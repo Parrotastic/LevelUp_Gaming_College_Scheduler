@@ -1,8 +1,10 @@
-package com.lukavalentine.databaseapp;
+package com.lukavalentine.databaseapp.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.lukavalentine.databaseapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
