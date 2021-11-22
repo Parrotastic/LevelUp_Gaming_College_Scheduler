@@ -1,5 +1,7 @@
 package com.lukavalentine.databaseapp.Database;
 
+import android.app.Application;
+
 import com.lukavalentine.databaseapp.DAO.AssessmentDAO;
 import com.lukavalentine.databaseapp.DAO.CourseDAO;
 import com.lukavalentine.databaseapp.DAO.TermDAO;
@@ -8,6 +10,8 @@ import com.lukavalentine.databaseapp.Entities.CourseEntity;
 import com.lukavalentine.databaseapp.Entities.TermEntity;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Repository {
 
@@ -19,6 +23,69 @@ public class Repository {
     private List<AssessmentEntity> mAllAssessments;
     private List<CourseEntity> mAllCourses;
     private List<TermEntity> mAllTerms;
+    private static int NUMBER_OF_THREADS = 4;
+    static final ExecutorService databaseWriteExecutor =
+            Executors.newFixedThreadPool(NUMBER_OF_THREADS);
+
+    public Repository(Application application){
+
+        DatabaseBuilder db = DatabaseBuilder.getDatabase(application);
+        mAssessmentDAO = db.assessmentDAO();
+        mCourseDAO = db.courseDAO();
+        mTermDAO = db.termDAO();
+
+    }
+
+    public List<TermEntity> getAllTerms(){
+        databaseWriteExecutor.execute(() -> {
+            mAllTerms = mTermDAO.getAllTerms();
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return mAllTerms;
+    }
+
+    public List<CourseEntity> getAllCourses(){
+        databaseWriteExecutor.execute(() -> {
+            mAllCourses = mCourseDAO.getAllCourses();
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return mAllCourses;
+    }
+
+    public List<AssessmentEntity> getAllAssessments(){
+        databaseWriteExecutor.execute(() ->{
+            mAllAssessments = mAssessmentDAO.getAllAssessments();
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return mAllAssessments;
+    }
+
+    //TODO: Write insert/update/delete (all?) statements.
+
+    public void insert(TermEntity termEntity){
+        databaseWriteExecutor.execute(() -> {
+            mTermDAO.insert(termEntity);
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 
 
