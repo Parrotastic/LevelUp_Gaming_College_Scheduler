@@ -21,8 +21,8 @@ public class TermEntity {
                 '}';
     }
 
-    public TermEntity(int termID, String termName, String termStart, String termEnd) {
-        this.termID = termID;
+    public TermEntity(String termName, String termStart, String termEnd) {
+        //this.termID = termID;
         this.termName = termName;
         this.termStart = termStart;
         this.termEnd = termEnd;
