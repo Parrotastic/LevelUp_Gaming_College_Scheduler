@@ -72,7 +72,7 @@ public class Repository {
         return mAllAssessments;
     }
 
-    //TODO: Write insert/update/delete (all?) statements.
+    //TODO: Write delete (all?) statements.
 
     public void insert(TermEntity termEntity){
         databaseWriteExecutor.execute(() -> {
@@ -85,10 +85,59 @@ public class Repository {
         }
     }
 
+    public void insert(CourseEntity courseEntity){
+        databaseWriteExecutor.execute(() -> {
+            mCourseDAO.insert(courseEntity);
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    public void insert(AssessmentEntity assessmentEntity){
+        databaseWriteExecutor.execute(() -> {
+            mAssessmentDAO.insert(assessmentEntity);
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public void update(TermEntity termEntity){
+        databaseWriteExecutor.execute(() -> {
+            mTermDAO.insert(termEntity);
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public void update(CourseEntity courseEntity){
+        databaseWriteExecutor.execute(() -> {
+            mCourseDAO.insert(courseEntity);
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
-
+    public void update(AssessmentEntity assessmentEntity){
+        databaseWriteExecutor.execute(() -> {
+            mAssessmentDAO.insert(assessmentEntity);
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }

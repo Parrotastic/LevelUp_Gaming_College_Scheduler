@@ -1,5 +1,6 @@
 package com.lukavalentine.databaseapp.DAO;
 
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -8,7 +9,7 @@ import androidx.room.Update;
 import com.lukavalentine.databaseapp.Entities.TermEntity;
 
 import java.util.List;
-
+@Dao
 public interface TermDAO {
     @Insert
     void insert(TermEntity term);

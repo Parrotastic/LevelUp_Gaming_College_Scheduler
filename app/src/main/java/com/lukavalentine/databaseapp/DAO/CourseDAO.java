@@ -1,5 +1,6 @@
 package com.lukavalentine.databaseapp.DAO;
 
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -9,7 +10,7 @@ import com.lukavalentine.databaseapp.Entities.AssessmentEntity;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
 
 import java.util.List;
-
+@Dao
 public interface CourseDAO {
     @Insert
     void insert(CourseEntity course);

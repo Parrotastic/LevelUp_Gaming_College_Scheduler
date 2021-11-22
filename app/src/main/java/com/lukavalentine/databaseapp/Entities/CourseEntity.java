@@ -27,7 +27,7 @@ public class CourseEntity {
                 '}';
     }
 
-    public CourseEntity(String courseName, String courseInstructor, String courseNote, String courseStart, String courseEnd, int termID) {
+    public CourseEntity(String courseName, String courseInstructor, String courseNote, String courseStart, String courseEnd) {
         this.courseName = courseName;
         this.courseInstructor = courseInstructor;
         this.courseNote = courseNote;
