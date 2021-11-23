@@ -172,7 +172,7 @@ public class Repository {
         }
     }
 
-    public void deleteAllAssessments(AssessmentEntity assessmentEntity){
+    public void deleteAllAssessments(){
         databaseWriteExecutor.execute(() -> {
             mAssessmentDAO.deleteAllAssessments();
         });
@@ -183,7 +183,7 @@ public class Repository {
         }
     }
 
-    public void deleteAllCourses(CourseEntity courseEntity){
+    public void deleteAllCourses(){
         databaseWriteExecutor.execute(() -> {
             mCourseDAO.deleteAllCourses();
         });
@@ -194,7 +194,7 @@ public class Repository {
         }
     }
 
-    public void deleteAllTerms(TermEntity termEntity){
+    public void deleteAllTerms(){
         databaseWriteExecutor.execute(() -> {
             mTermDAO.deleteAllTerms();
         });
