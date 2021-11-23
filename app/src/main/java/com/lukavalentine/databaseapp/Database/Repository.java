@@ -72,7 +72,7 @@ public class Repository {
         return mAllAssessments;
     }
 
-    //TODO: Write delete (all?) statements.
+
 
     public void insert(TermEntity termEntity){
         databaseWriteExecutor.execute(() -> {
@@ -138,6 +138,74 @@ public class Repository {
             e.printStackTrace();
         }
     }
+
+    public void delete(AssessmentEntity assessmentEntity){
+        databaseWriteExecutor.execute(() -> {
+            mAssessmentDAO.delete(assessmentEntity);
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void delete(CourseEntity courseEntity){
+        databaseWriteExecutor.execute(() -> {
+            mCourseDAO.delete(courseEntity);
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void delete(TermEntity termEntity){
+        databaseWriteExecutor.execute(() -> {
+            mTermDAO.delete(termEntity);
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteAllAssessments(AssessmentEntity assessmentEntity){
+        databaseWriteExecutor.execute(() -> {
+            mAssessmentDAO.deleteAllAssessments();
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteAllCourses(CourseEntity courseEntity){
+        databaseWriteExecutor.execute(() -> {
+            mCourseDAO.deleteAllCourses();
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteAllTerms(TermEntity termEntity){
+        databaseWriteExecutor.execute(() -> {
+            mTermDAO.deleteAllTerms();
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 
 }

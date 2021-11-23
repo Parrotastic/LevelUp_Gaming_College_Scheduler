@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.lukavalentine.databaseapp.Database.DatabaseBuilder;
 import com.lukavalentine.databaseapp.Database.Repository;
 import com.lukavalentine.databaseapp.Entities.AssessmentEntity;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
@@ -21,7 +22,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
         Repository repository = new Repository(getApplication());
+
+
+
+
         TermEntity term = new TermEntity( "Spring 2025", "04/03/25", "10/30/25");
         repository.insert(term);
         term = new TermEntity( "Winter 2025", "11/03/25", "05/30/26");
@@ -42,4 +49,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, TermList.class);
         startActivity(intent);
     }
+
+
+
+
 }
