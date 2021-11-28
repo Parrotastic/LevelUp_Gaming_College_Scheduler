@@ -31,6 +31,8 @@ public class TermActivity extends AppCompatActivity {
     }
 
     public void addTerm(View view){
+
+
         Intent intent = new Intent(TermActivity.this, TermDetail.class);
 
     }

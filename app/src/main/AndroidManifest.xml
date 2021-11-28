@@ -9,6 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DatabaseApp">
+
+        <activity android:name=".UI.TermActivity"
+            android:label="Terms"
+            android:parentActivityName=".UI.MainActivity"/>
+
+        <activity android:name=".UI.TermDetail"
+            android:label="Term Detail/Edit Screen"
+            android:parentActivityName=".UI.TermActivity"/>
+
+        <activity android:name=".UI.CourseActivity"
+            android:label="Courses"
+            android:parentActivityName=".UI.MainActivity"
+            />
+
+
+
+
         <activity
             android:name=".UI.MainActivity"
             android:exported="true">
@@ -16,6 +33,7 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
     </application>

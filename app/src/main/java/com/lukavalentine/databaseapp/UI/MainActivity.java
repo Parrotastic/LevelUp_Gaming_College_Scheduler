@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void termScreen(View view) {
-        Intent intent = new Intent(MainActivity.this, TermList.class);
+        Intent intent = new Intent(MainActivity.this, TermActivity.class);
         startActivity(intent);
     }
 
