@@ -30,10 +30,9 @@ public class TermActivity extends AppCompatActivity {
         adapter.setWords(Repository.getAllTerms());
     }
 
-    public void addTerm(View view){
-
-
+    public void addTermScreen(View view){
         Intent intent = new Intent(TermActivity.this, TermDetail.class);
+        startActivity(intent);
 
     }
 }
