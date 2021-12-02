@@ -12,7 +12,7 @@ import com.lukavalentine.databaseapp.R;
 public class CourseActivity extends AppCompatActivity {
     private Repository repository;
 
-    int ID;
+    int Id;
     String name;
     String instructor;
     String courseNote;
@@ -26,6 +26,9 @@ public class CourseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.id.);
+        setContentView(R.layout.activity_course);
+        Id = getIntent().getIntExtra("courseID", -1);
+        //if (Id == -1) Id = CourseDetail.
+
     }
 }
