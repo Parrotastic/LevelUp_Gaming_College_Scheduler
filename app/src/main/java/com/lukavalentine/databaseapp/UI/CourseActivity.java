@@ -1,6 +1,7 @@
 package com.lukavalentine.databaseapp.UI;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,5 +31,13 @@ public class CourseActivity extends AppCompatActivity {
         Id = getIntent().getIntExtra("courseID", -1);
         //if (Id == -1) Id = CourseDetail.
 
+        
+
+    }
+
+    public void addCourse(View view) {
+    }
+
+    public void addCourseFromScreen(View view) {
     }
 }
