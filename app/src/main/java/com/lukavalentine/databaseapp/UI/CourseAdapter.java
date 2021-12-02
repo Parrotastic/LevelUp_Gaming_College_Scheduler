@@ -12,6 +12,7 @@ import androidx.constraintlayout.helper.widget.Carousel;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
+import com.lukavalentine.databaseapp.Entities.TermEntity;
 import com.lukavalentine.databaseapp.R;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     private final LayoutInflater mInflater;
     private List<CourseEntity> mCourses;
 
-    public CourseAdapter(Context context){
+    public CourseAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
         this.context = context;
     }
@@ -30,20 +31,33 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     @NonNull
     @Override
     public CourseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View itemView = mInflater.inflate(R.layout.course_list_item, parent, false);
+        return new CourseViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
+        if (mCourses != null) {
+            final CourseEntity current = mCourses.get(position);
+            holder.courseTextView.setText(current.getCourseName());
+            holder.courseTextView2.setText(current.getCourseInstructor());
+        } else {
+            holder.courseTextView.setText("No Word");
+            holder.courseTextView2.setText("No Word");
+        }
+
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+
+        if (mCourses != null)
+            return mCourses.size();
+        else return 0;
     }
 
-    class CourseViewHolder extends RecyclerView.ViewHolder{
+    class CourseViewHolder extends RecyclerView.ViewHolder {
         private final TextView courseTextView;
         private final TextView courseTextView2;
 
@@ -51,7 +65,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
             super(itemView);
             courseTextView = itemView.findViewById(R.id.courseTextView);
             courseTextView2 = itemView.findViewById(R.id.courseTextView2);
-            itemView.setOnClickListener(new View.OnClickListener(){
+            itemView.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
@@ -73,5 +87,10 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
             });
 
         }
+    }
+
+    public void setWords(List<CourseEntity> words) {
+        mCourses = words;
+        notifyDataSetChanged();
     }
 }

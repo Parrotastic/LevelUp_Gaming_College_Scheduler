@@ -43,6 +43,7 @@ public class TermDetail extends AppCompatActivity {
     Long date;
 
     //AddTerm or AddTermScreen -> AddTerm = TermActivity.this, TermDetail.class, AddTermScreen = below with Receiver class.
+    //Receiver class is just meant for Broadcasts/Notification channels.
 
     public void addTerm(View view) {
 
