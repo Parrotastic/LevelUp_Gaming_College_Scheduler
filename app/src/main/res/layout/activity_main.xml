@@ -11,12 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Terms"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="98dp"
-        android:onClick="termScreen"/>
+        android:onClick="termScreen"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonCourses"
@@ -24,17 +24,16 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="160dp"
         android:text="Courses"
+        android:onClick="courseScreen"
         app:layout_constraintBottom_toTopOf="@id/buttonAssessments"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
+         />
 
     <Button
         android:id="@+id/buttonAssessments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Assessments"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/buttonCourses"
-        tools:layout_editor_absoluteY="476dp" />
+        android:onClick="assessmentScreen"
+        app:layout_constraintBottom_toBottomOf="@id/buttonAssessments"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

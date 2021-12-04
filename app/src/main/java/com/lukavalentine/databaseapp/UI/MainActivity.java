@@ -52,5 +52,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void courseScreen(View view) {
+        Intent intent = new Intent(MainActivity.this, CourseActivity.class);
+        startActivity(intent);
+    }
 
+
+    public void assessmentScreen(View view) {
+        Intent intent = new Intent(MainActivity.this, AssessmentActivity.class);
+        startActivity(intent);
+    }
 }

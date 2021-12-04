@@ -5,6 +5,8 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.lukavalentine.databaseapp.Database.Repository;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
@@ -24,18 +26,32 @@ public class CourseActivity extends AppCompatActivity {
     CourseEntity currentCourse;
     public static int numCourses;
 
+
+    //Should I be doing this with the PartActivity thing or the ProductActivity thing in mind?
+    //Think I should keep in mind that it's probably going to more like the ProductActivity setup.
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
-        Id = getIntent().getIntExtra("courseID", -1);
-        //if (Id == -1) Id = CourseDetail.
+        repository = new Repository(getApplication());
+        repository.getAllCourses();
+        RecyclerView recyclerView = findViewById(R.id.course_recycler_view);
+
+        final CourseAdapter adapter = new CourseAdapter(this);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter.setWords(repository.getAllCourses());
+
+
+
 
         
 
     }
 
     public void addCourse(View view) {
+
     }
 
     public void addCourseFromScreen(View view) {
