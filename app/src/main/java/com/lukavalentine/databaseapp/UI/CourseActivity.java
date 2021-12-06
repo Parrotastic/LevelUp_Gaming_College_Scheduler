@@ -1,5 +1,6 @@
 package com.lukavalentine.databaseapp.UI;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -45,12 +46,11 @@ public class CourseActivity extends AppCompatActivity {
 
 
 
-
-        
-
     }
 
     public void addCourse(View view) {
+        Intent intent = new Intent(CourseActivity.this, CourseDetail.class);
+        startActivity(intent);
 
     }
 

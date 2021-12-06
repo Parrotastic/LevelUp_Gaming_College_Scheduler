@@ -17,10 +17,8 @@
         app:layout_constraintRight_toRightOf="parent" />
 <ScrollView
     android:id="@+id/scrollViewCourse"
-    android:layout_width="410dp"
-    android:layout_height="410dp"
-    tools:layout_editor_absoluteX="1dp"
-    tools:layout_editor_absoluteY="1dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:ignore="MissingConstraints">
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,7 +53,7 @@
                 android:id="@+id/courseInstructor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Shelley Duvall"/>
+                android:hint="Shelley D."/>
 
         </LinearLayout>
         <LinearLayout
@@ -76,8 +74,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/course_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        tools:listitem="@layout/course_list_item"
-        app:layout_constraintBottom_toBottomOf="@id/scrollViewCourse"/>
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="@id/scrollViewCourse"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="138dp"
+        tools:listitem="@layout/course_list_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

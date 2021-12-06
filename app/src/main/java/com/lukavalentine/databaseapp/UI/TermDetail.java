@@ -52,4 +52,6 @@ public class TermDetail extends AppCompatActivity {
     }
 
 
+    public void addTermScreen(View view) {
+    }
 }
