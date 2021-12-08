@@ -37,7 +37,13 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
     public void onBindViewHolder(@NonNull AssessmentViewHolder holder, int position) {
         if(mAssessments != null){
             final AssessmentEntity current = mAssessments.get(position);
-            //holder.
+            holder.assessmentTextView.setText(current.getAssessmentID());
+            holder.assessmentTextView2.setText(current.getAssessmentName());
+
+        }
+        else{
+            holder.assessmentTextView.setText("No Word");
+            holder.assessmentTextView2.setText("No Word");
         }
 
     }
@@ -64,10 +70,21 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
                     final AssessmentEntity current = mAssessments.get(position);
 
                     Intent intent = new Intent(context, AssessmentDetail.class);
-                    //intent.putExtra()
+                    intent.putExtra("assessmentID", current.getAssessmentID());
+                    intent.putExtra("assessmentName", current.getAssessmentName());
+                    intent.putExtra("assessmentStart", current.getAssessmentStart());
+                    intent.putExtra("assessmentEnd", current.getAssessmentEnd());
+                    intent.putExtra("courseID", current.getCourseID());
+                    intent.putExtra("position", position);
+                    context.startActivity(intent);
 
                 }
             });
         }
+    }
+
+    public void setWords(List<AssessmentEntity> words){
+        mAssessments = words;
+        notifyDataSetChanged();
     }
 }
