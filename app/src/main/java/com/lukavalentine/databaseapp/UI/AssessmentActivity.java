@@ -1,9 +1,12 @@
 package com.lukavalentine.databaseapp.UI;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lukavalentine.databaseapp.Database.Repository;
@@ -24,7 +27,19 @@ public class AssessmentActivity extends AppCompatActivity {
         repository.getAllAssessments();
         RecyclerView recyclerView = findViewById(R.id.assessment_recycler_view);
 
-        //Work on Assessment Adapter first.
-        //final AssessmentAdapter adapter = new AssessmentAdapter(this);
+        final AssessmentAdapter adapter = new AssessmentAdapter(this);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter.setWords(repository.getAllAssessments());
+
+    }
+
+    public void addAssessment(View view){
+        Intent intent = new Intent(AssessmentActivity.this, AssessmentDetail.class);
+        startActivity(intent);
+    }
+
+    public void addAssessmentFromScreen(View view){
+
     }
 }

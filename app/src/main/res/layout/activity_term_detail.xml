@@ -7,7 +7,7 @@
     tools:context=".UI.TermDetail">
 
     <ScrollView
-        android:id="@+id/scrollView"
+        android:id="@+id/termScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
@@ -75,7 +75,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="addTermScreen"
+                    android:onClick="editTermScreen"
                     android:text="Save"/>
 
             </LinearLayout>
@@ -89,7 +89,7 @@
         android:layout_height="400dp"
         android:background="@color/teal_700"
         tools:listitem="course_list_item"
-        app:layout_constraintTop_toBottomOf="@id/scrollView"/>
+        app:layout_constraintTop_toBottomOf="@id/termScrollView"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
