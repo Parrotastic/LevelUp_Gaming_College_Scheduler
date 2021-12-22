@@ -35,7 +35,7 @@ public class AssessmentActivity extends AppCompatActivity {
     }
 
     public void addAssessment(View view){
-        Intent intent = new Intent(AssessmentActivity.this, AssessmentDetail.class);
+        Intent intent = new Intent(AssessmentActivity.this, AssessmentEdit.class);
         startActivity(intent);
     }
 

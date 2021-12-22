@@ -11,7 +11,7 @@ import com.lukavalentine.databaseapp.R;
 
 import java.util.Calendar;
 
-public class CourseDetail extends AppCompatActivity {
+public class CourseEdit extends AppCompatActivity {
     private Repository repository;
     public static int numAlert;
 

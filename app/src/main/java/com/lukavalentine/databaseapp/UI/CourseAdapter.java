@@ -8,11 +8,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.helper.widget.Carousel;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
-import com.lukavalentine.databaseapp.Entities.TermEntity;
 import com.lukavalentine.databaseapp.R;
 
 import java.util.List;
@@ -72,7 +70,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
                     int position = getAdapterPosition();
                     final CourseEntity current = mCourses.get(position);
 
-                    Intent intent = new Intent(context, CourseDetail.class);
+                    Intent intent = new Intent(context, CourseEdit.class);
                     intent.putExtra("courseID", current.getCourseID());
                     intent.putExtra("courseName", current.getCourseName());
                     intent.putExtra("courseInstructor", current.getCourseInstructor());

@@ -69,7 +69,7 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
                     int position = getAdapterPosition();
                     final AssessmentEntity current = mAssessments.get(position);
 
-                    Intent intent = new Intent(context, AssessmentDetail.class);
+                    Intent intent = new Intent(context, AssessmentEdit.class);
                     intent.putExtra("assessmentID", current.getAssessmentID());
                     intent.putExtra("assessmentName", current.getAssessmentName());
                     intent.putExtra("assessmentStart", current.getAssessmentStart());

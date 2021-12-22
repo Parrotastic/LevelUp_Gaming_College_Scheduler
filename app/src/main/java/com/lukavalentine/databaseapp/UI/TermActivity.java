@@ -31,7 +31,7 @@ public class TermActivity extends AppCompatActivity {
     }
 
     public void editTermScreen(View view){
-        Intent intent = new Intent(TermActivity.this, TermDetail.class);
+        Intent intent = new Intent(TermActivity.this, TermEdit.class);
         startActivity(intent);
 
     }

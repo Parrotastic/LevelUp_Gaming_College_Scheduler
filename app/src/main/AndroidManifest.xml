@@ -14,7 +14,7 @@
             android:label="Terms"
             android:parentActivityName=".UI.MainActivity"/>
 
-        <activity android:name=".UI.TermDetail"
+        <activity android:name=".UI.TermEdit"
             android:label="Term Detail/Edit Screen"
             android:parentActivityName=".UI.TermActivity"/>
 

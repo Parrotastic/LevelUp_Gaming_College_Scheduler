@@ -1,4 +1,4 @@
 package com.lukavalentine.databaseapp.UI;
 
-public class AssessmentDetail {
+public class CourseAdd {
 }
