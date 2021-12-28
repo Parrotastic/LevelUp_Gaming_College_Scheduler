@@ -14,7 +14,7 @@ import com.lukavalentine.databaseapp.Entities.AssessmentEntity;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
 import com.lukavalentine.databaseapp.Entities.TermEntity;
 
-@Database(entities = {AssessmentEntity.class, CourseEntity.class, TermEntity.class}, version = 1, exportSchema = false)
+@Database(entities = {AssessmentEntity.class, CourseEntity.class, TermEntity.class}, version = 2, exportSchema = false)
 public abstract class DatabaseBuilder extends RoomDatabase {
     public abstract AssessmentDAO assessmentDAO();
     public abstract CourseDAO courseDAO();

@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "course_table")
 public class CourseEntity {
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     private int courseID;
     private String courseName;
     private String courseInstructor;
@@ -27,7 +27,7 @@ public class CourseEntity {
                 '}';
     }
 
-    public CourseEntity(String courseName, String courseInstructor, String courseNote, String courseStart, String courseEnd, int termID) {
+    public CourseEntity(int courseID, String courseName, String courseInstructor, String courseNote, String courseStart, String courseEnd, int termID) {
         this.courseName = courseName;
         this.courseInstructor = courseInstructor;
         this.courseNote = courseNote;

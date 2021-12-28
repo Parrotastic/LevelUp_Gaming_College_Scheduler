@@ -15,7 +15,7 @@ import java.util.concurrent.Executors;
 
 public class Repository {
 
-    //TODO: Video lands at 18:05 fpr the repository portion of it.
+
 
     private AssessmentDAO mAssessmentDAO;
     private CourseDAO mCourseDAO;

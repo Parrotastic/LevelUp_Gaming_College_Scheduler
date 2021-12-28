@@ -1,6 +1,10 @@
 package com.lukavalentine.databaseapp.UI;
 
-public class TermAdd {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class TermAdd extends AppCompatActivity {
+
+
 
     //
 }

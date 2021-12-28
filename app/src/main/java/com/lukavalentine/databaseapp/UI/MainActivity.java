@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         Repository repository = new Repository(getApplication());
 
-        //TODO: Autogen keys are uglying up the records - switch back to manual or find a way to reset count?
+        
 
         repository.deleteAllAssessments();
         repository.deleteAllCourses();
@@ -31,17 +31,17 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        TermEntity term = new TermEntity("Spring 2025", "04/03/25", "10/30/25");
+        TermEntity term = new TermEntity(1, "Spring 2025", "04/03/25", "10/30/25");
         repository.insert(term);
-        term = new TermEntity("Winter 2025", "11/03/25", "05/30/26");
+        term = new TermEntity(2, "Winter 2025", "11/03/25", "05/30/26");
         repository.insert(term);
-        term = new TermEntity("Summer 2026", "06/03/26", "12/30/26");
+        term = new TermEntity(3, "Summer 2026", "06/03/26", "12/30/26");
         repository.insert(term);
 
-        CourseEntity course = new CourseEntity("Practical Algebra", "001", "....", "04/03/25", "06/03/25", 1);
+        CourseEntity course = new CourseEntity(1, "Practical Algebra", "001", "....", "04/03/25", "06/03/25", 1);
         repository.insert(course);
 
-        AssessmentEntity assessment = new AssessmentEntity("PJGB Objective", "06/02/25", "06/03/25", 1);
+        AssessmentEntity assessment = new AssessmentEntity(1,"PJGB Objective", "06/02/25", "06/03/25", 1);
         repository.insert(assessment);
 
 

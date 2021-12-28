@@ -28,8 +28,8 @@ public class AssessmentEntity {
                 '}';
     }
 
-    public AssessmentEntity(String assessmentName, String assessmentStart, String assessmentEnd, int courseID) {
-        //this.assessmentID = assessmentID;
+    public AssessmentEntity(int assessmentID, String assessmentName, String assessmentStart, String assessmentEnd, int courseID) {
+        this.assessmentID = assessmentID;
         this.assessmentName = assessmentName;
         this.assessmentStart = assessmentStart;
         this.assessmentEnd = assessmentEnd;
