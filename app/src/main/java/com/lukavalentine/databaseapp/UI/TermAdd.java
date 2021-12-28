@@ -65,21 +65,23 @@ public class TermAdd extends AppCompatActivity {
 
 
     public void addTerm(View view) {
-        Intent intent = new Intent(TermAdd.this, TermActivity.class);
-        intent.putExtra("termID", termID);
-        startActivity(intent);
+//        Intent intent = new Intent(TermAdd.this, TermActivity.class);
+//        intent.putExtra("termID", termID);
+//        startActivity(intent);
     }
 
     public void addTermFromScreen(View view) {
         TermEntity t;
 
-
-        //Not saving added term.
         t = new TermEntity(termID, termAddName.getText().toString(), termAddStart.getText().toString(), termAddEnd.getText().toString());
         List<TermEntity> allTerms = repository.getAllTerms();
         termID = allTerms.get(allTerms.size() - 1).getTermID();
         t = new TermEntity(++termID, termAddName.getText().toString(), termAddStart.getText().toString(), termAddEnd.getText().toString());
         repository.insert(t);
+
+        Intent intent = new Intent(TermAdd.this, TermActivity.class);
+        intent.putExtra("termID", termID);
+        startActivity(intent);
 
 
     }

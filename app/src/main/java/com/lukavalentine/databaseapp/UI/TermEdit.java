@@ -104,9 +104,7 @@ public class TermEdit extends AppCompatActivity {
 
     public void saveTerm(View view) {
 
-        Intent intent = new Intent(TermEdit.this, TermActivity.class);
-        intent.putExtra("termID", termID);
-        startActivity(intent);
+
     }
 
     public void addTermFromScreen(View view) {
@@ -119,6 +117,10 @@ public class TermEdit extends AppCompatActivity {
             t = new TermEntity(++termID, editTermName.getText().toString(), editTermStart.getText().toString(), editTermEnd.getText().toString());
         }
         repository.update(t);
+
+        Intent intent = new Intent(TermEdit.this, TermActivity.class);
+        intent.putExtra("termID", termID);
+        startActivity(intent);
 
 
     }
