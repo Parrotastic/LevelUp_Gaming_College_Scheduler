@@ -1,6 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".UI.TermAdd">
+
+    <ScrollView
+        android:id="@+id/termAddScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Term Name" />
+
+                <EditText
+                    android:id="@+id/termAddName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Spring 2025" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Term Start" />
+
+                <EditText
+                    android:id="@+id/termAddStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="11/01/25" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Term End" />
+
+                <EditText
+                    android:id="@+id/termAddEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="04/30/26" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addTerm"
+                    android:text="Save"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

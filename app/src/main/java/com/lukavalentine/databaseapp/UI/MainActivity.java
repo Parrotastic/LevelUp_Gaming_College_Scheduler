@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         Repository repository = new Repository(getApplication());
 
-        
+
 
         repository.deleteAllAssessments();
         repository.deleteAllCourses();

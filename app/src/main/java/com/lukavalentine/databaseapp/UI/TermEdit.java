@@ -37,7 +37,6 @@ public class TermEdit extends AppCompatActivity {
 //    private String courseEnd;
 
 
-
     private int termID;
     private String termName;
     private String termStart;
@@ -80,11 +79,9 @@ public class TermEdit extends AppCompatActivity {
             editTermEnd.setText(termEnd);
         }
 
-        //RecyclerView is not showing list of courses.
 
         repository = new Repository(getApplication());
         RecyclerView recyclerView = findViewById(R.id.associated_courses);
-        //Changed below adapter to CourseAdapter from using TermAdapter.
         final CourseAdapter adapter = new CourseAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -93,15 +90,11 @@ public class TermEdit extends AppCompatActivity {
             if (c.getTermID() == termID) filteredCourses.add(c);
         }
         numTerms = filteredCourses.size();
-        //
+
         adapter.setWords(filteredCourses);
 
 
     }
-
-//    Calendar myCalender = Calendar.getInstance();
-//    DatePickerDialog.OnDateSetListener myDate;
-//    Long date;
 
 
     @Override
@@ -116,16 +109,16 @@ public class TermEdit extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void addTermFromScreen(View view){
+    public void addTermFromScreen(View view) {
         TermEntity t;
-        if(termID != -1) t = new TermEntity(termID, editTermName.getText().toString(), editTermStart.getText().toString(), editTermEnd.getText().toString());
-        else{
+        if (termID != -1)
+            t = new TermEntity(termID, editTermName.getText().toString(), editTermStart.getText().toString(), editTermEnd.getText().toString());
+        else {
             List<TermEntity> allTerms = repository.getAllTerms();
-            termID = allTerms.get(allTerms.size()-1).getTermID();
+            termID = allTerms.get(allTerms.size() - 1).getTermID();
             t = new TermEntity(++termID, editTermName.getText().toString(), editTermStart.getText().toString(), editTermEnd.getText().toString());
         }
-        repository.insert(t);
-
+        repository.update(t);
 
 
     }
