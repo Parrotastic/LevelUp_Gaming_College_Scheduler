@@ -75,7 +75,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="editTermScreen"
+                    android:onClick="addTermFromScreen"
                     android:text="Save"/>
 
             </LinearLayout>

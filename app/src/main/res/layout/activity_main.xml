@@ -27,7 +27,7 @@
         android:onClick="courseScreen"
         app:layout_constraintBottom_toTopOf="@id/buttonAssessments"
 
-         />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonAssessments"
@@ -35,5 +35,6 @@
         android:layout_height="wrap_content"
         android:text="Assessments"
         android:onClick="assessmentScreen"
-        app:layout_constraintBottom_toBottomOf="@id/buttonAssessments"/>
+        app:layout_constraintBottom_toBottomOf="@id/buttonAssessments"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
