@@ -15,13 +15,15 @@
             android:parentActivityName=".UI.MainActivity"/>
 
         <activity android:name=".UI.TermEdit"
-            android:label="Term Detail/Edit Screen"
+            android:label="Edit Term"
             android:parentActivityName=".UI.TermActivity"/>
 
         <activity android:name=".UI.CourseActivity"
             android:label="Courses"
             android:parentActivityName=".UI.MainActivity"
             />
+        <activity android:name=".UI.TermAdd"
+            android:label="Add Term"/>
 
 
 
