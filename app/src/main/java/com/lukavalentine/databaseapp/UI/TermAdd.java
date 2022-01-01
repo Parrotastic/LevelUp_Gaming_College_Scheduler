@@ -38,6 +38,8 @@ public class TermAdd extends AppCompatActivity {
 
         repository = new Repository(getApplication());
 
+        //Don't need getIntents.
+
         termID = getIntent().getIntExtra("termID", -1);
         termName = getIntent().getStringExtra("termName".toString());
         termStart = getIntent().getStringExtra("termStart".toString());
@@ -73,7 +75,9 @@ public class TermAdd extends AppCompatActivity {
     public void addTermFromScreen(View view) {
         TermEntity t;
 
-        t = new TermEntity(termID, termAddName.getText().toString(), termAddStart.getText().toString(), termAddEnd.getText().toString());
+        //First line t- is for edits.
+
+        //t = new TermEntity(termID, termAddName.getText().toString(), termAddStart.getText().toString(), termAddEnd.getText().toString());
         List<TermEntity> allTerms = repository.getAllTerms();
         termID = allTerms.get(allTerms.size() - 1).getTermID();
         t = new TermEntity(++termID, termAddName.getText().toString(), termAddStart.getText().toString(), termAddEnd.getText().toString());
@@ -86,5 +90,5 @@ public class TermAdd extends AppCompatActivity {
 
     }
 
-    //
+
 }

@@ -51,6 +51,7 @@ public class TermEdit extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_term_detail);
+        //Use this for floating action course button. Push IDs using this like CourseID to AddAssessments.
         termID = getIntent().getIntExtra("termID", -1);
         termName = getIntent().getStringExtra("termName".toString());
         termStart = getIntent().getStringExtra("termStart".toString());
@@ -125,7 +126,14 @@ public class TermEdit extends AppCompatActivity {
 
     }
 
+    //TODO: Create floating action button that adds courses and inputs termID over to the selection. Use addCourseToTerm method.
+
 
     public void editTermScreen(View view) {
+    }
+
+    public void addCourseToTerm(View view){
+
+
     }
 }
