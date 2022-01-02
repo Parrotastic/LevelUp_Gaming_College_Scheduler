@@ -24,6 +24,12 @@
             />
         <activity android:name=".UI.TermAdd"
             android:label="Add Term"/>
+        <activity android:name=".UI.CourseAdd"
+            android:label="Add Course" />
+        <activity android:name=".UI.CourseEdit"
+            android:label="Edit Course"/>
+
+
 
 
 

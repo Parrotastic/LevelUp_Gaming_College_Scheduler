@@ -133,6 +133,10 @@ public class TermEdit extends AppCompatActivity {
     }
 
     public void addCourseToTerm(View view){
+        termID = getIntent().getIntExtra("termID", -1);
+
+
+
 
 
     }
