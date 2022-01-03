@@ -50,12 +50,12 @@
             android:layout_below="@id/courseInstructor"
             />
 
-        <TextView
-            android:id="@+id/courseTermID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TermID:"
-            android:layout_below="@id/courseStart"/>
+<!--        <TextView-->
+<!--            android:id="@+id/courseTermID"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="TermID:"-->
+<!--            android:layout_below="@id/courseStart"/>-->
 
 
 

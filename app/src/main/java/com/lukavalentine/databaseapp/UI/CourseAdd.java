@@ -1,6 +1,7 @@
 package com.lukavalentine.databaseapp.UI;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,5 +32,11 @@ public class CourseAdd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_course);
 
+    }
+
+    public void addAssessment(View view) {
+    }
+
+    public void saveCourse(View view) {
     }
 }

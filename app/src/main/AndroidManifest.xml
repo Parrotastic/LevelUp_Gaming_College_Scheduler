@@ -28,6 +28,9 @@
             android:label="Add Course" />
         <activity android:name=".UI.CourseEdit"
             android:label="Edit Course"/>
+        <activity android:name=".UI.AssessmentAdd"
+            android:label="Add Assessment"/>
+
 
 
 
