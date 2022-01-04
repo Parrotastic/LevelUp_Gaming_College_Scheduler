@@ -6,6 +6,102 @@
     android:orientation="vertical"
     tools:context=".UI.AssessmentAdd">
 
+    <ScrollView
+        android:id="@+id/addAssessmentScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assessment Name" />
+
+                <EditText
+                    android:id="@+id/assessmentAddName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="PJGB1A" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assessment Start" />
+
+                <EditText
+                    android:id="@+id/assessmentAddStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="11/01/25" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assessment End" />
+
+                <EditText
+                    android:id="@+id/assessmentAddEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="04/30/26" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CourseID" />
+
+                <EditText
+                    android:id="@+id/assessmentAddCourseID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/addAssessmentSaveButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="saveAssessment"
+                    android:text="Save"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

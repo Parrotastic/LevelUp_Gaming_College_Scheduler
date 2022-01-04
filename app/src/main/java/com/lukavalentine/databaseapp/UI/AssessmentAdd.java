@@ -1,6 +1,7 @@
 package com.lukavalentine.databaseapp.UI;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,5 +15,8 @@ public class AssessmentAdd extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_assessment);
+    }
+
+    public void saveAssessment(View view) {
     }
 }
