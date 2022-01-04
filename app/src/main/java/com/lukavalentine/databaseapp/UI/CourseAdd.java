@@ -73,7 +73,7 @@ public class CourseAdd extends AppCompatActivity {
             courseAddNote.setText(courseNote);
             courseAddStart.setText(courseStart);
             courseAddEnd.setText(courseEnd);
-            courseAddTermID.setText(termID);
+            //courseAddTermID.setText(termID);
         }
 
 
@@ -88,14 +88,12 @@ public class CourseAdd extends AppCompatActivity {
         List<CourseEntity> allCourses = repository.getAllCourses();
         courseID = allCourses.get(allCourses.size() - 1).getCourseID();
         c = new CourseEntity(++courseID, courseAddName.getText().toString(), courseAddInstructor.getText().toString(),
-                courseAddNote.getText().toString(), courseAddStart.getText().toString(), courseAddEnd.getText().toString(),
-                Integer.parseInt(courseAddTermID.getText().toString()));
+                courseAddNote.getText().toString(), courseAddStart.getText().toString(), courseAddEnd.getText().toString(), termID);
 
         repository.insert(c);
 
         Intent intent = new Intent(CourseAdd.this, TermEdit.class);
-        repository.getAllCourses();
-        intent.putExtra("courseID", courseID);
+        intent.putExtra("termID", termID);
         startActivity(intent);
     }
 

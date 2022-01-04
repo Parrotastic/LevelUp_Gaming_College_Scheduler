@@ -126,7 +126,7 @@ public class TermEdit extends AppCompatActivity {
 
     }
 
-    //TODO: Create floating action button that adds courses and inputs termID over to the selection. Use addCourseToTerm method.
+
 
 
     public void editTermScreen(View view) {
@@ -136,6 +136,7 @@ public class TermEdit extends AppCompatActivity {
         termID = getIntent().getIntExtra("termID", -1);
 
         Intent intent = new Intent(TermEdit.this, CourseAdd.class);
+        intent.putExtra("termID", termID);
         startActivity(intent);
 
     }
