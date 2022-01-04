@@ -38,12 +38,12 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
         if(mAssessments != null){
             final AssessmentEntity current = mAssessments.get(position);
             holder.assessmentTextView.setText(current.getAssessmentID());
-            holder.assessmentTextView2.setText(current.getAssessmentName());
+
 
         }
         else{
             holder.assessmentTextView.setText("No Word");
-            holder.assessmentTextView2.setText("No Word");
+
         }
 
     }
@@ -57,12 +57,12 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
 
     public class AssessmentViewHolder extends RecyclerView.ViewHolder {
         private final TextView assessmentTextView;
-        private final TextView assessmentTextView2;
+
 
         public AssessmentViewHolder(@NonNull View itemView) {
             super(itemView);
             assessmentTextView = itemView.findViewById(R.id.assessmentTextView);
-            assessmentTextView2 = itemView.findViewById(R.id.assessmentTextView2);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -80,6 +80,10 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
 
                 }
             });
+        }
+
+        private TextView getAssessmentTextView() {
+            return assessmentTextView;
         }
     }
 

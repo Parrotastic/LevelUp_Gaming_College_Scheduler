@@ -4,6 +4,14 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/assessmentTextView"
+        android:background="@color/teal_700"
+        style="@android:style/TextAppearance.Material.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
 
 
 

@@ -28,6 +28,7 @@ public class CourseEntity {
     }
 
     public CourseEntity(int courseID, String courseName, String courseInstructor, String courseNote, String courseStart, String courseEnd, int termID) {
+        this.courseID = courseID;
         this.courseName = courseName;
         this.courseInstructor = courseInstructor;
         this.courseNote = courseNote;

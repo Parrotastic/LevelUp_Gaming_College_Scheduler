@@ -135,9 +135,8 @@ public class TermEdit extends AppCompatActivity {
     public void addCourseToTerm(View view){
         termID = getIntent().getIntExtra("termID", -1);
 
-
-
-
+        Intent intent = new Intent(TermEdit.this, CourseAdd.class);
+        startActivity(intent);
 
     }
 }

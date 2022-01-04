@@ -94,6 +94,7 @@ public class CourseAdd extends AppCompatActivity {
         repository.insert(c);
 
         Intent intent = new Intent(CourseAdd.this, TermEdit.class);
+        repository.getAllCourses();
         intent.putExtra("courseID", courseID);
         startActivity(intent);
     }
