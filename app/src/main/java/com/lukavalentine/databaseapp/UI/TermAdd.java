@@ -38,7 +38,7 @@ public class TermAdd extends AppCompatActivity {
 
         repository = new Repository(getApplication());
 
-        //Don't need getIntents.
+        //Don't need getIntents until Edits.
 
         termID = getIntent().getIntExtra("termID", -1);
         termName = getIntent().getStringExtra("termName".toString());
