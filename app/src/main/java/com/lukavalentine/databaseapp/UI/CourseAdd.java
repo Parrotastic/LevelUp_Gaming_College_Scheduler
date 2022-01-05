@@ -42,7 +42,7 @@ public class CourseAdd extends AppCompatActivity {
 
         repository = new Repository(getApplication());
 
-        //Should termID even be set this way with -1? Foreign key-wise, I mean?
+
         termID = getIntent().getIntExtra("termID", -1);
         courseID = getIntent().getIntExtra("courseID", -1);
         courseName = getIntent().getStringExtra("courseName".toString());
@@ -56,7 +56,7 @@ public class CourseAdd extends AppCompatActivity {
         courseAddNote = findViewById(R.id.courseAddNote);
         courseAddStart = findViewById(R.id.courseAddStart);
         courseAddEnd = findViewById(R.id.courseAddEnd);
-        courseAddTermID = findViewById(R.id.courseAddTermID);
+        //courseAddTermID = findViewById(R.id.courseAddTermID);
 
         if(currentCourse != null){
          courseName = currentCourse.getCourseName();

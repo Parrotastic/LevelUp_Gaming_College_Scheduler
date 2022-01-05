@@ -68,22 +68,22 @@
                     android:layout_height="wrap_content"
                     android:hint="04/30/26" />
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="CourseID" />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="CourseID" />-->
 
-                <EditText
-                    android:id="@+id/assessmentAddCourseID"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="1" />
-            </LinearLayout>
+<!--                <EditText-->
+<!--                    android:id="@+id/assessmentAddCourseID"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="1" />-->
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="wrap_content"
