@@ -37,7 +37,7 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
     public void onBindViewHolder(@NonNull AssessmentViewHolder holder, int position) {
         if(mAssessments != null){
             final AssessmentEntity current = mAssessments.get(position);
-            holder.assessmentTextView.setText(current.getAssessmentID());
+            holder.assessmentTextView.setText(current.getAssessmentName());
 
 
         }

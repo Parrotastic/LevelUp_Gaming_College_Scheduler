@@ -1,4 +1,10 @@
 package com.lukavalentine.databaseapp.UI;
 
-public class AssessmentEdit {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class AssessmentEdit extends AppCompatActivity {
+
+
+
+
 }
