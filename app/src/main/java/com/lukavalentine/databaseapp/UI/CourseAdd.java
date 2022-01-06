@@ -79,8 +79,7 @@ public class CourseAdd extends AppCompatActivity {
 
     }
 
-    public void addAssessment(View view) {
-    }
+
 
     public void saveCourse(View view) {
         CourseEntity c;

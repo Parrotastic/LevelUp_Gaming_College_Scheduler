@@ -7,13 +7,13 @@
     android:orientation="vertical"
     tools:context=".UI.CourseAdd">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="addAssessment"
-        android:src="@android:drawable/ic_input_add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:onClick="addAssessment"-->
+<!--        android:src="@android:drawable/ic_input_add"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"/>-->
 
     <ScrollView
         android:id="@+id/scrollViewAddCourse"
