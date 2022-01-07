@@ -30,6 +30,8 @@
             android:label="Edit Course"/>
         <activity android:name=".UI.AssessmentAdd"
             android:label="Add Assessment"/>
+        <activity android:name=".UI.AssessmentEdit"
+            android:label="Edit Assessment"/>
 
 
 

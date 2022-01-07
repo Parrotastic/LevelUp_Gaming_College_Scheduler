@@ -2,6 +2,7 @@ package com.lukavalentine.databaseapp.UI;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -54,5 +55,8 @@ public class AssessmentEdit extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         return super.onOptionsItemSelected(item);
+    }
+
+    public void saveUpdatedAssessment(View view) {
     }
 }
