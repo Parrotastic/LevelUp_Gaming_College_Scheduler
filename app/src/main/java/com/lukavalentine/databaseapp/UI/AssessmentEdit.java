@@ -1,5 +1,6 @@
 package com.lukavalentine.databaseapp.UI;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -82,5 +83,22 @@ public class AssessmentEdit extends AppCompatActivity {
     }
 
     public void saveUpdatedAssessment(View view) {
+        AssessmentEntity a;
+        if(assessmentID != -1){
+            a = new AssessmentEntity(assessmentID, assessmentEditName.getText().toString(),
+                    assessmentEditStart.getText().toString(), assessmentEditEnd.getText().toString(), currentAssessment.getCourseID());
+        }
+        else{
+            List<AssessmentEntity> allAssessments = repository.getAllAssessments();
+            assessmentID = allAssessments.get(allAssessments.size() - 1).getAssessmentID();
+            a = new AssessmentEntity(++assessmentID,assessmentEditName.getText().toString(),
+                    assessmentEditStart.getText().toString(), assessmentEditEnd.getText().toString(), currentAssessment.getCourseID() );
+        }
+        repository.update(a);
+
+        Intent intent = new Intent(AssessmentEdit.this, CourseEdit.class);
+
+
+
     }
 }
