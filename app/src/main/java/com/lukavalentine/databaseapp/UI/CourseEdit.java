@@ -140,7 +140,7 @@ public class CourseEdit extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //AddCourse Method screen here.
+
 
 
 }

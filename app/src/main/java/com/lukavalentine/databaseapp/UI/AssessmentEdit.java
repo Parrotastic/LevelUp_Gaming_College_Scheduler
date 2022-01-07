@@ -3,6 +3,7 @@ package com.lukavalentine.databaseapp.UI;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,6 +25,10 @@ public class AssessmentEdit extends AppCompatActivity {
     private String assessmentStart;
     private String assessmentEnd;
 
+    EditText assessmentEditName;
+    EditText assessmentEditStart;
+    EditText assessmentEditEnd;
+
     AssessmentEntity currentAssessment;
 
     @Override
@@ -44,6 +49,25 @@ public class AssessmentEdit extends AppCompatActivity {
                 currentAssessment = a;
 
         }
+
+        assessmentEditName = findViewById(R.id.assessmentEditName);
+        assessmentEditStart = findViewById(R.id.assessmentEditStart);
+        assessmentEditEnd = findViewById(R.id.assessmentEditEnd);
+
+        if(currentAssessment != null){
+            assessmentName = currentAssessment.getAssessmentName();
+            assessmentStart = currentAssessment.getAssessmentStart();
+            assessmentEnd = currentAssessment.getAssessmentEnd();
+
+        }
+
+        if(assessmentID != -1){
+            assessmentEditName.setText(assessmentName);
+            assessmentEditStart.setText(assessmentStart);
+            assessmentEditEnd.setText(assessmentEnd);
+        }
+
+        repository = new Repository(getApplication());
 
         
 
