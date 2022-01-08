@@ -28,6 +28,7 @@ public class TermActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter.setWords(Repository.getAllTerms());
+
     }
 
     public void addTermScreen(View view){
@@ -35,4 +36,6 @@ public class TermActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    //TODO: Use ArchitectureAppExample to implememnt menu and DeleteAll*s methods.
 }
