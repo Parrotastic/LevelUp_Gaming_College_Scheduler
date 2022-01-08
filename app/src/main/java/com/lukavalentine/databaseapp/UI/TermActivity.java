@@ -2,8 +2,13 @@ package com.lukavalentine.databaseapp.UI;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,5 +42,27 @@ public class TermActivity extends AppCompatActivity {
 
     }
 
-    //TODO: Use ArchitectureAppExample to implememnt menu and DeleteAll*s methods.
+    //Use PartActivity Line 89~115 for deletes via menus and exception control for e.g.(term with course, or course with assessment.)
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.term_menu, menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.delete_all_terms:
+                Repository.deleteAllTerms();
+                Toast.makeText(this, "All Terms deleted", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
 }
