@@ -25,10 +25,12 @@ public class AssessmentEdit extends AppCompatActivity {
     private String assessmentName;
     private String assessmentStart;
     private String assessmentEnd;
+    private int courseID;
 
     EditText assessmentEditName;
     EditText assessmentEditStart;
     EditText assessmentEditEnd;
+
 
     AssessmentEntity currentAssessment;
 
@@ -41,6 +43,7 @@ public class AssessmentEdit extends AppCompatActivity {
         assessmentName = getIntent().getStringExtra("assessmentName".toString());
         assessmentStart = getIntent().getStringExtra("assessmentStart".toString());
         assessmentEnd = getIntent().getStringExtra("assessmentEnd".toString());
+        courseID = getIntent().getIntExtra("courseID", -1);
 
         repository = new Repository(getApplication());
         List<AssessmentEntity> allAssessments = repository.getAllAssessments();
@@ -97,6 +100,9 @@ public class AssessmentEdit extends AppCompatActivity {
         repository.update(a);
 
         Intent intent = new Intent(AssessmentEdit.this, CourseEdit.class);
+        intent.putExtra("courseID", courseID);
+        startActivity(intent);
+
 
 
 

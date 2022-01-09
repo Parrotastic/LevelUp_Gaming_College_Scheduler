@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".UI.TermActivity">
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/term_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:onClick="addTermScreen"
+        app:layout_constraintBottom_toBottomOf="@id/term_recycler_view"
+        app:layout_constraintRight_toRightOf="@id/term_recycler_view"
+        app:srcCompat="@android:drawable/ic_input_add"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:orientation="vertical"
+        android:id="@+id/term_recycler_view"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:listitem="@layout/term_list_item"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

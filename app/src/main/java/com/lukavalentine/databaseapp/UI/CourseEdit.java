@@ -38,6 +38,7 @@ public class CourseEdit extends AppCompatActivity {
     EditText courseEditNote;
     EditText courseEditStart;
     EditText courseEditEnd;
+    private int termID;
 
 //    private int assessmentID;
 //    private String assessmentName;
@@ -58,6 +59,7 @@ public class CourseEdit extends AppCompatActivity {
         courseNote = getIntent().getStringExtra("courseNote".toString());
         courseStart = getIntent().getStringExtra("courseStart".toString());
         courseEnd = getIntent().getStringExtra("courseEnd".toString());
+        termID = getIntent().getIntExtra("termID", -1);
 
         repository = new Repository(getApplication());
         List<CourseEntity> allCourses = repository.getAllCourses();
@@ -130,6 +132,8 @@ public class CourseEdit extends AppCompatActivity {
         repository.update(c);
 
         Intent intent = new Intent(CourseEdit.this, TermEdit.class);
+        intent.putExtra("termID", termID);
+        startActivity(intent);
     }
 
     public void addAssessmentToCourse(View view) {
