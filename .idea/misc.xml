@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_add_assessment.xml" value="0.16181657848324515" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_add_course.xml" value="0.16181657848324515" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_add_term.xml" value="0.16181657848324515" />
+        <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_assessment.xml" value="0.16181657848324515" />
+        <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_assessment_detail.xml" value="0.16181657848324515" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_course.xml" value="0.15564373897707232" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_course_detail.xml" value="0.15564373897707232" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_main.xml" value="0.16049382716049382" />
