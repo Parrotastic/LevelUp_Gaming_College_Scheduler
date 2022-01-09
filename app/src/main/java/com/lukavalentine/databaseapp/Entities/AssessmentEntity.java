@@ -14,6 +14,9 @@ public class AssessmentEntity {
     private String assessmentEnd;
     private int courseID;
 
+    //TODO: Need to add assessmentType parameter to entity and its constructor.
+    //"Performance", "Objective"
+
 
 
 
