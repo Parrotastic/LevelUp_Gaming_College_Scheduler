@@ -44,13 +44,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Course Instructor: "/>
+                    android:text="Course Instructor Info: "/>
 
                 <EditText
                     android:id="@+id/courseEditInstructor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Course Instructor"
+                    android:hint="James Tiberius Fairbanks jfairbanks2@wgu.edu 555-555-5555"
+                    android:inputType="textMultiLine"
                     />
 
             </LinearLayout>
@@ -109,6 +110,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="12/31/2025"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Course Status: "/>
+
+                <EditText
+                    android:id="@+id/courseEditStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Completed"
                     />
 
             </LinearLayout>

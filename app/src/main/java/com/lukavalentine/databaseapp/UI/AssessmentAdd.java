@@ -25,9 +25,11 @@ public class AssessmentAdd extends AppCompatActivity {
     private String assessmentName;
     private String assessmentStart;
     private String assessmentEnd;
+    private String assessmentType;
     EditText assessmentAddName;
     EditText assessmentAddStart;
     EditText assessmentAddEnd;
+    EditText assessmentAddType;
 
     AssessmentEntity currentAssessment;
 
@@ -46,15 +48,18 @@ public class AssessmentAdd extends AppCompatActivity {
         assessmentName = getIntent().getStringExtra("assessmentName".toString());
         assessmentStart = getIntent().getStringExtra("assessmentStart".toString());
         assessmentEnd = getIntent().getStringExtra("assessmentEnd".toString());
+        assessmentType = getIntent().getStringExtra("assessmentType".toString());
 
         assessmentAddName = findViewById(R.id.assessmentAddName);
         assessmentAddStart = findViewById(R.id.assessmentAddStart);
         assessmentAddEnd = findViewById(R.id.assessmentAddEnd);
+        assessmentAddType = findViewById(R.id.assessmentAddType);
 
         if(currentAssessment != null){
             assessmentName = currentAssessment.getAssessmentName();
             assessmentStart = currentAssessment.getAssessmentStart();
             assessmentEnd = currentAssessment.getAssessmentEnd();
+            assessmentType = currentAssessment.getAssessmentType();
             courseID = currentAssessment.getCourseID();
         }
 
@@ -62,6 +67,7 @@ public class AssessmentAdd extends AppCompatActivity {
             assessmentAddName.setText(assessmentName);
             assessmentAddStart.setText(assessmentStart);
             assessmentAddEnd.setText(assessmentEnd);
+            assessmentAddType.setText(assessmentType);
         }
 
 
@@ -75,7 +81,7 @@ public class AssessmentAdd extends AppCompatActivity {
         List<AssessmentEntity> allAssessments = repository.getAllAssessments();
         assessmentID = allAssessments.get(allAssessments.size() - 1).getAssessmentID();
         a = new AssessmentEntity(++assessmentID, assessmentAddName.getText().toString(),
-                assessmentAddStart.getText().toString(), assessmentAddEnd.getText().toString(), courseID);
+                assessmentAddStart.getText().toString(), assessmentAddEnd.getText().toString(), assessmentAddType.getText().toString(), courseID);
 
         repository.insert(a);
 

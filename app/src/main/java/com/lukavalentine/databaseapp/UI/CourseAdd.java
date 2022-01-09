@@ -27,10 +27,12 @@ public class CourseAdd extends AppCompatActivity {
     private String courseNote;
     private String courseStart;
     private String courseEnd;
+    private String courseStatus;
     EditText courseAddName;
     EditText courseAddInstructor;
     EditText courseAddStart;
     EditText courseAddEnd;
+    EditText courseAddStatus;
     EditText courseAddNote;
     EditText courseAddTermID;
     CourseEntity currentCourse;
@@ -50,12 +52,14 @@ public class CourseAdd extends AppCompatActivity {
         courseNote = getIntent().getStringExtra("courseNote".toString());
         courseStart = getIntent().getStringExtra("courseStart".toString());
         courseEnd = getIntent().getStringExtra("courseEnd".toString());
+        courseStatus = getIntent().getStringExtra("courseStatus".toString());
 
         courseAddName = findViewById(R.id.courseAddName);
         courseAddInstructor = findViewById(R.id.courseAddInstructor);
         courseAddNote = findViewById(R.id.courseAddNote);
         courseAddStart = findViewById(R.id.courseAddStart);
         courseAddEnd = findViewById(R.id.courseAddEnd);
+        courseAddStatus = findViewById(R.id.courseAddStatus);
         //courseAddTermID = findViewById(R.id.courseAddTermID);
 
         if(currentCourse != null){
@@ -64,6 +68,7 @@ public class CourseAdd extends AppCompatActivity {
          courseNote = currentCourse.getCourseNote();
          courseStart = currentCourse.getCourseStart();
          courseEnd = currentCourse.getCourseEnd();
+         courseStatus = currentCourse.getCourseStatus();
          termID = currentCourse.getTermID();
         }
 
@@ -73,6 +78,7 @@ public class CourseAdd extends AppCompatActivity {
             courseAddNote.setText(courseNote);
             courseAddStart.setText(courseStart);
             courseAddEnd.setText(courseEnd);
+            courseAddStatus.setText(courseStatus);
             //courseAddTermID.setText(termID);
         }
 
@@ -87,7 +93,7 @@ public class CourseAdd extends AppCompatActivity {
         List<CourseEntity> allCourses = repository.getAllCourses();
         courseID = allCourses.get(allCourses.size() - 1).getCourseID();
         c = new CourseEntity(++courseID, courseAddName.getText().toString(), courseAddInstructor.getText().toString(),
-                courseAddNote.getText().toString(), courseAddStart.getText().toString(), courseAddEnd.getText().toString(), termID);
+                courseAddNote.getText().toString(), courseAddStart.getText().toString(), courseAddEnd.getText().toString(), courseAddStatus.getText().toString(),termID);
 
         repository.insert(c);
 

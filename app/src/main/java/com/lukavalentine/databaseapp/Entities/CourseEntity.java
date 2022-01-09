@@ -12,6 +12,7 @@ public class CourseEntity {
     private String courseNote;
     private String courseStart;
     private String courseEnd;
+    private String courseStatus;
     private int termID;
 
     //TODO: Need to add status String to constructor and entity to fulfill requirements.
@@ -26,17 +27,19 @@ public class CourseEntity {
                 ", courseNote='" + courseNote + '\'' +
                 ", courseStart='" + courseStart + '\'' +
                 ", courseEnd='" + courseEnd + '\'' +
+                ", courseEnd='" + courseStatus + '\'' +
                 ", termID=" + termID +
                 '}';
     }
 
-    public CourseEntity(int courseID, String courseName, String courseInstructor, String courseNote, String courseStart, String courseEnd, int termID) {
+    public CourseEntity(int courseID, String courseName, String courseInstructor, String courseNote, String courseStart, String courseEnd, String courseStatus, int termID) {
         this.courseID = courseID;
         this.courseName = courseName;
         this.courseInstructor = courseInstructor;
         this.courseNote = courseNote;
         this.courseStart = courseStart;
         this.courseEnd = courseEnd;
+        this.courseStatus = courseStatus;
         this.termID = termID;
     }
 
@@ -86,6 +89,14 @@ public class CourseEntity {
 
     public void setCourseEnd(String courseEnd) {
         this.courseEnd = courseEnd;
+    }
+
+    public String getCourseStatus() {
+        return courseStatus;
+    }
+
+    public void setCourseStatus(String courseStatus) {
+        this.courseStatus = courseStatus;
     }
 
     public int getTermID() {

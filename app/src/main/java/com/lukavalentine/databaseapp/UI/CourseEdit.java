@@ -33,11 +33,13 @@ public class CourseEdit extends AppCompatActivity {
     private String courseNote;
     private String courseStart;
     private String courseEnd;
+    private String courseStatus;
     EditText courseEditName;
     EditText courseEditInstructor;
     EditText courseEditNote;
     EditText courseEditStart;
     EditText courseEditEnd;
+    EditText courseEditStatus;
     private int termID;
 
 //    private int assessmentID;
@@ -59,6 +61,7 @@ public class CourseEdit extends AppCompatActivity {
         courseNote = getIntent().getStringExtra("courseNote".toString());
         courseStart = getIntent().getStringExtra("courseStart".toString());
         courseEnd = getIntent().getStringExtra("courseEnd".toString());
+        courseStatus = getIntent().getStringExtra("courseStatus".toString());
         termID = getIntent().getIntExtra("termID", -1);
 
         repository = new Repository(getApplication());
@@ -76,6 +79,7 @@ public class CourseEdit extends AppCompatActivity {
          courseEditNote = findViewById(R.id.courseEditNote);
          courseEditStart = findViewById(R.id.courseEditStart);
          courseEditEnd = findViewById(R.id.courseEditEnd);
+         courseEditStatus = findViewById(R.id.courseEditStatus);
 
          if (currentCourse != null){
              courseName = currentCourse.getCourseName();
@@ -83,6 +87,7 @@ public class CourseEdit extends AppCompatActivity {
              courseNote = currentCourse.getCourseNote();
              courseStart = currentCourse.getCourseStart();
              courseEnd = currentCourse.getCourseEnd();
+             courseStatus = currentCourse.getCourseStatus();
 
          }
 
@@ -92,6 +97,7 @@ public class CourseEdit extends AppCompatActivity {
              courseEditNote.setText(courseNote);
              courseEditStart.setText(courseStart);
              courseEditEnd.setText(courseEnd);
+             courseEditStatus.setText(courseStatus);
          }
 
          repository = new Repository(getApplication());
@@ -122,12 +128,12 @@ public class CourseEdit extends AppCompatActivity {
         CourseEntity c;
         if(courseID != -1)
             c = new CourseEntity(courseID, courseEditName.getText().toString(), courseEditInstructor.getText().toString(),
-                    courseEditNote.getText().toString(), courseEditStart.getText().toString(), courseEditEnd.getText().toString(), currentCourse.getTermID());
+                    courseEditNote.getText().toString(), courseEditStart.getText().toString(), courseEditEnd.getText().toString(), courseEditStatus.getText().toString(), currentCourse.getTermID());
         else{
             List<CourseEntity> allCourses = repository.getAllCourses();
             courseID = allCourses.get(allCourses.size() - 1).getCourseID();
             c = new CourseEntity(++courseID, courseEditName.getText().toString(), courseEditInstructor.getText().toString(),
-                    courseEditNote.getText().toString(), courseEditStart.getText().toString(), courseEditEnd.getText().toString(), currentCourse.getTermID());
+                    courseEditNote.getText().toString(), courseEditStart.getText().toString(), courseEditEnd.getText().toString(),  courseEditStatus.getText().toString() ,currentCourse.getTermID());
         }
         repository.update(c);
 

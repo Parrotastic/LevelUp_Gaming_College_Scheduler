@@ -25,11 +25,13 @@ public class AssessmentEdit extends AppCompatActivity {
     private String assessmentName;
     private String assessmentStart;
     private String assessmentEnd;
+    private String assessmentType;
     private int courseID;
 
     EditText assessmentEditName;
     EditText assessmentEditStart;
     EditText assessmentEditEnd;
+    EditText assessmentEditType;
 
 
     AssessmentEntity currentAssessment;
@@ -43,6 +45,7 @@ public class AssessmentEdit extends AppCompatActivity {
         assessmentName = getIntent().getStringExtra("assessmentName".toString());
         assessmentStart = getIntent().getStringExtra("assessmentStart".toString());
         assessmentEnd = getIntent().getStringExtra("assessmentEnd".toString());
+        assessmentType = getIntent().getStringExtra("assessmentType".toString());
         courseID = getIntent().getIntExtra("courseID", -1);
 
         repository = new Repository(getApplication());
@@ -57,11 +60,13 @@ public class AssessmentEdit extends AppCompatActivity {
         assessmentEditName = findViewById(R.id.assessmentEditName);
         assessmentEditStart = findViewById(R.id.assessmentEditStart);
         assessmentEditEnd = findViewById(R.id.assessmentEditEnd);
+        assessmentEditType = findViewById(R.id.assessmentEditType);
 
         if(currentAssessment != null){
             assessmentName = currentAssessment.getAssessmentName();
             assessmentStart = currentAssessment.getAssessmentStart();
             assessmentEnd = currentAssessment.getAssessmentEnd();
+            assessmentType = currentAssessment.getAssessmentType();
 
         }
 
@@ -69,6 +74,7 @@ public class AssessmentEdit extends AppCompatActivity {
             assessmentEditName.setText(assessmentName);
             assessmentEditStart.setText(assessmentStart);
             assessmentEditEnd.setText(assessmentEnd);
+            assessmentEditType.setText(assessmentType);
         }
 
         repository = new Repository(getApplication());
@@ -89,13 +95,13 @@ public class AssessmentEdit extends AppCompatActivity {
         AssessmentEntity a;
         if(assessmentID != -1){
             a = new AssessmentEntity(assessmentID, assessmentEditName.getText().toString(),
-                    assessmentEditStart.getText().toString(), assessmentEditEnd.getText().toString(), currentAssessment.getCourseID());
+                    assessmentEditStart.getText().toString(), assessmentEditEnd.getText().toString(), assessmentEditType.getText().toString(),currentAssessment.getCourseID());
         }
         else{
             List<AssessmentEntity> allAssessments = repository.getAllAssessments();
             assessmentID = allAssessments.get(allAssessments.size() - 1).getAssessmentID();
             a = new AssessmentEntity(++assessmentID,assessmentEditName.getText().toString(),
-                    assessmentEditStart.getText().toString(), assessmentEditEnd.getText().toString(), currentAssessment.getCourseID() );
+                    assessmentEditStart.getText().toString(), assessmentEditEnd.getText().toString(), assessmentEditType.getText().toString(), currentAssessment.getCourseID() );
         }
         repository.update(a);
 

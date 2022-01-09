@@ -12,10 +12,10 @@ public class AssessmentEntity {
     private String assessmentName;
     private String assessmentStart;
     private String assessmentEnd;
+    private String assessmentType;
     private int courseID;
 
-    //TODO: Need to add assessmentType parameter to entity and its constructor.
-    //"Performance", "Objective"
+
 
 
 
@@ -27,15 +27,17 @@ public class AssessmentEntity {
                 ", assessmentName='" + assessmentName + '\'' +
                 ", assessmentStart='" + assessmentStart + '\'' +
                 ", assessmentEnd='" + assessmentEnd + '\'' +
+                ", assessmentType='" + assessmentType + '\'' +
                 ", courseID=" + courseID +
                 '}';
     }
 
-    public AssessmentEntity(int assessmentID, String assessmentName, String assessmentStart, String assessmentEnd, int courseID) {
+    public AssessmentEntity(int assessmentID, String assessmentName, String assessmentStart, String assessmentEnd, String assessmentType, int courseID) {
         this.assessmentID = assessmentID;
         this.assessmentName = assessmentName;
         this.assessmentStart = assessmentStart;
         this.assessmentEnd = assessmentEnd;
+        this.assessmentType = assessmentType;
         this.courseID = courseID;
     }
 
@@ -63,12 +65,22 @@ public class AssessmentEntity {
         this.assessmentStart = assessmentStart;
     }
 
+
+
     public String getAssessmentEnd() {
         return assessmentEnd;
     }
 
     public void setAssessmentEnd(String assessmentEnd) {
         this.assessmentEnd = assessmentEnd;
+    }
+
+    public String getAssessmentType() {
+        return assessmentType;
+    }
+
+    public void setAssessmentType(String assessmentType) {
+        this.assessmentType = assessmentType;
     }
 
     public int getCourseID() {

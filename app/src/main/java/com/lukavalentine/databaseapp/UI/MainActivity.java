@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
         term = new TermEntity(3, "Summer 2026", "06/03/26", "12/30/26");
         repository.insert(term);
 
-        CourseEntity course = new CourseEntity(1,"Practical Algebra", "001", "....", "04/03/25", "06/03/25", 1);
+        CourseEntity course = new CourseEntity(1,"Practical Algebra", "001", "....", "04/03/25", "06/03/25", "In Progress",1);
         repository.insert(course);
 
-        AssessmentEntity assessment = new AssessmentEntity(1,"PJGB Objective", "06/02/25", "06/03/25", 1);
+        AssessmentEntity assessment = new AssessmentEntity(1,"PJGB Objective", "06/02/25", "06/03/25", "Objective",1);
         repository.insert(assessment);
 
 
