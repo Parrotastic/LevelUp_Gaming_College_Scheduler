@@ -2,9 +2,12 @@ package com.lukavalentine.databaseapp.UI;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,7 +26,7 @@ import java.util.List;
 public class TermEdit extends AppCompatActivity {
     private Repository repository;
     public static int numAlert;
-    public static int numTerms;
+    public static int numCourses;
 
 
     //Only term details.
@@ -90,7 +93,7 @@ public class TermEdit extends AppCompatActivity {
         for (CourseEntity c : repository.getAllCourses()) {
             if (c.getTermID() == termID) filteredCourses.add(c);
         }
-        numTerms = filteredCourses.size();
+        numCourses = filteredCourses.size();
 
         adapter.setWords(filteredCourses);
 
@@ -98,10 +101,7 @@ public class TermEdit extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
+
 
     public void saveTerm(View view) {
 
@@ -138,6 +138,40 @@ public class TermEdit extends AppCompatActivity {
         Intent intent = new Intent(TermEdit.this, CourseAdd.class);
         intent.putExtra("termID", termID);
         startActivity(intent);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.term_menu, menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if(id == R.id.delete_term){
+            if(numCourses == 0){
+                repository.delete(currentTerm);
+                Intent intent = new Intent(TermEdit.this, TermActivity.class);
+                intent.putExtra("termID", termID);
+                startActivity(intent);
+
+            }
+            else{
+                Toast.makeText(getApplicationContext(), "Cannot delete term with course(s) assigned.", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+
+
+
+        return super.onOptionsItemSelected(item);
+
+
 
     }
 }

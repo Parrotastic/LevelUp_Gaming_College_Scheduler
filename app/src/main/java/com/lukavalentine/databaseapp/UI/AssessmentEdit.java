@@ -2,9 +2,12 @@ package com.lukavalentine.databaseapp.UI;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -86,10 +89,7 @@ public class AssessmentEdit extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
+
 
     public void saveUpdatedAssessment(View view) {
         AssessmentEntity a;
@@ -109,8 +109,27 @@ public class AssessmentEdit extends AppCompatActivity {
         intent.putExtra("courseID", courseID);
         startActivity(intent);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.assessment_menu, menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        repository.delete(currentAssessment);
 
 
+        Intent intent = new Intent(AssessmentEdit.this, CourseEdit.class);
+        intent.putExtra("assessmentID", assessmentID);
+        startActivity(intent);
 
+        return super.onOptionsItemSelected(item);
     }
 }

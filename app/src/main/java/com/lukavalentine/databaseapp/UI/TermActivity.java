@@ -11,14 +11,17 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.lukavalentine.databaseapp.DAO.TermDAO;
 import com.lukavalentine.databaseapp.Database.Repository;
 import com.lukavalentine.databaseapp.R;
 
 public class TermActivity extends AppCompatActivity {
     private Repository Repository;
+
 
 
     @Override
@@ -34,7 +37,25 @@ public class TermActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter.setWords(Repository.getAllTerms());
 
+
+//        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT){
+//            @Override
+//            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+//                return false;
+//            }
+//
+//            @Override
+//            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+//                int position = viewHolder.getAdapterPosition();
+//                //adapter.d
+//
+//
+//            }
+//        };
+
     }
+
+
 
     public void addTermScreen(View view){
         Intent intent = new Intent(TermActivity.this, TermAdd.class);
@@ -45,24 +66,5 @@ public class TermActivity extends AppCompatActivity {
     //Use PartActivity Line 89~115 for deletes via menus and exception control for e.g.(term with course, or course with assessment.)
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.term_menu, menu);
-        return true;
 
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch(item.getItemId()){
-            case R.id.delete_all_terms:
-                Repository.deleteAllTerms();
-                Toast.makeText(this, "All Terms deleted", Toast.LENGTH_SHORT).show();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-
-    }
 }

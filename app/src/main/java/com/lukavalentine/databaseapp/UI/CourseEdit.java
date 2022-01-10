@@ -3,9 +3,12 @@ package com.lukavalentine.databaseapp.UI;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,7 +28,7 @@ import java.util.List;
 public class CourseEdit extends AppCompatActivity {
     private Repository repository;
     public static int numAlert;
-    public static int numCourses;
+    public static int numAssessments;
 
     private int courseID;
     private String courseName;
@@ -109,16 +112,12 @@ public class CourseEdit extends AppCompatActivity {
         for (AssessmentEntity a : repository.getAllAssessments()){
             if(a.getCourseID() == courseID) filteredAssessments.add(a);
         }
-        numCourses = filteredAssessments.size();
+        numAssessments = filteredAssessments.size();
         adapter.setWords(filteredAssessments);
 
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
 
     //    Calendar myCalendar = Calendar.getInstance();
 //    DatePickerDialog.OnDateSetListener myDate;
@@ -148,6 +147,40 @@ public class CourseEdit extends AppCompatActivity {
         Intent intent = new Intent(CourseEdit.this, AssessmentAdd.class);
         intent.putExtra("courseID", courseID);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.course_menu, menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if(id == R.id.delete_course){
+            if(numAssessments == 0){
+                repository.delete(currentCourse);
+                Intent intent = new Intent(CourseEdit.this, TermEdit.class);
+                intent.putExtra("courseID", courseID);
+                startActivity(intent);
+
+            }
+            else{
+                Toast.makeText(getApplicationContext(), "Cannot delete course with assessments(s) assigned.", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+
+
+
+        return super.onOptionsItemSelected(item);
+
+
+
     }
 
 
