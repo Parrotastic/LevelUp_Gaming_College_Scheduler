@@ -7,4 +7,19 @@
         app:showAsAction="never"
         />
 
+<!--    <item-->
+<!--        android:id="@+id/share_assessment"-->
+<!--        android:title="Share Assessment"-->
+<!--        app:showAsAction="never"-->
+<!--        />-->
+
+
+    <item
+        android:id="@+id/assessment_notifications"
+        android:title="Notifications"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+
 </menu>

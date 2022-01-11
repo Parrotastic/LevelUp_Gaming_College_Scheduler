@@ -78,8 +78,20 @@ public class AssessmentAdd extends AppCompatActivity {
     public void saveAssessment(View view) {
         AssessmentEntity a;
 
+        int assessmentSize;
+
         List<AssessmentEntity> allAssessments = repository.getAllAssessments();
-        assessmentID = allAssessments.get(allAssessments.size() - 1).getAssessmentID();
+
+        assessmentSize = allAssessments.size();
+
+        if(assessmentSize == 0){
+            assessmentID = assessmentSize;
+        }
+        else{
+            assessmentID = allAssessments.get(allAssessments.size() - 1).getAssessmentID();
+        }
+
+
         a = new AssessmentEntity(++assessmentID, assessmentAddName.getText().toString(),
                 assessmentAddStart.getText().toString(), assessmentAddEnd.getText().toString(), assessmentAddType.getText().toString(), courseID);
 

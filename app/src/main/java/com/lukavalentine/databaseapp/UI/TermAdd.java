@@ -21,6 +21,8 @@ public class TermAdd extends AppCompatActivity {
     public static int numAlert;
     public static int numTerms;
 
+
+
     private int termID;
     private String termName;
     private String termStart;
@@ -75,11 +77,24 @@ public class TermAdd extends AppCompatActivity {
     public void addTermFromScreen(View view) {
         TermEntity t;
 
+        int termSize;
+
+
+
         //First line t- is for edits.
 
         //t = new TermEntity(termID, termAddName.getText().toString(), termAddStart.getText().toString(), termAddEnd.getText().toString());
+
         List<TermEntity> allTerms = repository.getAllTerms();
-        termID = allTerms.get(allTerms.size() - 1).getTermID();
+
+        termSize = allTerms.size();
+
+        if(termSize == 0){
+            termID = termSize;
+        } else{
+            termID = allTerms.get(allTerms.size() -1).getTermID();
+        }
+
         t = new TermEntity(++termID, termAddName.getText().toString(), termAddStart.getText().toString(), termAddEnd.getText().toString());
         repository.insert(t);
 

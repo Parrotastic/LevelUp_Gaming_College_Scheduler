@@ -7,4 +7,17 @@
         app:showAsAction="never"
         />
 
+<!--    <item-->
+<!--        android:id="@+id/share_term"-->
+<!--        android:title="Share Term"-->
+<!--        app:showAsAction="never"-->
+<!--        />-->
+
+<!--    <item-->
+<!--        android:id="@+id/term_notifications"-->
+<!--        android:title="Notifications"-->
+<!--        android:orderInCategory="100"-->
+<!--        app:showAsAction="never"-->
+<!--        />-->
+
 </menu>

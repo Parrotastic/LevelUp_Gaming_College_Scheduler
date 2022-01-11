@@ -7,5 +7,17 @@
         android:title="Delete Course"
         app:showAsAction="never"
         />
+    <item
+        android:id="@+id/share_course"
+        android:title="Share Course"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/course_notifications"
+        android:title="Notifications"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+
+        />
 
 </menu>

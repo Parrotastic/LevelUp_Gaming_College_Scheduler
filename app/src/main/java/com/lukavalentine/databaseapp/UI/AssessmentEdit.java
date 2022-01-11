@@ -127,7 +127,7 @@ public class AssessmentEdit extends AppCompatActivity {
 
 
         Intent intent = new Intent(AssessmentEdit.this, CourseEdit.class);
-        intent.putExtra("assessmentID", assessmentID);
+        intent.putExtra("courseID", courseID);
         startActivity(intent);
 
         return super.onOptionsItemSelected(item);

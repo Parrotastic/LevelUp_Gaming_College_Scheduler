@@ -89,9 +89,19 @@ public class CourseAdd extends AppCompatActivity {
 
     public void saveCourse(View view) {
         CourseEntity c;
+        int courseSize;
 
         List<CourseEntity> allCourses = repository.getAllCourses();
-        courseID = allCourses.get(allCourses.size() - 1).getCourseID();
+
+        courseSize = allCourses.size();
+
+        if(courseSize == 0){
+            courseID = courseSize;
+        }else{
+            courseID = allCourses.get(allCourses.size() - 1).getCourseID();
+        }
+
+
         c = new CourseEntity(++courseID, courseAddName.getText().toString(), courseAddInstructor.getText().toString(),
                 courseAddNote.getText().toString(), courseAddStart.getText().toString(), courseAddEnd.getText().toString(), courseAddStatus.getText().toString(),termID);
 

@@ -1,6 +1,9 @@
 package com.lukavalentine.databaseapp.UI;
 
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -44,12 +47,6 @@ public class CourseEdit extends AppCompatActivity {
     EditText courseEditEnd;
     EditText courseEditStatus;
     private int termID;
-
-//    private int assessmentID;
-//    private String assessmentName;
-//    private String assessmentStart;
-//    private String assessmentEnd;
-
     CourseEntity currentCourse;
 
 
@@ -102,7 +99,6 @@ public class CourseEdit extends AppCompatActivity {
              courseEditEnd.setText(courseEnd);
              courseEditStatus.setText(courseStatus);
          }
-
          repository = new Repository(getApplication());
         RecyclerView recyclerView = findViewById(R.id.associated_assessments);
         final AssessmentAdapter adapter = new AssessmentAdapter(this);
@@ -119,9 +115,7 @@ public class CourseEdit extends AppCompatActivity {
     }
 
 
-    //    Calendar myCalendar = Calendar.getInstance();
-//    DatePickerDialog.OnDateSetListener myDate;
-//    Long date;
+
 
     public void saveUpdatedCourse(View view) {
         CourseEntity c;
@@ -161,26 +155,45 @@ public class CourseEdit extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
+
         if(id == R.id.delete_course){
             if(numAssessments == 0){
                 repository.delete(currentCourse);
                 Intent intent = new Intent(CourseEdit.this, TermEdit.class);
-                intent.putExtra("courseID", courseID);
+                intent.putExtra("termID", currentCourse.getTermID());
                 startActivity(intent);
-
             }
             else{
                 Toast.makeText(getApplicationContext(), "Cannot delete course with assessments(s) assigned.", Toast.LENGTH_SHORT).show();
             }
         }
 
+        if(id == R.id.share_course){
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, currentCourse.getCourseNote());
+
+            sendIntent.putExtra(Intent.EXTRA_TITLE, "Course Note(s)");
+            sendIntent.setType("text/plain");
+
+            Intent shareIntent = Intent.createChooser(sendIntent, null);
+            startActivity(shareIntent);
+            return true;
+        }
+
+        if(id == R.id.course_notifications){
+            Intent intent=new Intent(CourseEdit.this,MyReceiver.class);
+            intent.putExtra("key","This is a short message");
+            PendingIntent sender= PendingIntent.getBroadcast(CourseEdit.this,++numAlert,intent,0);
+            AlarmManager alarmManager=(AlarmManager)getSystemService(Context.ALARM_SERVICE);
+            //date=myCalendar.getTimeInMillis();
+            //alarmManager.set(AlarmManager.RTC_WAKEUP, date, sender);
+            return true;
 
 
+        }
 
         return super.onOptionsItemSelected(item);
-
-
-
     }
 
 
