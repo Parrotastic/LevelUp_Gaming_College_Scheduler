@@ -24,9 +24,14 @@ import com.lukavalentine.databaseapp.Entities.AssessmentEntity;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
 import com.lukavalentine.databaseapp.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class CourseEdit extends AppCompatActivity {
     private Repository repository;
@@ -186,8 +191,24 @@ public class CourseEdit extends AppCompatActivity {
             intent.putExtra("key","This is a short message");
             PendingIntent sender= PendingIntent.getBroadcast(CourseEdit.this,++numAlert,intent,0);
             AlarmManager alarmManager=(AlarmManager)getSystemService(Context.ALARM_SERVICE);
+
+
+            String sDate = courseEditStart.getText().toString();
+            String myFormat = "MM/DD/YY";
+            SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+            Date myDate = null;
+
+            try {
+                myDate = sdf.parse(sDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            Long trigger = myDate.getTime();
+
+
             //date=myCalendar.getTimeInMillis();
-            //alarmManager.set(AlarmManager.RTC_WAKEUP, date, sender);
+            alarmManager.set(AlarmManager.RTC_WAKEUP, trigger, sender);
             return true;
 
 
@@ -195,6 +216,7 @@ public class CourseEdit extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
 
 

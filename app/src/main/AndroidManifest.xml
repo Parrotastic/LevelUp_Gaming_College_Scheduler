@@ -50,6 +50,7 @@
 
             </intent-filter>
         </activity>
+        <receiver android:name=".UI.MyReceiver"/>
     </application>
 
 </manifest>

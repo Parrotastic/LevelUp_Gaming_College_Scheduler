@@ -14,7 +14,7 @@
         />
     <item
         android:id="@+id/course_notifications"
-        android:title="Notifications"
+        android:title="Notify @ Start Date"
         android:orderInCategory="100"
         app:showAsAction="never"
 
