@@ -71,7 +71,7 @@
                     android:id="@+id/courseAddStart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="11/05/2025"/>
+                    android:hint="11/05/25"/>
 
             </LinearLayout>
 
@@ -87,7 +87,7 @@
                     android:id="@+id/courseAddEnd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="05/30/2026"/>
+                    android:hint="05/30/26"/>
 
             </LinearLayout>
             <LinearLayout
