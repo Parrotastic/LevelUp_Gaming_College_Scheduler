@@ -15,8 +15,15 @@
 
 
     <item
-        android:id="@+id/assessment_notifications"
-        android:title="Notifications"
+        android:id="@+id/assessment_start_notif"
+        android:title="Notify @ Assessment Start Date"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/assessment_end_notif"
+        android:title="Notify @ Assessment End Date"
         android:orderInCategory="100"
         app:showAsAction="never"
         />

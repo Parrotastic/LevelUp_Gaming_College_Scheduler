@@ -186,7 +186,8 @@ public class CourseEdit extends AppCompatActivity {
             return true;
         }
 
-        if(id == R.id.course_notifications){
+        if(id == R.id.course_start_notif){
+
             Intent intent=new Intent(CourseEdit.this,MyReceiver.class);
             intent.putExtra("key","This is a short message");
             PendingIntent sender= PendingIntent.getBroadcast(CourseEdit.this,++numAlert,intent,0);

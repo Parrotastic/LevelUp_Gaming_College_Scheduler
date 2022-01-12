@@ -13,11 +13,18 @@
         app:showAsAction="never"
         />
     <item
-        android:id="@+id/course_notifications"
+        android:id="@+id/course_start_notif"
         android:title="Notify @ Start Date"
         android:orderInCategory="100"
         app:showAsAction="never"
 
+        />
+
+    <item
+        android:id="@+id/course_end_notif"
+        android:title="Notify @ End Date"
+        android:orderInCategory="100"
+        app:showAsAction="never"
         />
 
 </menu>
