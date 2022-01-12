@@ -189,12 +189,41 @@ public class CourseEdit extends AppCompatActivity {
         if(id == R.id.course_start_notif){
 
             Intent intent=new Intent(CourseEdit.this,MyReceiver.class);
-            intent.putExtra("key","This is a short message");
+            intent.putExtra("key","Your course begins today");
             PendingIntent sender= PendingIntent.getBroadcast(CourseEdit.this,++numAlert,intent,0);
             AlarmManager alarmManager=(AlarmManager)getSystemService(Context.ALARM_SERVICE);
 
 
             String sDate = courseEditStart.getText().toString();
+            String myFormat = "MM/DD/YY";
+            SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+            Date myDate = null;
+
+            try {
+                myDate = sdf.parse(sDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            Long trigger = myDate.getTime();
+
+
+            //date=myCalendar.getTimeInMillis();
+            alarmManager.set(AlarmManager.RTC_WAKEUP, trigger, sender);
+            return true;
+
+
+        }
+
+        if(id == R.id.course_end_notif){
+
+            Intent intent=new Intent(CourseEdit.this,MyReceiver.class);
+            intent.putExtra("key","Your course ends today");
+            PendingIntent sender= PendingIntent.getBroadcast(CourseEdit.this,++numAlert,intent,0);
+            AlarmManager alarmManager=(AlarmManager)getSystemService(Context.ALARM_SERVICE);
+
+
+            String sDate = courseEditEnd.getText().toString();
             String myFormat = "MM/DD/YY";
             SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
             Date myDate = null;

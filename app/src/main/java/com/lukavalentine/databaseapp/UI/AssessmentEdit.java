@@ -1,5 +1,8 @@
 package com.lukavalentine.databaseapp.UI;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,7 +20,11 @@ import com.lukavalentine.databaseapp.Database.Repository;
 import com.lukavalentine.databaseapp.Entities.AssessmentEntity;
 import com.lukavalentine.databaseapp.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class AssessmentEdit extends AppCompatActivity {
     private Repository repository;
@@ -123,12 +130,74 @@ public class AssessmentEdit extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        repository.delete(currentAssessment);
+
+        if(id == R.id.delete_assessment){
+
+            repository.delete(currentAssessment);
+            Intent intent = new Intent(AssessmentEdit.this, CourseEdit.class);
+            intent.putExtra("courseID", courseID);
+            startActivity(intent);
+        }
+
+        if(id == R.id.assessment_start_notif){
+            Intent intent=new Intent(AssessmentEdit.this,MyReceiver.class);
+            intent.putExtra("key","Your assessment begins today");
+            PendingIntent sender= PendingIntent.getBroadcast(AssessmentEdit.this,++numAlert,intent,0);
+            AlarmManager alarmManager=(AlarmManager)getSystemService(Context.ALARM_SERVICE);
 
 
-        Intent intent = new Intent(AssessmentEdit.this, CourseEdit.class);
-        intent.putExtra("courseID", courseID);
-        startActivity(intent);
+            String sDate = assessmentEditStart.getText().toString();
+            String myFormat = "MM/DD/YY";
+            SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+            Date myDate = null;
+
+            try {
+                myDate = sdf.parse(sDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            Long trigger = myDate.getTime();
+
+
+            //date=myCalendar.getTimeInMillis();
+            alarmManager.set(AlarmManager.RTC_WAKEUP, trigger, sender);
+            return true;
+
+
+
+
+        }
+
+        if(id == R.id.assessment_end_notif){
+            Intent intent=new Intent(AssessmentEdit.this,MyReceiver.class);
+            intent.putExtra("key","Your assessment ends today");
+            PendingIntent sender= PendingIntent.getBroadcast(AssessmentEdit.this,++numAlert,intent,0);
+            AlarmManager alarmManager=(AlarmManager)getSystemService(Context.ALARM_SERVICE);
+
+
+            String sDate = assessmentEditEnd.getText().toString();
+            String myFormat = "MM/DD/YY";
+            SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+            Date myDate = null;
+
+            try {
+                myDate = sdf.parse(sDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            Long trigger = myDate.getTime();
+
+
+            //date=myCalendar.getTimeInMillis();
+            alarmManager.set(AlarmManager.RTC_WAKEUP, trigger, sender);
+            return true;
+
+
+        }
+
+
 
         return super.onOptionsItemSelected(item);
     }

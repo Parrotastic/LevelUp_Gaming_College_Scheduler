@@ -90,7 +90,7 @@
                     android:id="@+id/courseEditStart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="11/24/2024"
+                    android:hint="11/24/24"
                     />
 
             </LinearLayout>
@@ -109,7 +109,7 @@
                     android:id="@+id/courseEditEnd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="12/31/2025"
+                    android:hint="12/31/25"
                     />
 
             </LinearLayout>
