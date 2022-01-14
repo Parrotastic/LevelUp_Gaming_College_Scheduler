@@ -15,8 +15,7 @@ public class CourseEntity {
     private String courseStatus;
     private int termID;
 
-    //TODO: Need to add status String to constructor and entity to fulfill requirements.
-    //"In progress", "Completed", "Dropped", "Plan to take"
+
 
     @Override
     public String toString() {

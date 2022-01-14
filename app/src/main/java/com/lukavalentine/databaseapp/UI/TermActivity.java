@@ -38,20 +38,7 @@ public class TermActivity extends AppCompatActivity {
         adapter.setWords(Repository.getAllTerms());
 
 
-//        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT){
-//            @Override
-//            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-//                return false;
-//            }
 //
-//            @Override
-//            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-//                int position = viewHolder.getAdapterPosition();
-//                //adapter.d
-//
-//
-//            }
-//        };
 
     }
 
@@ -63,7 +50,7 @@ public class TermActivity extends AppCompatActivity {
 
     }
 
-    //Use PartActivity Line 89~115 for deletes via menus and exception control for e.g.(term with course, or course with assessment.)
+
 
 
 

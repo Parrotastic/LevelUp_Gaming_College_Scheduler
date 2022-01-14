@@ -28,8 +28,6 @@ public class CourseActivity extends AppCompatActivity {
     public static int numCourses;
 
 
-    //Should I be doing this with the PartActivity thing or the ProductActivity thing in mind?
-    //Think I should keep in mind that it's probably going to more like the ProductActivity setup.
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

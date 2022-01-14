@@ -29,15 +29,7 @@ public class TermEdit extends AppCompatActivity {
     public static int numCourses;
 
 
-    //Only term details.
-    //Stick with strings for Calender date.
 
-//    private int courseID;
-//    private String courseName;
-//    private String courseInstructor;
-//    private String courseNote;
-//    private String courseStart;
-//    private String courseEnd;
 
 
     private int termID;
@@ -54,7 +46,7 @@ public class TermEdit extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_term_detail);
-        //Use this for floating action course button. Push IDs using this like CourseID to AddAssessments.
+
         termID = getIntent().getIntExtra("termID", -1);
         termName = getIntent().getStringExtra("termName".toString());
         termStart = getIntent().getStringExtra("termStart".toString());

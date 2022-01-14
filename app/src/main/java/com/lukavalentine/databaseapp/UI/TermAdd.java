@@ -17,7 +17,7 @@ import java.util.List;
 public class TermAdd extends AppCompatActivity {
     private Repository repository;
 
-    //Probably don't need these two.
+
     public static int numAlert;
     public static int numTerms;
 
@@ -40,7 +40,7 @@ public class TermAdd extends AppCompatActivity {
 
         repository = new Repository(getApplication());
 
-        //Don't need getIntents until Edits.
+
 
         termID = getIntent().getIntExtra("termID", -1);
         termName = getIntent().getStringExtra("termName".toString());
@@ -81,9 +81,6 @@ public class TermAdd extends AppCompatActivity {
 
 
 
-        //First line t- is for edits.
-
-        //t = new TermEntity(termID, termAddName.getText().toString(), termAddStart.getText().toString(), termAddEnd.getText().toString());
 
         List<TermEntity> allTerms = repository.getAllTerms();
 

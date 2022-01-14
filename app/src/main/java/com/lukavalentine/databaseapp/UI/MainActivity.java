@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        repository.deleteAllAssessments();
-        repository.deleteAllCourses();
-        repository.deleteAllTerms();
+//        repository.deleteAllAssessments();
+//        repository.deleteAllCourses();
+//        repository.deleteAllTerms();
 
 
 
