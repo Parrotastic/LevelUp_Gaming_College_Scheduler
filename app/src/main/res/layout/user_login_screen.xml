@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <TextView
+        android:id="@+id/loginTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player Login"
+        android:layout_marginTop="100dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:padding="50dp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="monospace"
+        android:textColor="@color/black"
+
+       />
+
+    <EditText
+        android:id="@+id/loginUserNameEditText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter Username"
+        android:textColor="@color/black"
+        android:inputType="textPersonName"
+        android:backgroundTint="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/loginPasswordEditText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginUserNameEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:hint="Enter Password"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/black"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="168dp"
+        android:text="Login"
+        android:backgroundTint="@color/black"
+        />
+
+
+</RelativeLayout>
