@@ -7,6 +7,13 @@
         app:showAsAction="never"
         />
 
+    <item
+        android:id="@+id/search_term"
+        android:title="Search..."
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
 <!--    <item-->
 <!--        android:id="@+id/share_term"-->
 <!--        android:title="Share Term"-->
