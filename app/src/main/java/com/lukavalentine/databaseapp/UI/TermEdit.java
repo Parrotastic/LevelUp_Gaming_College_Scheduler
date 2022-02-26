@@ -28,8 +28,10 @@ import java.util.List;
 
 public class TermEdit extends AppCompatActivity {
     private Repository repository;
+    private CourseAdapter searchCourseAdapter;
     public static int numAlert;
     public static int numCourses;
+
 
 
 
@@ -144,8 +146,26 @@ public class TermEdit extends AppCompatActivity {
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.search_term).getActionView();
 
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        searchView.setIconifiedByDefault(false);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                //TODO: Test search to see if it works with adapter.
+
+
+
+
+                return false;
+            }
+        });
+
+//        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+//        searchView.setIconifiedByDefault(false);
         return true;
 
     }

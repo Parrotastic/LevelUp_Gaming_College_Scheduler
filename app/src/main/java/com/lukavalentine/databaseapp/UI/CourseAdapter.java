@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,7 +17,7 @@ import com.lukavalentine.databaseapp.R;
 
 import java.util.List;
 
-public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> {
+public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> implements Filterable {
 
     private final Context context;
     private final LayoutInflater mInflater;
@@ -53,6 +55,13 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         if (mCourses != null)
             return mCourses.size();
         else return 0;
+    }
+
+    @Override
+    public Filter getFilter() {
+        //TODO: Fill out rest of the getFilter method.
+        //https://www.learn2crack.com/2017/03/searchview-with-recyclerview.html
+        return null;
     }
 
     class CourseViewHolder extends RecyclerView.ViewHolder {
