@@ -11,11 +11,11 @@
         android:theme="@style/Theme.DatabaseApp">
 
         <activity android:name=".UI.TermActivity"
-            android:label="Terms"
+            android:label="Levels"
             android:parentActivityName=".UI.MainActivity"/>
 
         <activity android:name=".UI.TermEdit"
-            android:label="Edit Term"
+            android:label="Edit Level"
             android:parentActivityName=".UI.TermActivity" />
 
 
@@ -24,15 +24,15 @@
             android:parentActivityName=".UI.MainActivity"
             />
         <activity android:name=".UI.TermAdd"
-            android:label="Add Term"/>
+            android:label="Add Level"/>
         <activity android:name=".UI.CourseAdd"
             android:label="Add Course" />
         <activity android:name=".UI.CourseEdit"
             android:label="Edit Course"/>
         <activity android:name=".UI.AssessmentAdd"
-            android:label="Add Assessment"/>
+            android:label="Add Trial"/>
         <activity android:name=".UI.AssessmentEdit"
-            android:label="Edit Assessment"/>
+            android:label="Edit Trial"/>
 
 
 
