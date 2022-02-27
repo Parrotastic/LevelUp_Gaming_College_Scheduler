@@ -25,7 +25,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Assessment Name" />
+                    android:text="Trial Name" />
 
                 <EditText
                     android:id="@+id/assessmentAddName"
@@ -43,7 +43,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Assessment Start" />
+                    android:text="Trial Start" />
 
                 <EditText
                     android:id="@+id/assessmentAddStart"
@@ -60,7 +60,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Assessment End" />
+                    android:text="Trial End" />
 
                 <EditText
                     android:id="@+id/assessmentAddEnd"
@@ -91,7 +91,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Assessment Type" />
+                    android:text="Trial Type" />
 
                 <EditText
                     android:id="@+id/assessmentAddType"

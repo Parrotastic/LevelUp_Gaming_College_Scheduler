@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
 import com.lukavalentine.databaseapp.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> implements Filterable {
@@ -22,6 +23,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     private final Context context;
     private final LayoutInflater mInflater;
     private List<CourseEntity> mCourses;
+    private List<CourseEntity> mfilteredCourses;
 
     public CourseAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
@@ -61,7 +63,43 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     public Filter getFilter() {
         //TODO: Fill out rest of the getFilter method.
         //https://www.learn2crack.com/2017/03/searchview-with-recyclerview.html
-        return null;
+
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                String charString = constraint.toString();
+
+                if (charString.isEmpty()){
+                    mfilteredCourses = mCourses;
+
+                } else{
+                    ArrayList<CourseEntity> filteredCourses = new ArrayList<>();
+
+                    for (CourseEntity courseEntity : mCourses){
+                        if (courseEntity.getCourseName().toLowerCase().contains(charString)){
+                            filteredCourses.add(courseEntity);
+                        }
+                    }
+
+                    mfilteredCourses = filteredCourses;
+                }
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = mfilteredCourses;
+                return filterResults;
+
+
+
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                mfilteredCourses = (ArrayList<CourseEntity>) results.values;
+                notifyDataSetChanged();
+
+            }
+        };
+
     }
 
     class CourseViewHolder extends RecyclerView.ViewHolder {
