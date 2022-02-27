@@ -55,14 +55,14 @@ public class TermActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.term_menu, menu);
-
-
-
-
-    return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.term_menu, menu);
+//
+//
+//
+//
+//    return true;
+//    }
 }
