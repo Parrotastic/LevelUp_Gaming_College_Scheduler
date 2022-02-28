@@ -141,7 +141,7 @@ public class AssessmentEdit extends AppCompatActivity {
 
         if(id == R.id.assessment_start_notif){
             Intent intent=new Intent(AssessmentEdit.this,MyReceiver.class);
-            intent.putExtra("key","Your assessment begins today");
+            intent.putExtra("key","Get ready! Your trial begins today!");
             PendingIntent sender= PendingIntent.getBroadcast(AssessmentEdit.this,++numAlert,intent,0);
             AlarmManager alarmManager=(AlarmManager)getSystemService(Context.ALARM_SERVICE);
 
@@ -171,7 +171,7 @@ public class AssessmentEdit extends AppCompatActivity {
 
         if(id == R.id.assessment_end_notif){
             Intent intent=new Intent(AssessmentEdit.this,MyReceiver.class);
-            intent.putExtra("key","Your assessment ends today");
+            intent.putExtra("key","Your trial ends today");
             PendingIntent sender= PendingIntent.getBroadcast(AssessmentEdit.this,++numAlert,intent,0);
             AlarmManager alarmManager=(AlarmManager)getSystemService(Context.ALARM_SERVICE);
 

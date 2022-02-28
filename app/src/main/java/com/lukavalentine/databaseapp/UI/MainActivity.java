@@ -29,17 +29,17 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        TermEntity term = new TermEntity(1, "Spring 2025", "04/03/25", "10/30/25");
+        TermEntity term = new TermEntity(1, "Level 1: Tutorial", "04/03/25", "10/30/25");
         repository.insert(term);
-        term = new TermEntity(2, "Winter 2025", "11/03/25", "05/30/26");
+        term = new TermEntity(2, "Level 2: Beginner's Lane", "11/03/25", "05/30/26");
         repository.insert(term);
-        term = new TermEntity(3, "Summer 2026", "06/03/26", "12/30/26");
+        term = new TermEntity(3, "Level 3: Rhombus Road", "06/03/26", "12/30/26");
         repository.insert(term);
 
-        CourseEntity course = new CourseEntity(1,"Practical Algebra", "001", "....", "04/03/25", "06/03/25", "In Progress",1);
+        CourseEntity course = new CourseEntity(1,"UI/UX 101", "001", "....", "04/03/25", "06/03/25", "In Progress",1);
         repository.insert(course);
 
-        AssessmentEntity assessment = new AssessmentEntity(1,"PJGB Objective", "06/02/25", "06/03/25", "Objective",1);
+        AssessmentEntity assessment = new AssessmentEntity(1,"Trial Boss: Angry Tree", "06/02/25", "06/03/25", "Objective",1);
         repository.insert(assessment);
 
 

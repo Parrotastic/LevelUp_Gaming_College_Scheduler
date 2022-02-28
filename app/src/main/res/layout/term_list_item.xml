@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/termTextView"
-        android:background="@color/teal_700"
+
         style="@android:style/TextAppearance.Material.Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

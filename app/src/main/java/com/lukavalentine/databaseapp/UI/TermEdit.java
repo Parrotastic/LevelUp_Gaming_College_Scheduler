@@ -183,7 +183,7 @@ public class TermEdit extends AppCompatActivity {
 
             }
             else{
-                Toast.makeText(getApplicationContext(), "Cannot delete term with course(s) assigned.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Cannot delete level with course(s) assigned.", Toast.LENGTH_SHORT).show();
             }
         }
 //

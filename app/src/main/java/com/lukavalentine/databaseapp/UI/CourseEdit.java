@@ -169,7 +169,7 @@ public class CourseEdit extends AppCompatActivity {
                 startActivity(intent);
             }
             else{
-                Toast.makeText(getApplicationContext(), "Cannot delete course with assessments(s) assigned.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Cannot delete course with trial(s) assigned.", Toast.LENGTH_SHORT).show();
             }
         }
 
