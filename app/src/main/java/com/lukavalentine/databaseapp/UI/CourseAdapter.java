@@ -18,7 +18,7 @@ import com.lukavalentine.databaseapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> implements Filterable {
+public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> {
 
     private final Context context;
     private final LayoutInflater mInflater;
@@ -59,48 +59,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         else return 0;
     }
 
-    @Override
-    public Filter getFilter() {
-        //TODO: Fill out rest of the getFilter method.
-        //https://www.learn2crack.com/2017/03/searchview-with-recyclerview.html
 
-        return new Filter() {
-            @Override
-            protected FilterResults performFiltering(CharSequence constraint) {
-                String charString = constraint.toString();
-
-                if (charString.isEmpty()){
-                    mfilteredCourses = mCourses;
-
-                } else{
-                    ArrayList<CourseEntity> filteredCourses = new ArrayList<>();
-
-                    for (CourseEntity courseEntity : mCourses){
-                        if (courseEntity.getCourseName().toLowerCase().contains(charString)){
-                            filteredCourses.add(courseEntity);
-                        }
-                    }
-
-                    mfilteredCourses = filteredCourses;
-                }
-
-                FilterResults filterResults = new FilterResults();
-                filterResults.values = mfilteredCourses;
-                return filterResults;
-
-
-
-            }
-
-            @Override
-            protected void publishResults(CharSequence constraint, FilterResults results) {
-                mfilteredCourses = (ArrayList<CourseEntity>) results.values;
-                notifyDataSetChanged();
-
-            }
-        };
-
-    }
 
     class CourseViewHolder extends RecyclerView.ViewHolder {
         private final TextView courseTextView;

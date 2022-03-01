@@ -27,4 +27,13 @@ public interface CourseDAO {
 
     @Query("SELECT * FROM course_table ORDER BY courseID ASC")
     List<CourseEntity> getAllCourses();
+//    For search query
+//    https://stackoverflow.com/questions/48406228/room-select-query-with-in-condition
+//    @Query("SELECT * FROM course_table WHERE courseName = :variablecoursename")
+//    List<CourseEntity> searchCourses(variablecoursename);
+
+
+
 }
+
+

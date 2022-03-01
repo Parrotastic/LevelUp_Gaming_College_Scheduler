@@ -32,11 +32,6 @@ public class TermEdit extends AppCompatActivity {
     public static int numAlert;
     public static int numCourses;
 
-
-
-
-
-
     private int termID;
     private String termName;
     private String termStart;
@@ -83,10 +78,15 @@ public class TermEdit extends AppCompatActivity {
 
         repository = new Repository(getApplication());
         RecyclerView recyclerView = findViewById(R.id.associated_courses);
+
         final CourseAdapter adapter = new CourseAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         List<CourseEntity> filteredCourses = new ArrayList<>();
+        //Use this for the password/username verification
+        //If(username = userentity.username && password = userentity.password)
+        //True: intent to next activity
+        //False: Toast message invalid username/pass
         for (CourseEntity c : repository.getAllCourses()) {
             if (c.getTermID() == termID) filteredCourses.add(c);
         }
@@ -95,7 +95,11 @@ public class TermEdit extends AppCompatActivity {
         adapter.setWords(filteredCourses);
 
 
+
+
     }
+
+
 
 
 
