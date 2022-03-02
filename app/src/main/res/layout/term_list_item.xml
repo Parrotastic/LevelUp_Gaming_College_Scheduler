@@ -3,14 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
     <TextView
         android:id="@+id/termTextView"
-
         style="@android:style/TextAppearance.Material.Title"
-        android:layout_width="match_parent"
+        android:layout_width="215dp"
+        android:layout_height="30dp"
+        android:ellipsize="marquee"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="25dp"
+        android:maxLines="1"
+        android:scrollHorizontally="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        />
+
+    <TextView
+        android:id="@+id/termTextView2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:fontFamily="monospace"
+        />
+
+    <TextView
+        android:id="@+id/termTextView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
         />
 
 </LinearLayout>

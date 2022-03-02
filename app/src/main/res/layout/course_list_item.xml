@@ -6,7 +6,6 @@
 
     <TextView
         android:id="@+id/courseTextView"
-
         style="@android:style/TextAppearance.Material.Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,6 +68,8 @@
 
 
 <!--    </RelativeLayout>-->
+
+<!--    Changing from CardView to GridLayout-->
 
 
 

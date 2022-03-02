@@ -1,10 +1,13 @@
 package com.lukavalentine.databaseapp.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.lukavalentine.databaseapp.Database.DatabaseBuilder;
 import com.lukavalentine.databaseapp.Database.Repository;
@@ -13,6 +16,9 @@ import com.lukavalentine.databaseapp.Entities.CourseEntity;
 import com.lukavalentine.databaseapp.Entities.TermEntity;
 import com.lukavalentine.databaseapp.Entities.UserEntity;
 import com.lukavalentine.databaseapp.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,6 +51,44 @@ public class MainActivity extends AppCompatActivity {
 
         UserEntity user = new UserEntity(1, "admin", "password");
         repository.insert(user);
+
+        //TODO: Work on user verification setup in the MainActivity.
+
+//        repository = new Repository(getApplication());
+//        RecyclerView recyclerView = findViewById(R.id.associated_courses);
+//
+//        final CourseAdapter adapter = new CourseAdapter(this);
+//        recyclerView.setAdapter(adapter);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        List<CourseEntity> filteredCourses = new ArrayList<>();
+//        //Use this for the password/username verification
+//        //If(username = userentity.username && password = userentity.password)
+//        //True: intent to next activity
+//        //False: Toast message invalid username/pass
+//        for (CourseEntity c : repository.getAllCourses()) {
+//            if (c.getTermID() == termID) filteredCourses.add(c);
+//        }
+//        numCourses = filteredCourses.size();
+//
+//        adapter.setWords(filteredCourses);
+//
+//        for(UserEntity u : repository.getAllUsers()){
+//            if (u.getUserName() == user.getUserName() && u.getUserPassword() == user.getUserPassword());
+//        }
+//
+//        if(id == R.id.delete_course){
+//            if(numAssessments == 0){
+//                repository.delete(currentCourse);
+//                Intent intent = new Intent(CourseEdit.this, TermEdit.class);
+//                intent.putExtra("termID", currentCourse.getTermID());
+//                startActivity(intent);
+//            }
+//            else{
+//                Toast.makeText(getApplicationContext(), "Cannot delete course with trial(s) assigned.", Toast.LENGTH_SHORT).show();
+//            }
+//        }
+
+
 
 
     }

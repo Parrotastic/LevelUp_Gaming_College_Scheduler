@@ -15,12 +15,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lukavalentine.databaseapp.Database.Repository;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
 import com.lukavalentine.databaseapp.Entities.TermEntity;
+import com.lukavalentine.databaseapp.Entities.UserEntity;
 import com.lukavalentine.databaseapp.R;
 
 import java.util.ArrayList;
@@ -81,6 +83,7 @@ public class TermEdit extends AppCompatActivity {
 
         final CourseAdapter adapter = new CourseAdapter(this);
         recyclerView.setAdapter(adapter);
+        //recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         List<CourseEntity> filteredCourses = new ArrayList<>();
         //Use this for the password/username verification
@@ -93,6 +96,10 @@ public class TermEdit extends AppCompatActivity {
         numCourses = filteredCourses.size();
 
         adapter.setWords(filteredCourses);
+//
+//        for(UserEntity u : repository.getAllUsers()){
+//            if (u.getUserName() == user)
+//        }
 
 
 

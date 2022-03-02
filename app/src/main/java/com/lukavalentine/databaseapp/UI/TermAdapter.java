@@ -29,10 +29,15 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
     class TermViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView termItemView;
+        private final TextView termItemView2;
+        private final TextView termItemView3;
 
         private TermViewHolder(View itemView) {
             super(itemView);
             termItemView = itemView.findViewById(R.id.termTextView);
+            //Added additional termItemView2
+            termItemView2 = itemView.findViewById(R.id.termTextView2);
+            termItemView3 = itemView.findViewById(R.id.termTextView3);
             itemView.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -69,6 +74,9 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
         if (mTerms != null) {
             final TermEntity current = mTerms.get(position);
             holder.termItemView.setText(current.getTermName());
+            //Added additional termItemView2.
+            holder.termItemView2.setText(current.getTermStart());
+            holder.termItemView3.setText(current.getTermEnd());
         } else {
             holder.termItemView.setText("No Word");
         }
