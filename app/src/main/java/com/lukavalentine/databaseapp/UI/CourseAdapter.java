@@ -42,6 +42,8 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         if (mCourses != null) {
             final CourseEntity current = mCourses.get(position);
             holder.courseTextView.setText(current.getCourseName());
+            holder.courseTextView2.setText(current.getCourseStart());
+            holder.courseTextView3.setText(current.getCourseEnd());
 
         } else {
             holder.courseTextView.setText("No Word");
@@ -63,11 +65,15 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
     class CourseViewHolder extends RecyclerView.ViewHolder {
         private final TextView courseTextView;
+        private final TextView courseTextView2;
+        private final TextView courseTextView3;
 
 
         private CourseViewHolder(@NonNull View itemView) {
             super(itemView);
             courseTextView = itemView.findViewById(R.id.courseTextView);
+            courseTextView2 = itemView.findViewById(R.id.courseTextView2);
+            courseTextView3 = itemView.findViewById(R.id.courseTextView3);
 
             itemView.setOnClickListener(new View.OnClickListener() {
 

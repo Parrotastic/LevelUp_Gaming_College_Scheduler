@@ -38,6 +38,8 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
         if(mAssessments != null){
             final AssessmentEntity current = mAssessments.get(position);
             holder.assessmentTextView.setText(current.getAssessmentName());
+            holder.assessmentTextView2.setText(current.getAssessmentStart());
+            holder.assessmentTextView3.setText(current.getAssessmentEnd());
 
 
         }
@@ -57,11 +59,15 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
 
     public class AssessmentViewHolder extends RecyclerView.ViewHolder {
         private final TextView assessmentTextView;
+        private final TextView assessmentTextView2;
+        private final TextView assessmentTextView3;
 
 
         public AssessmentViewHolder(@NonNull View itemView) {
             super(itemView);
             assessmentTextView = itemView.findViewById(R.id.assessmentTextView);
+            assessmentTextView2 = itemView.findViewById(R.id.assessmentTextView2);
+            assessmentTextView3 = itemView.findViewById(R.id.assessmentTextView3);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
