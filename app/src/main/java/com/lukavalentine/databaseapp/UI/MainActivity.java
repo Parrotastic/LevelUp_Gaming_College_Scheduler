@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.lukavalentine.databaseapp.Database.DatabaseBuilder;
@@ -21,14 +22,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private String userName;
+    private String password;
+    EditText loginUserNameEditText;
+    EditText loginPasswordEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.user_login_screen);
 
 
         Repository repository = new Repository(getApplication());
+
+
+
+
+        //assessmentEditName = findViewById(R.id.assessmentEditName);
+        loginUserNameEditText = findViewById(R.id.loginUserNameEditText);
+        loginPasswordEditText = findViewById(R.id.loginPasswordEditText);
+        userName = loginUserNameEditText.getText().toString();
+        password = loginPasswordEditText.getText().toString();
+        loginUserNameEditText.setText(userName);
+        loginPasswordEditText.setText(password);
+
+
+
 
 
 
@@ -52,9 +71,9 @@ public class MainActivity extends AppCompatActivity {
         UserEntity user = new UserEntity(1, "admin", "password");
         repository.insert(user);
 
-        //TODO: Work on user verification setup in the MainActivity.
 
-//        repository = new Repository(getApplication());
+
+
 //        RecyclerView recyclerView = findViewById(R.id.associated_courses);
 //
 //        final CourseAdapter adapter = new CourseAdapter(this);
@@ -72,9 +91,7 @@ public class MainActivity extends AppCompatActivity {
 //
 //        adapter.setWords(filteredCourses);
 //
-//        for(UserEntity u : repository.getAllUsers()){
-//            if (u.getUserName() == user.getUserName() && u.getUserPassword() == user.getUserPassword());
-//        }
+
 //
 //        if(id == R.id.delete_course){
 //            if(numAssessments == 0){
@@ -107,5 +124,25 @@ public class MainActivity extends AppCompatActivity {
     public void assessmentScreen(View view) {
         Intent intent = new Intent(MainActivity.this, AssessmentActivity.class);
         startActivity(intent);
+    }
+
+    public void verifyLogin(View view) {
+        Repository repository = new Repository(getApplication());
+
+
+        //TODO: Keeps giving invalid login message even when correct username/password combination given.
+
+        for(UserEntity u : repository.getAllUsers()){
+            if (u.getUserName() == userName && u.getUserPassword() == password){
+                Toast.makeText(this, "Welcome! Time to gain exp! ☕", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, TermActivity.class);
+                startActivity(intent);
+            }
+            else{
+                Toast.makeText(this, "Invalid username/password", Toast.LENGTH_SHORT).show();
+
+            }
+        }
+
     }
 }

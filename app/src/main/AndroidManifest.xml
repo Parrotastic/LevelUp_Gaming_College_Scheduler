@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DatabaseApp">
 
+
         <activity android:name=".UI.TermActivity"
             android:label="Levels"
             android:parentActivityName=".UI.MainActivity"/>
@@ -33,13 +34,6 @@
             android:label="Add Trial"/>
         <activity android:name=".UI.AssessmentEdit"
             android:label="Edit Trial"/>
-
-
-
-
-
-
-
 
         <activity
             android:name=".UI.MainActivity"
