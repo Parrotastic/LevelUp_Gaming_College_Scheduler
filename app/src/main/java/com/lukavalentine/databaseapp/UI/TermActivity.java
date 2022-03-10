@@ -54,6 +54,11 @@ public class TermActivity extends AppCompatActivity {
 
     }
 
+    public void searchCourses(View view) {
+        Intent intent = new Intent(TermActivity.this, SearchActivity.class);
+        startActivity(intent);
+    }
+
 
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {

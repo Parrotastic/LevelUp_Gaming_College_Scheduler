@@ -28,7 +28,7 @@ import com.lukavalentine.databaseapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TermEdit extends AppCompatActivity implements SearchView.OnQueryTextListener {
+public class TermEdit extends AppCompatActivity {
     private Repository repository;
     private CourseAdapter searchCourseAdapter;
     public static int numAlert;
@@ -83,13 +83,10 @@ public class TermEdit extends AppCompatActivity implements SearchView.OnQueryTex
 
         final CourseAdapter adapter = new CourseAdapter(this);
         recyclerView.setAdapter(adapter);
-        //recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         List<CourseEntity> filteredCourses = new ArrayList<>();
-        //Use this for the password/username verification
-        //If(username = userentity.username && password = userentity.password)
-        //True: intent to next activity
-        //False: Toast message invalid username/pass
+
         for (CourseEntity c : repository.getAllCourses()) {
             if (c.getTermID() == termID) filteredCourses.add(c);
         }
@@ -97,9 +94,7 @@ public class TermEdit extends AppCompatActivity implements SearchView.OnQueryTex
 
         adapter.setWords(filteredCourses);
 //
-//        for(UserEntity u : repository.getAllUsers()){
-//            if (u.getUserName() == user)
-//        }
+//
 
 
 
@@ -153,48 +148,11 @@ public class TermEdit extends AppCompatActivity implements SearchView.OnQueryTex
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.term_menu, menu);
-
-        //SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        final MenuItem searchItem = menu.findItem(R.id.search_term);
-        final SearchView searchView = (SearchView) searchItem.getActionView();
-        //SearchView searchView = (SearchView) menu.findItem(R.id.search_term).getActionView();
-        searchView.setOnQueryTextListener(this);
-
-//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//
-//                //TODO: Test search to see if it works with adapter.
-//
-//
-//
-//
-//                return true;
-//            }
-//        });
-
-//        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-//        searchView.setIconifiedByDefault(false);
         return true;
 
     }
 
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        searchCourseAdapter.searchFilter(query);
-        return true;
-    }
 
-    @Override
-    public boolean onQueryTextChange(String newText) {
-        searchCourseAdapter.searchFilter(newText);
-        return true;
-    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
