@@ -34,6 +34,8 @@
             android:label="Add Trial"/>
         <activity android:name=".UI.AssessmentEdit"
             android:label="Edit Trial"/>
+        <activity android:name=".UI.SearchActivity"
+            android:label="Search Courses"/>
 
         <activity
             android:name=".UI.MainActivity"

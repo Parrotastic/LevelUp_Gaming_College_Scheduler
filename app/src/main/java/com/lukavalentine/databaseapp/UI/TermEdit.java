@@ -28,7 +28,7 @@ import com.lukavalentine.databaseapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TermEdit extends AppCompatActivity {
+public class TermEdit extends AppCompatActivity implements SearchView.OnQueryTextListener {
     private Repository repository;
     private CourseAdapter searchCourseAdapter;
     public static int numAlert;
@@ -154,31 +154,46 @@ public class TermEdit extends AppCompatActivity {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.term_menu, menu);
 
-        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView = (SearchView) menu.findItem(R.id.search_term).getActionView();
+        //SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        final MenuItem searchItem = menu.findItem(R.id.search_term);
+        final SearchView searchView = (SearchView) searchItem.getActionView();
+        //SearchView searchView = (SearchView) menu.findItem(R.id.search_term).getActionView();
+        searchView.setOnQueryTextListener(this);
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-
-                //TODO: Test search to see if it works with adapter.
-
-
-
-
-                return false;
-            }
-        });
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//
+//                //TODO: Test search to see if it works with adapter.
+//
+//
+//
+//
+//                return true;
+//            }
+//        });
 
 //        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
 //        searchView.setIconifiedByDefault(false);
         return true;
 
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        searchCourseAdapter.searchFilter(query);
+        return true;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        searchCourseAdapter.searchFilter(newText);
+        return true;
     }
 
     @Override
@@ -219,4 +234,6 @@ public class TermEdit extends AppCompatActivity {
 
 
     }
+
+
 }

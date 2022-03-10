@@ -17,6 +17,7 @@ import com.lukavalentine.databaseapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> {
 
@@ -104,4 +105,21 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         mCourses = words;
         notifyDataSetChanged();
     }
+
+    public void searchFilter(String text){
+        mCourses.clear();
+        if(text.isEmpty()){
+            mCourses.addAll(mfilteredCourses);
+        } else{
+            text = text.toLowerCase(Locale.ROOT);
+            for (CourseEntity c: mfilteredCourses){
+                if (c.getCourseName().toLowerCase(Locale.ROOT).contains(text)){
+                    mfilteredCourses.add(c);
+                }
+            }
+        }
+        notifyDataSetChanged();
+    }
+
+
 }

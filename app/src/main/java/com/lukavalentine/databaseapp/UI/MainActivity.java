@@ -22,10 +22,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private Repository repository;
     private String userName;
     private String password;
     EditText loginUserNameEditText;
     EditText loginPasswordEditText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,18 +35,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.user_login_screen);
 
 
-        Repository repository = new Repository(getApplication());
 
 
-
-
-        //assessmentEditName = findViewById(R.id.assessmentEditName);
+        userName = getIntent().getStringExtra("userName".toString());
+        password = getIntent().getStringExtra("userPassword".toString());
+//        List<UserEntity> allUsers = repository.getAllUsers();
         loginUserNameEditText = findViewById(R.id.loginUserNameEditText);
         loginPasswordEditText = findViewById(R.id.loginPasswordEditText);
-        userName = loginUserNameEditText.getText().toString();
-        password = loginPasswordEditText.getText().toString();
+
+        //BELOW LINE @ 48 IS A NULL OBJECT REFERENCE...
+//        Caused b
+//
+//        y: java.lang.NullPointerException: Attempt to invoke virtual method 'android.text.Editable android.widget.EditText.getText()' on a null object reference
+
         loginUserNameEditText.setText(userName);
         loginPasswordEditText.setText(password);
+
+        Repository repository= new Repository(getApplication());
 
 
 
@@ -128,12 +135,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void verifyLogin(View view) {
         Repository repository = new Repository(getApplication());
+        userName = loginUserNameEditText.getText().toString();
+        password = loginPasswordEditText.getText().toString();
+
+
+
+
 
 
         //TODO: Keeps giving invalid login message even when correct username/password combination given.
+        //Appears to be not receiving the typed information for userName/password fields and crashing the app with null object references in the new user login/verification methods.
 
         for(UserEntity u : repository.getAllUsers()){
-            if (u.getUserName() == userName && u.getUserPassword() == password){
+            String dbUserName = u.getUserName().toString();
+            String dbUserPassWord = u.getUserPassword();
+
+            if (dbUserName == userName){
                 Toast.makeText(this, "Welcome! Time to gain exp! ☕", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, TermActivity.class);
                 startActivity(intent);
