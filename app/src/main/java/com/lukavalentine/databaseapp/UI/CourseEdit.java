@@ -51,7 +51,7 @@ public class CourseEdit extends AppCompatActivity {
     EditText courseEditStart;
     EditText courseEditEnd;
     EditText courseEditStatus;
-    private int termID;
+    private int LevelID;
     CourseEntity currentCourse;
 
 
@@ -67,7 +67,7 @@ public class CourseEdit extends AppCompatActivity {
         courseStart = getIntent().getStringExtra("courseStart".toString());
         courseEnd = getIntent().getStringExtra("courseEnd".toString());
         courseStatus = getIntent().getStringExtra("courseStatus".toString());
-        termID = getIntent().getIntExtra("termID", -1);
+        LevelID = getIntent().getIntExtra("LevelID", -1);
 
         repository = new Repository(getApplication());
         List<CourseEntity> allCourses = repository.getAllCourses();
@@ -126,17 +126,17 @@ public class CourseEdit extends AppCompatActivity {
         CourseEntity c;
         if(courseID != -1)
             c = new CourseEntity(courseID, courseEditName.getText().toString(), courseEditInstructor.getText().toString(),
-                    courseEditNote.getText().toString(), courseEditStart.getText().toString(), courseEditEnd.getText().toString(), courseEditStatus.getText().toString(), currentCourse.getTermID());
+                    courseEditNote.getText().toString(), courseEditStart.getText().toString(), courseEditEnd.getText().toString(), courseEditStatus.getText().toString(), currentCourse.getLevelID());
         else{
             List<CourseEntity> allCourses = repository.getAllCourses();
             courseID = allCourses.get(allCourses.size() - 1).getCourseID();
             c = new CourseEntity(++courseID, courseEditName.getText().toString(), courseEditInstructor.getText().toString(),
-                    courseEditNote.getText().toString(), courseEditStart.getText().toString(), courseEditEnd.getText().toString(),  courseEditStatus.getText().toString() ,currentCourse.getTermID());
+                    courseEditNote.getText().toString(), courseEditStart.getText().toString(), courseEditEnd.getText().toString(),  courseEditStatus.getText().toString() ,currentCourse.getLevelID());
         }
         repository.update(c);
 
-        Intent intent = new Intent(CourseEdit.this, TermEdit.class);
-        intent.putExtra("termID", termID);
+        Intent intent = new Intent(CourseEdit.this, LevelEdit.class);
+        intent.putExtra("LevelID", LevelID);
         startActivity(intent);
     }
 
@@ -164,8 +164,8 @@ public class CourseEdit extends AppCompatActivity {
         if(id == R.id.delete_course){
             if(numAssessments == 0){
                 repository.delete(currentCourse);
-                Intent intent = new Intent(CourseEdit.this, TermEdit.class);
-                intent.putExtra("termID", currentCourse.getTermID());
+                Intent intent = new Intent(CourseEdit.this, LevelEdit.class);
+                intent.putExtra("LevelID", currentCourse.getLevelID());
                 startActivity(intent);
             }
             else{

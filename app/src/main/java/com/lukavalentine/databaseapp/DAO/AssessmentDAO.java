@@ -9,7 +9,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import com.lukavalentine.databaseapp.Entities.AssessmentEntity;
-import com.lukavalentine.databaseapp.Entities.TermEntity;
+import com.lukavalentine.databaseapp.Entities.LevelEntity;
 
 import java.util.List;
 @Dao

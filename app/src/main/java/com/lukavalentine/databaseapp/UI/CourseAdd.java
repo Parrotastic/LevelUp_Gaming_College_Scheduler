@@ -20,7 +20,7 @@ public class CourseAdd extends AppCompatActivity {
     public static int numAlert;
     public static int numCourses;
 
-    private int termID;
+    private int LevelID;
     private int courseID;
     private String courseName;
     private String courseInstructor;
@@ -34,7 +34,7 @@ public class CourseAdd extends AppCompatActivity {
     EditText courseAddEnd;
     EditText courseAddStatus;
     EditText courseAddNote;
-    EditText courseAddTermID;
+    EditText courseAddLevelID;
     CourseEntity currentCourse;
 
     @Override
@@ -45,7 +45,7 @@ public class CourseAdd extends AppCompatActivity {
         repository = new Repository(getApplication());
 
 
-        termID = getIntent().getIntExtra("termID", -1);
+        LevelID = getIntent().getIntExtra("LevelID", -1);
         courseID = getIntent().getIntExtra("courseID", -1);
         courseName = getIntent().getStringExtra("courseName".toString());
         courseInstructor = getIntent().getStringExtra("courseInstructor".toString());
@@ -60,7 +60,7 @@ public class CourseAdd extends AppCompatActivity {
         courseAddStart = findViewById(R.id.courseAddStart);
         courseAddEnd = findViewById(R.id.courseAddEnd);
         courseAddStatus = findViewById(R.id.courseAddStatus);
-        //courseAddTermID = findViewById(R.id.courseAddTermID);
+        //courseAddLevelID = findViewById(R.id.courseAddLevelID);
 
         if(currentCourse != null){
          courseName = currentCourse.getCourseName();
@@ -69,7 +69,7 @@ public class CourseAdd extends AppCompatActivity {
          courseStart = currentCourse.getCourseStart();
          courseEnd = currentCourse.getCourseEnd();
          courseStatus = currentCourse.getCourseStatus();
-         termID = currentCourse.getTermID();
+         LevelID = currentCourse.getLevelID();
         }
 
         if(courseID != -1){
@@ -79,7 +79,7 @@ public class CourseAdd extends AppCompatActivity {
             courseAddStart.setText(courseStart);
             courseAddEnd.setText(courseEnd);
             courseAddStatus.setText(courseStatus);
-            //courseAddTermID.setText(termID);
+            //courseAddLevelID.setText(LevelID);
         }
 
 
@@ -103,12 +103,12 @@ public class CourseAdd extends AppCompatActivity {
 
 
         c = new CourseEntity(++courseID, courseAddName.getText().toString(), courseAddInstructor.getText().toString(),
-                courseAddNote.getText().toString(), courseAddStart.getText().toString(), courseAddEnd.getText().toString(), courseAddStatus.getText().toString(),termID);
+                courseAddNote.getText().toString(), courseAddStart.getText().toString(), courseAddEnd.getText().toString(), courseAddStatus.getText().toString(),LevelID);
 
         repository.insert(c);
 
-        Intent intent = new Intent(CourseAdd.this, TermEdit.class);
-        intent.putExtra("termID", termID);
+        Intent intent = new Intent(CourseAdd.this, LevelEdit.class);
+        intent.putExtra("LevelID", LevelID);
         startActivity(intent);
     }
 

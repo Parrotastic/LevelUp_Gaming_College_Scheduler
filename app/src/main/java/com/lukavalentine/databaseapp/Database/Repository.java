@@ -4,11 +4,11 @@ import android.app.Application;
 
 import com.lukavalentine.databaseapp.DAO.AssessmentDAO;
 import com.lukavalentine.databaseapp.DAO.CourseDAO;
-import com.lukavalentine.databaseapp.DAO.TermDAO;
+import com.lukavalentine.databaseapp.DAO.LevelDAO;
 import com.lukavalentine.databaseapp.DAO.UserDAO;
 import com.lukavalentine.databaseapp.Entities.AssessmentEntity;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
-import com.lukavalentine.databaseapp.Entities.TermEntity;
+import com.lukavalentine.databaseapp.Entities.LevelEntity;
 import com.lukavalentine.databaseapp.Entities.UserEntity;
 
 import java.util.List;
@@ -23,11 +23,11 @@ public class Repository {
 
     private AssessmentDAO mAssessmentDAO;
     private CourseDAO mCourseDAO;
-    private TermDAO mTermDAO;
+    private LevelDAO mLevelDAO;
     private UserDAO mUserDAO;
     private List<AssessmentEntity> mAllAssessments;
     private List<CourseEntity> mAllCourses;
-    private List<TermEntity> mAllTerms;
+    private List<LevelEntity> mAllLevels;
     private List<UserEntity> mAllUsers;
     private static int NUMBER_OF_THREADS = 4;
     static final ExecutorService databaseWriteExecutor =
@@ -38,22 +38,22 @@ public class Repository {
         DatabaseBuilder db = DatabaseBuilder.getDatabase(application);
         mAssessmentDAO = db.assessmentDAO();
         mCourseDAO = db.courseDAO();
-        mTermDAO = db.termDAO();
+        mLevelDAO = db.LevelDAO();
         mUserDAO = db.userDAO();
 
 
     }
 
-    public List<TermEntity> getAllTerms(){
+    public List<LevelEntity> getAllLevels(){
         databaseWriteExecutor.execute(() -> {
-            mAllTerms = mTermDAO.getAllTerms();
+            mAllLevels = mLevelDAO.getAllLevels();
         });
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return mAllTerms;
+        return mAllLevels;
     }
 
     public List<CourseEntity> getAllCourses(){
@@ -94,9 +94,9 @@ public class Repository {
 
 
 
-    public void insert(TermEntity termEntity){
+    public void insert(LevelEntity LevelEntity){
         databaseWriteExecutor.execute(() -> {
-            mTermDAO.insert(termEntity);
+            mLevelDAO.insert(LevelEntity);
         });
         try {
             Thread.sleep(1000);
@@ -137,9 +137,9 @@ public class Repository {
         }
     }
 
-    public void update(TermEntity termEntity){
+    public void update(LevelEntity LevelEntity){
         databaseWriteExecutor.execute(() -> {
-            mTermDAO.insert(termEntity);
+            mLevelDAO.insert(LevelEntity);
         });
         try {
             Thread.sleep(1000);
@@ -203,9 +203,9 @@ public class Repository {
         }
     }
 
-    public void delete(TermEntity termEntity){
+    public void delete(LevelEntity LevelEntity){
         databaseWriteExecutor.execute(() -> {
-            mTermDAO.delete(termEntity);
+            mLevelDAO.delete(LevelEntity);
         });
         try {
             Thread.sleep(1000);
@@ -247,9 +247,9 @@ public class Repository {
         }
     }
 
-    public void deleteAllTerms(){
+    public void deleteAllLevels(){
         databaseWriteExecutor.execute(() -> {
-            mTermDAO.deleteAllTerms();
+            mLevelDAO.deleteAllLevels();
         });
         try {
             Thread.sleep(1000);

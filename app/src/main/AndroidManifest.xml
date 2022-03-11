@@ -11,20 +11,20 @@
         android:theme="@style/Theme.DatabaseApp">
 
 
-        <activity android:name=".UI.TermActivity"
+        <activity android:name=".UI.LevelActivity"
             android:label="Levels"
             android:parentActivityName=".UI.MainActivity"/>
 
-        <activity android:name=".UI.TermEdit"
+        <activity android:name=".UI.LevelEdit"
             android:label="Edit Level"
-            android:parentActivityName=".UI.TermActivity" />
+            android:parentActivityName=".UI.LevelActivity" />
 
 
         <activity android:name=".UI.CourseActivity"
             android:label="Courses"
             android:parentActivityName=".UI.MainActivity"
             />
-        <activity android:name=".UI.TermAdd"
+        <activity android:name=".UI.LevelAdd"
             android:label="Add Level"/>
         <activity android:name=".UI.CourseAdd"
             android:label="Add Course" />

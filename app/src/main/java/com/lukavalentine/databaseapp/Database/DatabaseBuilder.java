@@ -9,18 +9,18 @@ import androidx.room.RoomDatabase;
 
 import com.lukavalentine.databaseapp.DAO.AssessmentDAO;
 import com.lukavalentine.databaseapp.DAO.CourseDAO;
-import com.lukavalentine.databaseapp.DAO.TermDAO;
+import com.lukavalentine.databaseapp.DAO.LevelDAO;
 import com.lukavalentine.databaseapp.DAO.UserDAO;
 import com.lukavalentine.databaseapp.Entities.AssessmentEntity;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
-import com.lukavalentine.databaseapp.Entities.TermEntity;
+import com.lukavalentine.databaseapp.Entities.LevelEntity;
 import com.lukavalentine.databaseapp.Entities.UserEntity;
 
-@Database(entities = {AssessmentEntity.class, CourseEntity.class, TermEntity.class, UserEntity.class}, version = 7, exportSchema = false)
+@Database(entities = {AssessmentEntity.class, CourseEntity.class, LevelEntity.class, UserEntity.class}, version = 8, exportSchema = false)
 public abstract class DatabaseBuilder extends RoomDatabase {
     public abstract AssessmentDAO assessmentDAO();
     public abstract CourseDAO courseDAO();
-    public abstract TermDAO termDAO();
+    public abstract LevelDAO LevelDAO();
     public abstract UserDAO userDAO();
 
     private static volatile DatabaseBuilder INSTANCE;

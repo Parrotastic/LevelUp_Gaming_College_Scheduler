@@ -7,7 +7,7 @@
     tools:context=".UI.MainActivity">
 
     <Button
-        android:id="@+id/buttonTerms"
+        android:id="@+id/buttonLevels"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Levels"
@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="98dp"
-        android:onClick="termScreen"
+        android:onClick="LevelScreen"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

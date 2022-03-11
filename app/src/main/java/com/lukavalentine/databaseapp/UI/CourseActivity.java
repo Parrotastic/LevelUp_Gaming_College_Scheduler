@@ -22,7 +22,7 @@ public class CourseActivity extends AppCompatActivity {
     String courseNote;
     String start;
     String end;
-    int termID;
+    int LevelID;
 
     CourseEntity currentCourse;
     public static int numCourses;

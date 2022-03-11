@@ -19,11 +19,11 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lukavalentine.databaseapp.DAO.TermDAO;
+import com.lukavalentine.databaseapp.DAO.LevelDAO;
 import com.lukavalentine.databaseapp.Database.Repository;
 import com.lukavalentine.databaseapp.R;
 
-public class TermActivity extends AppCompatActivity {
+public class LevelActivity extends AppCompatActivity {
     private Repository Repository;
 
 
@@ -31,15 +31,15 @@ public class TermActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_term);
+        setContentView(R.layout.activity_level);
         Repository = new Repository(getApplication());
-        Repository.getAllTerms();
-        RecyclerView recyclerView = findViewById(R.id.term_recycler_view);
+        Repository.getAllLevels();
+        RecyclerView recyclerView = findViewById(R.id.Level_recycler_view);
 
-        final TermAdapter adapter = new TermAdapter(this);
+        final LevelAdapter adapter = new LevelAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter.setWords(Repository.getAllTerms());
+        adapter.setWords(Repository.getAllLevels());
 
 
 //
@@ -48,14 +48,14 @@ public class TermActivity extends AppCompatActivity {
 
 
 
-    public void addTermScreen(View view){
-        Intent intent = new Intent(TermActivity.this, TermAdd.class);
+    public void addLevelScreen(View view){
+        Intent intent = new Intent(LevelActivity.this, LevelAdd.class);
         startActivity(intent);
 
     }
 
     public void searchCourses(View view) {
-        Intent intent = new Intent(TermActivity.this, SearchActivity.class);
+        Intent intent = new Intent(LevelActivity.this, SearchActivity.class);
         startActivity(intent);
     }
 
@@ -63,7 +63,7 @@ public class TermActivity extends AppCompatActivity {
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.term_menu, menu);
+//        inflater.inflate(R.menu.Level_menu, menu);
 //
 //
 //

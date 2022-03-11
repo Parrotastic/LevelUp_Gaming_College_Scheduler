@@ -77,10 +77,10 @@
 <!--            />-->
 
 <!--        <TextView-->
-<!--            android:id="@+id/courseTermID"-->
+<!--            android:id="@+id/courseLevelID"-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"-->
-<!--            android:text="TermID:"-->
+<!--            android:text="LevelID:"-->
 <!--            android:layout_below="@id/courseStart"/>-->
 
 

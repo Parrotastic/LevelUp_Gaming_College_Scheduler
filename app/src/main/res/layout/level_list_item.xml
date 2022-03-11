@@ -6,20 +6,19 @@
     android:orientation="horizontal">
 
     <TextView
-        android:id="@+id/termTextView"
+        android:id="@+id/LevelTextView"
         style="@android:style/TextAppearance.Material.Title"
         android:layout_width="215dp"
         android:layout_height="30dp"
         android:ellipsize="marquee"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="25dp"
-        android:maxLines="1"
         android:scrollHorizontally="true"
         android:marqueeRepeatLimit="marquee_forever"
-        />
+        android:singleLine="true" />
 
     <TextView
-        android:id="@+id/termTextView2"
+        android:id="@+id/LevelTextView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
@@ -27,7 +26,7 @@
         />
 
     <TextView
-        android:id="@+id/termTextView3"
+        android:id="@+id/LevelTextView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"

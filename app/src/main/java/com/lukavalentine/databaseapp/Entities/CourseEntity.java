@@ -13,7 +13,7 @@ public class CourseEntity {
     private String courseStart;
     private String courseEnd;
     private String courseStatus;
-    private int termID;
+    private int LevelID;
 
 
 
@@ -27,11 +27,11 @@ public class CourseEntity {
                 ", courseStart='" + courseStart + '\'' +
                 ", courseEnd='" + courseEnd + '\'' +
                 ", courseEnd='" + courseStatus + '\'' +
-                ", termID=" + termID +
+                ", LevelID=" + LevelID +
                 '}';
     }
 
-    public CourseEntity(int courseID, String courseName, String courseInstructor, String courseNote, String courseStart, String courseEnd, String courseStatus, int termID) {
+    public CourseEntity(int courseID, String courseName, String courseInstructor, String courseNote, String courseStart, String courseEnd, String courseStatus, int LevelID) {
         this.courseID = courseID;
         this.courseName = courseName;
         this.courseInstructor = courseInstructor;
@@ -39,7 +39,7 @@ public class CourseEntity {
         this.courseStart = courseStart;
         this.courseEnd = courseEnd;
         this.courseStatus = courseStatus;
-        this.termID = termID;
+        this.LevelID = LevelID;
     }
 
     public int getCourseID() {
@@ -98,11 +98,11 @@ public class CourseEntity {
         this.courseStatus = courseStatus;
     }
 
-    public int getTermID() {
-        return termID;
+    public int getLevelID() {
+        return LevelID;
     }
 
-    public void setTermID(int termID) {
-        this.termID = termID;
+    public void setLevelID(int LevelID) {
+        this.LevelID = LevelID;
     }
 }

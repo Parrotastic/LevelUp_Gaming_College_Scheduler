@@ -21,60 +21,60 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.lukavalentine.databaseapp.Database.Repository;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
-import com.lukavalentine.databaseapp.Entities.TermEntity;
+import com.lukavalentine.databaseapp.Entities.LevelEntity;
 import com.lukavalentine.databaseapp.Entities.UserEntity;
 import com.lukavalentine.databaseapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TermEdit extends AppCompatActivity {
+public class LevelEdit extends AppCompatActivity {
     private Repository repository;
     private CourseAdapter searchCourseAdapter;
     public static int numAlert;
     public static int numCourses;
 
-    private int termID;
-    private String termName;
-    private String termStart;
-    private String termEnd;
-    EditText editTermName;
-    EditText editTermStart;
-    EditText editTermEnd;
-    TermEntity currentTerm;
+    private int LevelID;
+    private String LevelName;
+    private String LevelStart;
+    private String LevelEnd;
+    EditText editLevelName;
+    EditText editLevelStart;
+    EditText editLevelEnd;
+    LevelEntity currentLevel;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_term_detail);
+        setContentView(R.layout.activity_level_detail);
 
-        termID = getIntent().getIntExtra("termID", -1);
-        termName = getIntent().getStringExtra("termName".toString());
-        termStart = getIntent().getStringExtra("termStart".toString());
-        termEnd = getIntent().getStringExtra("termEnd".toString());
+        LevelID = getIntent().getIntExtra("LevelID", -1);
+        LevelName = getIntent().getStringExtra("LevelName".toString());
+        LevelStart = getIntent().getStringExtra("LevelStart".toString());
+        LevelEnd = getIntent().getStringExtra("LevelEnd".toString());
 
         repository = new Repository(getApplication());
-        List<TermEntity> allTerms = repository.getAllTerms();
+        List<LevelEntity> allLevels = repository.getAllLevels();
 
-        for (TermEntity t : allTerms) {
-            if (t.getTermID() == termID)
-                currentTerm = t;
+        for (LevelEntity t : allLevels) {
+            if (t.getLevelID() == LevelID)
+                currentLevel = t;
         }
 
-        editTermName = findViewById(R.id.termName);
-        editTermStart = findViewById(R.id.termStart);
-        editTermEnd = findViewById(R.id.termEnd);
+        editLevelName = findViewById(R.id.LevelName);
+        editLevelStart = findViewById(R.id.LevelStart);
+        editLevelEnd = findViewById(R.id.LevelEnd);
 
-        if (currentTerm != null) {
-            termName = currentTerm.getTermName();
-            termStart = currentTerm.getTermStart();
-            termEnd = currentTerm.getTermEnd();
+        if (currentLevel != null) {
+            LevelName = currentLevel.getLevelName();
+            LevelStart = currentLevel.getLevelStart();
+            LevelEnd = currentLevel.getLevelEnd();
         }
-        if (termID != -1) {
-            editTermName.setText(termName);
-            editTermStart.setText(termStart);
-            editTermEnd.setText(termEnd);
+        if (LevelID != -1) {
+            editLevelName.setText(LevelName);
+            editLevelStart.setText(LevelStart);
+            editLevelEnd.setText(LevelEnd);
         }
 
 
@@ -88,7 +88,7 @@ public class TermEdit extends AppCompatActivity {
         List<CourseEntity> filteredCourses = new ArrayList<>();
 
         for (CourseEntity c : repository.getAllCourses()) {
-            if (c.getTermID() == termID) filteredCourses.add(c);
+            if (c.getLevelID() == LevelID) filteredCourses.add(c);
         }
         numCourses = filteredCourses.size();
 
@@ -106,24 +106,24 @@ public class TermEdit extends AppCompatActivity {
 
 
 
-    public void saveTerm(View view) {
+    public void saveLevel(View view) {
 
 
     }
 
-    public void addTermFromScreen(View view) {
-        TermEntity t;
-        if (termID != -1)
-            t = new TermEntity(termID, editTermName.getText().toString(), editTermStart.getText().toString(), editTermEnd.getText().toString());
+    public void addLevelFromScreen(View view) {
+        LevelEntity t;
+        if (LevelID != -1)
+            t = new LevelEntity(LevelID, editLevelName.getText().toString(), editLevelStart.getText().toString(), editLevelEnd.getText().toString());
         else {
-            List<TermEntity> allTerms = repository.getAllTerms();
-            termID = allTerms.get(allTerms.size() - 1).getTermID();
-            t = new TermEntity(++termID, editTermName.getText().toString(), editTermStart.getText().toString(), editTermEnd.getText().toString());
+            List<LevelEntity> allLevels = repository.getAllLevels();
+            LevelID = allLevels.get(allLevels.size() - 1).getLevelID();
+            t = new LevelEntity(++LevelID, editLevelName.getText().toString(), editLevelStart.getText().toString(), editLevelEnd.getText().toString());
         }
         repository.update(t);
 
-        Intent intent = new Intent(TermEdit.this, TermActivity.class);
-        intent.putExtra("termID", termID);
+        Intent intent = new Intent(LevelEdit.this, LevelActivity.class);
+        intent.putExtra("LevelID", LevelID);
         startActivity(intent);
 
 
@@ -132,14 +132,14 @@ public class TermEdit extends AppCompatActivity {
 
 
 
-    public void editTermScreen(View view) {
+    public void editLevelScreen(View view) {
     }
 
-    public void addCourseToTerm(View view){
-        termID = getIntent().getIntExtra("termID", -1);
+    public void addCourseToLevel(View view){
+        LevelID = getIntent().getIntExtra("LevelID", -1);
 
-        Intent intent = new Intent(TermEdit.this, CourseAdd.class);
-        intent.putExtra("termID", termID);
+        Intent intent = new Intent(LevelEdit.this, CourseAdd.class);
+        intent.putExtra("LevelID", LevelID);
         startActivity(intent);
 
     }
@@ -147,7 +147,7 @@ public class TermEdit extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.term_menu, menu);
+        menuInflater.inflate(R.menu.level_menu, menu);
         return true;
 
     }
@@ -158,11 +158,11 @@ public class TermEdit extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if(id == R.id.delete_term){
+        if(id == R.id.delete_Level){
             if(numCourses == 0){
-                repository.delete(currentTerm);
-                Intent intent = new Intent(TermEdit.this, TermActivity.class);
-                intent.putExtra("termID", termID);
+                repository.delete(currentLevel);
+                Intent intent = new Intent(LevelEdit.this, LevelActivity.class);
+                intent.putExtra("LevelID", LevelID);
                 startActivity(intent);
 
             }
@@ -171,12 +171,12 @@ public class TermEdit extends AppCompatActivity {
             }
         }
 //
-//        if(id == R.id.share_term){
+//        if(id == R.id.share_Level){
 //            Intent sendIntent = new Intent();
 //            sendIntent.setAction(Intent.ACTION_SEND);
 //            sendIntent.putExtra(Intent.EXTRA_TEXT, "Check out this information!");
 //
-//            sendIntent.putExtra(Intent.EXTRA_TITLE, "Term Info");
+//            sendIntent.putExtra(Intent.EXTRA_TITLE, "Level Info");
 //            sendIntent.setType("text/plain");
 //
 //            Intent shareIntent = Intent.createChooser(sendIntent, null);
