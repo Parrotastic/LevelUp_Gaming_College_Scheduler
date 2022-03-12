@@ -58,14 +58,14 @@ public class SearchActivity extends AppCompatActivity {
 
         eventsName = new String[]{
                 "Tavern Talk with Julie",
-                "Owning Your Growth Mentality",
-                "Not Waiting For the Future",
+                "Growth Mentality",
+                "Future! Don't wait!",
                 "Dev Ops 101",
-                "Miraculous Potions and Battle Systems",
-                "Not Your Fairy Godmother: Write Your Own Vivid Characters",
-                "Tool Time with Jan and Bob",
-                "Networking For Good and Evil",
-                "Working with your Inner Introvert",
+                "Miraculous Battle Systems",
+                "Vivid Writing",
+                "Tool Time with Jan",
+                "Networking For Good",
+                "Working with Clients",
         };
 
         eventsDate = new String[]{
