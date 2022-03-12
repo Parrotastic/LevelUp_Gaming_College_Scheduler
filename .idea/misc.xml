@@ -13,9 +13,11 @@
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_course.xml" value="0.15564373897707232" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_course_detail.xml" value="0.22" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_level.xml" value="0.14417989417989419" />
+        <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_level_detail.xml" value="0.18165784832451498" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_main.xml" value="0.16049382716049382" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_term.xml" value="0.16049382716049382" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_term_detail.xml" value="0.25" />
+        <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout-land/activity_trial.xml" value="0.14417989417989419" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout/activity_add_assessment.xml" value="0.25" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout/activity_add_course.xml" value="0.25" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout/activity_add_level.xml" value="0.3489583333333333" />
@@ -25,10 +27,12 @@
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout/activity_course.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout/activity_course_detail.xml" value="0.25" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout/activity_level.xml" value="0.17083333333333334" />
+        <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout/activity_level_detail.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout/activity_main.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout/activity_search.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout/activity_term.xml" value="0.27851458885941643" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout/activity_term_detail.xml" value="0.25" />
+        <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout/activity_trial.xml" value="0.1703125" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout/assessment_list_item.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout/course_list_item.xml" value="0.1" />
         <entry key="..\:/Users/ameli/AndroidStudioProjects/DatabaseApp/app/src/main/res/layout/level_list_item.xml" value="0.3489583333333333" />

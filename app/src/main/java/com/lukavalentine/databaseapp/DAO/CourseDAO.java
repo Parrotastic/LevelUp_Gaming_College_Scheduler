@@ -7,7 +7,7 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.lukavalentine.databaseapp.Entities.AssessmentEntity;
+import com.lukavalentine.databaseapp.Entities.TrialEntity;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
 
 import java.util.List;

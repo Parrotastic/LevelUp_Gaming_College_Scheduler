@@ -30,9 +30,9 @@
             android:label="Add Course" />
         <activity android:name=".UI.CourseEdit"
             android:label="Edit Course"/>
-        <activity android:name=".UI.AssessmentAdd"
+        <activity android:name=".UI.TrialAdd"
             android:label="Add Trial"/>
-        <activity android:name=".UI.AssessmentEdit"
+        <activity android:name=".UI.TrialEdit"
             android:label="Edit Trial"/>
         <activity android:name=".UI.SearchActivity"
             android:label="Search Courses"/>

@@ -2,27 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/delete_assessment"
+        android:id="@+id/delete_Trial"
         android:title="Delete Trial"
         app:showAsAction="never"
         />
 
 <!--    <item-->
-<!--        android:id="@+id/share_assessment"-->
-<!--        android:title="Share Assessment"-->
+<!--        android:id="@+id/share_Trial"-->
+<!--        android:title="Share Trial"-->
 <!--        app:showAsAction="never"-->
 <!--        />-->
 
 
     <item
-        android:id="@+id/assessment_start_notif"
+        android:id="@+id/Trial_start_notif"
         android:title="Notify @ Trial Start Date"
         android:orderInCategory="100"
         app:showAsAction="never"
         />
 
     <item
-        android:id="@+id/assessment_end_notif"
+        android:id="@+id/Trial_end_notif"
         android:title="Notify @ Trial End Date"
         android:orderInCategory="100"
         app:showAsAction="never"

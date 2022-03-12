@@ -5,7 +5,7 @@
     android:orientation="horizontal">
 
     <TextView
-        android:id="@+id/assessmentTextView"
+        android:id="@+id/TrialTextView"
         style="@android:style/TextAppearance.Material.Title"
         android:layout_width="215dp"
         android:layout_height="30dp"
@@ -18,7 +18,7 @@
         />
 
     <TextView
-        android:id="@+id/assessmentTextView2"
+        android:id="@+id/TrialTextView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
@@ -26,7 +26,7 @@
 
 
     <TextView
-        android:id="@+id/assessmentTextView3"
+        android:id="@+id/TrialTextView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"/>

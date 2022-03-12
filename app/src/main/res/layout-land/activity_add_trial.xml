@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".UI.AssessmentAdd">
+    tools:context=".UI.TrialAdd">
 
     <ScrollView
-        android:id="@+id/addAssessmentScrollView"
+        android:id="@+id/addTrialScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
@@ -28,10 +28,10 @@
                     android:text="Trial Name" />
 
                 <EditText
-                    android:id="@+id/assessmentAddName"
+                    android:id="@+id/TrialAddName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="PJGB1A" />
+                    android:hint="48th Annual Code-A-Thon" />
             </LinearLayout>
 
 
@@ -46,7 +46,7 @@
                     android:text="Trial Start" />
 
                 <EditText
-                    android:id="@+id/assessmentAddStart"
+                    android:id="@+id/TrialAddStart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="11/01/25" />
@@ -63,7 +63,7 @@
                     android:text="Trial End" />
 
                 <EditText
-                    android:id="@+id/assessmentAddEnd"
+                    android:id="@+id/TrialAddEnd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="04/30/26" />
@@ -79,11 +79,12 @@
 <!--                    android:text="CourseID" />-->
 
 <!--                <EditText-->
-<!--                    android:id="@+id/assessmentAddCourseID"-->
+<!--                    android:id="@+id/TrialAddCourseID"-->
 <!--                    android:layout_width="wrap_content"-->
 <!--                    android:layout_height="wrap_content"-->
 <!--                    android:hint="1" />-->
 <!--            </LinearLayout>-->
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -94,7 +95,7 @@
                     android:text="Trial Type" />
 
                 <EditText
-                    android:id="@+id/assessmentAddType"
+                    android:id="@+id/TrialAddType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Performance" />
@@ -107,10 +108,10 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <Button
-                    android:id="@+id/addAssessmentSaveButton"
+                    android:id="@+id/addTrialSaveButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="saveAssessment"
+                    android:onClick="saveTrial"
                     android:text="Save"/>
 
             </LinearLayout>

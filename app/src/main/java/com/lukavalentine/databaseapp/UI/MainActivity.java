@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.lukavalentine.databaseapp.Database.DatabaseBuilder;
 import com.lukavalentine.databaseapp.Database.Repository;
-import com.lukavalentine.databaseapp.Entities.AssessmentEntity;
+import com.lukavalentine.databaseapp.Entities.TrialEntity;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
 import com.lukavalentine.databaseapp.Entities.LevelEntity;
 import com.lukavalentine.databaseapp.Entities.UserEntity;
@@ -73,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
         CourseEntity course = new CourseEntity(1,"UI/UX 101", "001", "....", "04/03/25", "06/03/25", "In Progress",1);
         repository.insert(course);
 
-        AssessmentEntity assessment = new AssessmentEntity(1,"Trial Boss: Angry Tree", "06/02/25", "06/03/25", "Objective",1);
-        repository.insert(assessment);
+        TrialEntity Trial = new TrialEntity(1,"Trial Boss: Angry Tree", "06/02/25", "06/03/25", "Objective",1);
+        repository.insert(Trial);
 
         UserEntity user = new UserEntity(1, "admin", "password");
         repository.insert(user);
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
 //
 //        if(id == R.id.delete_course){
-//            if(numAssessments == 0){
+//            if(numTrials == 0){
 //                repository.delete(currentCourse);
 //                Intent intent = new Intent(CourseEdit.this, LevelEdit.class);
 //                intent.putExtra("LevelID", currentCourse.getLevelID());
@@ -129,8 +129,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void assessmentScreen(View view) {
-        Intent intent = new Intent(MainActivity.this, AssessmentActivity.class);
+    public void TrialScreen(View view) {
+        Intent intent = new Intent(MainActivity.this, TrialActivity.class);
         startActivity(intent);
     }
 

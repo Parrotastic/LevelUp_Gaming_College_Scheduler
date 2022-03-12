@@ -2,11 +2,11 @@ package com.lukavalentine.databaseapp.Database;
 
 import android.app.Application;
 
-import com.lukavalentine.databaseapp.DAO.AssessmentDAO;
+import com.lukavalentine.databaseapp.DAO.TrialDAO;
 import com.lukavalentine.databaseapp.DAO.CourseDAO;
 import com.lukavalentine.databaseapp.DAO.LevelDAO;
 import com.lukavalentine.databaseapp.DAO.UserDAO;
-import com.lukavalentine.databaseapp.Entities.AssessmentEntity;
+import com.lukavalentine.databaseapp.Entities.TrialEntity;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
 import com.lukavalentine.databaseapp.Entities.LevelEntity;
 import com.lukavalentine.databaseapp.Entities.UserEntity;
@@ -21,11 +21,11 @@ public class Repository {
 
 
 
-    private AssessmentDAO mAssessmentDAO;
+    private TrialDAO mTrialDAO;
     private CourseDAO mCourseDAO;
     private LevelDAO mLevelDAO;
     private UserDAO mUserDAO;
-    private List<AssessmentEntity> mAllAssessments;
+    private List<TrialEntity> mAllTrials;
     private List<CourseEntity> mAllCourses;
     private List<LevelEntity> mAllLevels;
     private List<UserEntity> mAllUsers;
@@ -36,7 +36,7 @@ public class Repository {
     public Repository(Application application){
 
         DatabaseBuilder db = DatabaseBuilder.getDatabase(application);
-        mAssessmentDAO = db.assessmentDAO();
+        mTrialDAO = db.TrialDAO();
         mCourseDAO = db.courseDAO();
         mLevelDAO = db.LevelDAO();
         mUserDAO = db.userDAO();
@@ -68,16 +68,16 @@ public class Repository {
         return mAllCourses;
     }
 
-    public List<AssessmentEntity> getAllAssessments(){
+    public List<TrialEntity> getAllTrials(){
         databaseWriteExecutor.execute(() ->{
-            mAllAssessments = mAssessmentDAO.getAllAssessments();
+            mAllTrials = mTrialDAO.getAllTrials();
         });
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return mAllAssessments;
+        return mAllTrials;
     }
 
     public List<UserEntity> getAllUsers(){
@@ -115,9 +115,9 @@ public class Repository {
             e.printStackTrace();
         }
     }
-    public void insert(AssessmentEntity assessmentEntity){
+    public void insert(TrialEntity TrialEntity){
         databaseWriteExecutor.execute(() -> {
-            mAssessmentDAO.insert(assessmentEntity);
+            mTrialDAO.insert(TrialEntity);
         });
         try {
             Thread.sleep(1000);
@@ -159,9 +159,9 @@ public class Repository {
         }
     }
 
-    public void update(AssessmentEntity assessmentEntity){
+    public void update(TrialEntity TrialEntity){
         databaseWriteExecutor.execute(() -> {
-            mAssessmentDAO.insert(assessmentEntity);
+            mTrialDAO.insert(TrialEntity);
         });
         try {
             Thread.sleep(1000);
@@ -181,9 +181,9 @@ public class Repository {
         }
     }
 
-    public void delete(AssessmentEntity assessmentEntity){
+    public void delete(TrialEntity TrialEntity){
         databaseWriteExecutor.execute(() -> {
-            mAssessmentDAO.delete(assessmentEntity);
+            mTrialDAO.delete(TrialEntity);
         });
         try {
             Thread.sleep(1000);
@@ -225,9 +225,9 @@ public class Repository {
         }
     }
 
-    public void deleteAllAssessments(){
+    public void deleteAllTrials(){
         databaseWriteExecutor.execute(() -> {
-            mAssessmentDAO.deleteAllAssessments();
+            mTrialDAO.deleteAllTrials();
         });
         try {
             Thread.sleep(1000);

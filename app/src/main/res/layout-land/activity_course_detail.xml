@@ -147,20 +147,20 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/associated_assessments"
+                android:id="@+id/associated_Trials"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:listitem="@layout/assessment_list_item"
+                tools:listitem="@layout/trial_list_item"
                 app:layout_constraintTop_toBottomOf="@id/courseScrollView" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/Level_add_course_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="addAssessmentToCourse"
+                android:onClick="addTrialToCourse"
                 android:layout_margin="16dp"
-                app:layout_constraintTop_toBottomOf="@id/associated_assessments"
-                app:layout_constraintRight_toRightOf="@id/associated_assessments"
+                app:layout_constraintTop_toBottomOf="@id/associated_Trials"
+                app:layout_constraintRight_toRightOf="@id/associated_Trials"
                 app:srcCompat="@android:drawable/ic_input_add"
                 />
 

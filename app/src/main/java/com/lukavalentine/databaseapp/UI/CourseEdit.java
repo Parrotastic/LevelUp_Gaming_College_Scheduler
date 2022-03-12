@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lukavalentine.databaseapp.Database.Repository;
-import com.lukavalentine.databaseapp.Entities.AssessmentEntity;
+import com.lukavalentine.databaseapp.Entities.TrialEntity;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
 import com.lukavalentine.databaseapp.R;
 
@@ -36,7 +36,7 @@ import java.util.Locale;
 public class CourseEdit extends AppCompatActivity {
     private Repository repository;
     public static int numAlert;
-    public static int numAssessments;
+    public static int numTrials;
 
     private int courseID;
     private String courseName;
@@ -105,16 +105,16 @@ public class CourseEdit extends AppCompatActivity {
              courseEditStatus.setText(courseStatus);
          }
          repository = new Repository(getApplication());
-        RecyclerView recyclerView = findViewById(R.id.associated_assessments);
-        final AssessmentAdapter adapter = new AssessmentAdapter(this);
+        RecyclerView recyclerView = findViewById(R.id.associated_Trials);
+        final TrialAdapter adapter = new TrialAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        List<AssessmentEntity> filteredAssessments = new ArrayList<>();
-        for (AssessmentEntity a : repository.getAllAssessments()){
-            if(a.getCourseID() == courseID) filteredAssessments.add(a);
+        List<TrialEntity> filteredTrials = new ArrayList<>();
+        for (TrialEntity a : repository.getAllTrials()){
+            if(a.getCourseID() == courseID) filteredTrials.add(a);
         }
-        numAssessments = filteredAssessments.size();
-        adapter.setWords(filteredAssessments);
+        numTrials = filteredTrials.size();
+        adapter.setWords(filteredTrials);
 
 
     }
@@ -140,10 +140,10 @@ public class CourseEdit extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void addAssessmentToCourse(View view) {
+    public void addTrialToCourse(View view) {
         courseID = getIntent().getIntExtra("courseID", -1);
 
-        Intent intent = new Intent(CourseEdit.this, AssessmentAdd.class);
+        Intent intent = new Intent(CourseEdit.this, TrialAdd.class);
         intent.putExtra("courseID", courseID);
         startActivity(intent);
     }
@@ -162,7 +162,7 @@ public class CourseEdit extends AppCompatActivity {
 
 
         if(id == R.id.delete_course){
-            if(numAssessments == 0){
+            if(numTrials == 0){
                 repository.delete(currentCourse);
                 Intent intent = new Intent(CourseEdit.this, LevelEdit.class);
                 intent.putExtra("LevelID", currentCourse.getLevelID());

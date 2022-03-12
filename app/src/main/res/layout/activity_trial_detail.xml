@@ -3,14 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    tools:context=".UI.AssessmentAdd">
+    tools:context=".UI.TrialEdit">
 
     <ScrollView
-        android:id="@+id/addAssessmentScrollView"
+        android:id="@+id/TrialEditScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                     android:text="Trial Name" />
 
                 <EditText
-                    android:id="@+id/assessmentAddName"
+                    android:id="@+id/TrialEditName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="48th Annual Code-A-Thon" />
@@ -46,7 +46,7 @@
                     android:text="Trial Start" />
 
                 <EditText
-                    android:id="@+id/assessmentAddStart"
+                    android:id="@+id/TrialEditStart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="11/01/25" />
@@ -63,63 +63,40 @@
                     android:text="Trial End" />
 
                 <EditText
-                    android:id="@+id/assessmentAddEnd"
+                    android:id="@+id/TrialEditEnd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="04/30/26" />
             </LinearLayout>
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="horizontal">-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="CourseID" />-->
-
-<!--                <EditText-->
-<!--                    android:id="@+id/assessmentAddCourseID"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:hint="1" />-->
-<!--            </LinearLayout>-->
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Trial Type" />
 
                 <EditText
-                    android:id="@+id/assessmentAddType"
+                    android:id="@+id/TrialEditType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Performance" />
-
-
+                    android:hint="Objective" />
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <Button
-                    android:id="@+id/addAssessmentSaveButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="saveAssessment"
+                    android:onClick="saveUpdatedTrial"
                     android:text="Save"/>
 
             </LinearLayout>
         </LinearLayout>
 
-
     </ScrollView>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,18 +7,18 @@ import androidx.room.Insert;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.lukavalentine.databaseapp.DAO.AssessmentDAO;
+import com.lukavalentine.databaseapp.DAO.TrialDAO;
 import com.lukavalentine.databaseapp.DAO.CourseDAO;
 import com.lukavalentine.databaseapp.DAO.LevelDAO;
 import com.lukavalentine.databaseapp.DAO.UserDAO;
-import com.lukavalentine.databaseapp.Entities.AssessmentEntity;
+import com.lukavalentine.databaseapp.Entities.TrialEntity;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
 import com.lukavalentine.databaseapp.Entities.LevelEntity;
 import com.lukavalentine.databaseapp.Entities.UserEntity;
 
-@Database(entities = {AssessmentEntity.class, CourseEntity.class, LevelEntity.class, UserEntity.class}, version = 8, exportSchema = false)
+@Database(entities = {TrialEntity.class, CourseEntity.class, LevelEntity.class, UserEntity.class}, version = 9, exportSchema = false)
 public abstract class DatabaseBuilder extends RoomDatabase {
-    public abstract AssessmentDAO assessmentDAO();
+    public abstract TrialDAO TrialDAO();
     public abstract CourseDAO courseDAO();
     public abstract LevelDAO LevelDAO();
     public abstract UserDAO userDAO();
