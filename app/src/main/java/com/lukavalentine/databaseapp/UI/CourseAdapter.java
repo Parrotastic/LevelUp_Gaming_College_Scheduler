@@ -15,20 +15,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
 import com.lukavalentine.databaseapp.R;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> {
+public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder>{
 
     private final Context context;
     private final LayoutInflater mInflater;
     private List<CourseEntity> mCourses;
     private List<CourseEntity> mfilteredCourses;
 
+
     public CourseAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
         this.context = context;
+
     }
 
     @NonNull
@@ -62,7 +65,45 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         else return 0;
     }
 
-
+//    @Override
+//    public Filter getFilter() {
+//        return searchFilter;
+//    }
+//
+//    private final Filter searchFilter = new Filter() {
+//        @Override
+//        protected FilterResults performFiltering(CharSequence constraint) {
+//            ArrayList<CourseEntity> filteredSearchList = new ArrayList<>();
+//            if(constraint == null || constraint.length() == 0){
+//                filteredSearchList.addAll(courseArrayListFull);
+//            } else{
+//                String filterPattern = constraint.toString().toLowerCase(Locale.ROOT).trim();
+//                for (CourseEntity courses : courseArrayListFull){
+//                    if (courses.getCourseName().toLowerCase(Locale.ROOT).contains(filterPattern))
+//                        filteredSearchList.add(courses);
+//                }
+//            }
+//
+//            FilterResults results = new FilterResults();
+//            results.values = filteredSearchList;
+//            results.count = filteredSearchList.size();
+//            return results;
+//        }
+//
+//        @Override
+//        protected void publishResults(CharSequence constraint, FilterResults results) {
+//
+//            courseArrayList.clear();
+//            courseArrayList.addAll((ArrayList)results.values);
+//            notifyDataSetChanged();
+//
+//
+//
+//
+//
+//        }
+//    };
+//
 
     class CourseViewHolder extends RecyclerView.ViewHolder {
         private final TextView courseTextView;
@@ -106,20 +147,20 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         notifyDataSetChanged();
     }
 
-    public void searchFilter(String text){
-        mCourses.clear();
-        if(text.isEmpty()){
-            mCourses.addAll(mfilteredCourses);
-        } else{
-            text = text.toLowerCase(Locale.ROOT);
-            for (CourseEntity c: mfilteredCourses){
-                if (c.getCourseName().toLowerCase(Locale.ROOT).contains(text)){
-                    mfilteredCourses.add(c);
-                }
-            }
-        }
-        notifyDataSetChanged();
-    }
+//    public void searchFilter(String text){
+//        mCourses.clear();
+//        if(text.isEmpty()){
+//            mCourses.addAll(mfilteredCourses);
+//        } else{
+//            text = text.toLowerCase(Locale.ROOT);
+//            for (CourseEntity c: mfilteredCourses){
+//                if (c.getCourseName().toLowerCase(Locale.ROOT).contains(text)){
+//                    mfilteredCourses.add(c);
+//                }
+//            }
+//        }
+//        notifyDataSetChanged();
+//    }
 
 
 }
