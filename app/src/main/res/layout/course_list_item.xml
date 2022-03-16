@@ -60,11 +60,11 @@
 <!--            />-->
 
 <!--        <TextView-->
-<!--            android:id="@+id/courseInstructor"-->
+<!--            android:id="@+id/courseMentor"-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"-->
 <!--            android:layout_alignParentRight="true"-->
-<!--            android:text="Course Instructor"/>-->
+<!--            android:text="Course Mentor"/>-->
 
 <!--        <TextView-->
 <!--            android:id="@+id/courseNote"-->
@@ -73,7 +73,7 @@
 <!--            android:text="Course Notes"-->
 <!--            android:ellipsize="marquee"-->
 <!--            android:layout_alignParentEnd="true"-->
-<!--            android:layout_below="@id/courseInstructor"-->
+<!--            android:layout_below="@id/courseMentor"-->
 <!--            />-->
 
 <!--        <TextView-->

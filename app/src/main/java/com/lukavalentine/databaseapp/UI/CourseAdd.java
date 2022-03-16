@@ -23,13 +23,13 @@ public class CourseAdd extends AppCompatActivity {
     private int LevelID;
     private int courseID;
     private String courseName;
-    private String courseInstructor;
+    private String courseMentor;
     private String courseNote;
     private String courseStart;
     private String courseEnd;
     private String courseStatus;
     EditText courseAddName;
-    EditText courseAddInstructor;
+    EditText courseAddMentor;
     EditText courseAddStart;
     EditText courseAddEnd;
     EditText courseAddStatus;
@@ -48,14 +48,14 @@ public class CourseAdd extends AppCompatActivity {
         LevelID = getIntent().getIntExtra("LevelID", -1);
         courseID = getIntent().getIntExtra("courseID", -1);
         courseName = getIntent().getStringExtra("courseName".toString());
-        courseInstructor = getIntent().getStringExtra("courseInstructor".toString());
+        courseMentor = getIntent().getStringExtra("courseMentor".toString());
         courseNote = getIntent().getStringExtra("courseNote".toString());
         courseStart = getIntent().getStringExtra("courseStart".toString());
         courseEnd = getIntent().getStringExtra("courseEnd".toString());
         courseStatus = getIntent().getStringExtra("courseStatus".toString());
 
         courseAddName = findViewById(R.id.courseAddName);
-        courseAddInstructor = findViewById(R.id.courseAddInstructor);
+        courseAddMentor = findViewById(R.id.courseAddMentor);
         courseAddNote = findViewById(R.id.courseAddNote);
         courseAddStart = findViewById(R.id.courseAddStart);
         courseAddEnd = findViewById(R.id.courseAddEnd);
@@ -64,7 +64,7 @@ public class CourseAdd extends AppCompatActivity {
 
         if(currentCourse != null){
          courseName = currentCourse.getCourseName();
-         courseInstructor = currentCourse.getCourseInstructor();
+         courseMentor = currentCourse.getCourseMentor();
          courseNote = currentCourse.getCourseNote();
          courseStart = currentCourse.getCourseStart();
          courseEnd = currentCourse.getCourseEnd();
@@ -74,7 +74,7 @@ public class CourseAdd extends AppCompatActivity {
 
         if(courseID != -1){
             courseAddName.setText(courseName);
-            courseAddInstructor.setText(courseInstructor);
+            courseAddMentor.setText(courseMentor);
             courseAddNote.setText(courseNote);
             courseAddStart.setText(courseStart);
             courseAddEnd.setText(courseEnd);
@@ -102,7 +102,7 @@ public class CourseAdd extends AppCompatActivity {
         }
 
 
-        c = new CourseEntity(++courseID, courseAddName.getText().toString(), courseAddInstructor.getText().toString(),
+        c = new CourseEntity(++courseID, courseAddName.getText().toString(), courseAddMentor.getText().toString(),
                 courseAddNote.getText().toString(), courseAddStart.getText().toString(), courseAddEnd.getText().toString(), courseAddStatus.getText().toString(),LevelID);
 
         repository.insert(c);

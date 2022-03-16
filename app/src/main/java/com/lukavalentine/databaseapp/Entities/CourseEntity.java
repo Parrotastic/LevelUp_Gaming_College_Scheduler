@@ -8,7 +8,7 @@ public class CourseEntity {
     @PrimaryKey
     private int courseID;
     private String courseName;
-    private String courseInstructor;
+    private String courseMentor;
     private String courseNote;
     private String courseStart;
     private String courseEnd;
@@ -22,7 +22,7 @@ public class CourseEntity {
         return "CourseEntity{" +
                 "courseID=" + courseID +
                 ", courseName='" + courseName + '\'' +
-                ", courseInstructor='" + courseInstructor + '\'' +
+                ", courseMentor='" + courseMentor + '\'' +
                 ", courseNote='" + courseNote + '\'' +
                 ", courseStart='" + courseStart + '\'' +
                 ", courseEnd='" + courseEnd + '\'' +
@@ -31,10 +31,10 @@ public class CourseEntity {
                 '}';
     }
 
-    public CourseEntity(int courseID, String courseName, String courseInstructor, String courseNote, String courseStart, String courseEnd, String courseStatus, int LevelID) {
+    public CourseEntity(int courseID, String courseName, String courseMentor, String courseNote, String courseStart, String courseEnd, String courseStatus, int LevelID) {
         this.courseID = courseID;
         this.courseName = courseName;
-        this.courseInstructor = courseInstructor;
+        this.courseMentor = courseMentor;
         this.courseNote = courseNote;
         this.courseStart = courseStart;
         this.courseEnd = courseEnd;
@@ -58,12 +58,12 @@ public class CourseEntity {
         this.courseName = courseName;
     }
 
-    public String getCourseInstructor() {
-        return courseInstructor;
+    public String getCourseMentor() {
+        return courseMentor;
     }
 
-    public void setCourseInstructor(String courseInstructor) {
-        this.courseInstructor = courseInstructor;
+    public void setCourseMentor(String courseMentor) {
+        this.courseMentor = courseMentor;
     }
 
     public String getCourseNote() {

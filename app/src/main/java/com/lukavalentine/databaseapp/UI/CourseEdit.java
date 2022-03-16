@@ -40,13 +40,13 @@ public class CourseEdit extends AppCompatActivity {
 
     private int courseID;
     private String courseName;
-    private String courseInstructor;
+    private String courseMentor;
     private String courseNote;
     private String courseStart;
     private String courseEnd;
     private String courseStatus;
     EditText courseEditName;
-    EditText courseEditInstructor;
+    EditText courseEditMentor;
     EditText courseEditNote;
     EditText courseEditStart;
     EditText courseEditEnd;
@@ -62,7 +62,7 @@ public class CourseEdit extends AppCompatActivity {
 
         courseID = getIntent().getIntExtra("courseID", -1);
         courseName = getIntent().getStringExtra("courseName".toString());
-        courseInstructor = getIntent().getStringExtra("courseInstructor".toString());
+        courseMentor = getIntent().getStringExtra("courseMentor".toString());
         courseNote = getIntent().getStringExtra("courseNote".toString());
         courseStart = getIntent().getStringExtra("courseStart".toString());
         courseEnd = getIntent().getStringExtra("courseEnd".toString());
@@ -80,7 +80,7 @@ public class CourseEdit extends AppCompatActivity {
         }
 
          courseEditName = findViewById(R.id.courseEditName);
-         courseEditInstructor = findViewById(R.id.courseEditInstructor);
+         courseEditMentor = findViewById(R.id.courseEditMentor);
          courseEditNote = findViewById(R.id.courseEditNote);
          courseEditStart = findViewById(R.id.courseEditStart);
          courseEditEnd = findViewById(R.id.courseEditEnd);
@@ -88,7 +88,7 @@ public class CourseEdit extends AppCompatActivity {
 
          if (currentCourse != null){
              courseName = currentCourse.getCourseName();
-             courseInstructor = currentCourse.getCourseInstructor();
+             courseMentor = currentCourse.getCourseMentor();
              courseNote = currentCourse.getCourseNote();
              courseStart = currentCourse.getCourseStart();
              courseEnd = currentCourse.getCourseEnd();
@@ -98,7 +98,7 @@ public class CourseEdit extends AppCompatActivity {
 
          if(courseID != -1){
              courseEditName.setText(courseName);
-             courseEditInstructor.setText(courseInstructor);
+             courseEditMentor.setText(courseMentor);
              courseEditNote.setText(courseNote);
              courseEditStart.setText(courseStart);
              courseEditEnd.setText(courseEnd);
@@ -125,12 +125,12 @@ public class CourseEdit extends AppCompatActivity {
     public void saveUpdatedCourse(View view) {
         CourseEntity c;
         if(courseID != -1)
-            c = new CourseEntity(courseID, courseEditName.getText().toString(), courseEditInstructor.getText().toString(),
+            c = new CourseEntity(courseID, courseEditName.getText().toString(), courseEditMentor.getText().toString(),
                     courseEditNote.getText().toString(), courseEditStart.getText().toString(), courseEditEnd.getText().toString(), courseEditStatus.getText().toString(), currentCourse.getLevelID());
         else{
             List<CourseEntity> allCourses = repository.getAllCourses();
             courseID = allCourses.get(allCourses.size() - 1).getCourseID();
-            c = new CourseEntity(++courseID, courseEditName.getText().toString(), courseEditInstructor.getText().toString(),
+            c = new CourseEntity(++courseID, courseEditName.getText().toString(), courseEditMentor.getText().toString(),
                     courseEditNote.getText().toString(), courseEditStart.getText().toString(), courseEditEnd.getText().toString(),  courseEditStatus.getText().toString() ,currentCourse.getLevelID());
         }
         repository.update(c);

@@ -47,7 +47,7 @@
                     android:text="Mentor Info: "/>
 
                 <EditText
-                    android:id="@+id/courseEditInstructor"
+                    android:id="@+id/courseEditMentor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="James Tiberius Fairbanks jfairbanks2@wgu.edu 555-555-5555"

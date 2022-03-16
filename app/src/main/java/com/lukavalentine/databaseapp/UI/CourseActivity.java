@@ -18,7 +18,7 @@ public class CourseActivity extends AppCompatActivity {
 
     int Id;
     String name;
-    String instructor;
+    String Mentor;
     String courseNote;
     String start;
     String end;

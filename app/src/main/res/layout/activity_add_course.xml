@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:text="Mentor Info: "/>
                 <EditText
-                    android:id="@+id/courseAddInstructor"
+                    android:id="@+id/courseAddMentor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"

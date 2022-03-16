@@ -30,7 +30,7 @@
             android:id="@+id/courseName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Applied Algebra"/>
+            android:hint="Unit Testing"/>
 
     </LinearLayout>
         <LinearLayout
@@ -40,9 +40,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Course Instructor: "/>
+                android:text="Course Mentor: "/>
             <EditText
-                android:id="@+id/courseInstructor"
+                android:id="@+id/courseMentor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Shelley D."/>
