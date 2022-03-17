@@ -7,7 +7,7 @@
     <TextView
         android:id="@+id/searchListTextView"
         style="@android:style/TextAppearance.Material.Title"
-        android:layout_width="215dp"
+        android:layout_width="125dp"
         android:layout_height="30dp"
         android:ellipsize="marquee"
         android:layout_marginRight="10dp"

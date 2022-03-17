@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.lukavalentine.databaseapp.Database.Repository;
 import com.lukavalentine.databaseapp.Entities.CourseEntity;
-import com.lukavalentine.databaseapp.Entities.EventEntity;
+import com.lukavalentine.databaseapp.Entities.MentorEntity;
 import com.lukavalentine.databaseapp.R;
 
 import java.util.ArrayList;
@@ -25,18 +25,19 @@ public class SearchActivity extends AppCompatActivity {
 
 
     Repository Repository;
-    ArrayList<EventEntity> eventsArrayList;
+    ArrayList<MentorEntity> MentorsArrayList;
     SearchAdapter searchAdapter;
     RecyclerView recyclerView;
-    String[] eventsName;
-    String[] eventsDate;
+    String[] MentorName;
+    String[] MentorPhone;
+    String[] MentorEmail;
 
 
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        //Thinking about doing something more simplistic like listing events rather
+        //Thinking about doing something more simplistic like listing Mentors rather
         //than trying to pull courses...
 
         super.onCreate(savedInstanceState);
@@ -53,31 +54,44 @@ public class SearchActivity extends AppCompatActivity {
         //searchCourseAdapter.setWords(Repository.getAllCourses());
 
         //courseArrayList = new ArrayList<CourseEntity>();
-        eventsArrayList = new ArrayList<EventEntity>();
+        MentorsArrayList = new ArrayList<MentorEntity>();
 
 
-        eventsName = new String[]{
-                "Tavern Talk with Julie",
-                "Growth Mentality",
-                "Future! Don't wait!",
-                "Dev Ops 101",
-                "Miraculous Battle Systems",
-                "Vivid Writing",
-                "Tool Time with Jan",
-                "Networking For Good",
-                "Working with Clients",
+        MentorName = new String[]{
+                "Julie T.",
+                "Julian M.",
+                "Mark P.",
+                "Anita Z.",
+                "Luka V.",
+                "Marcus W.",
+                "Lola Z.",
+                "Marsha K.",
+                "Lucian P.",
         };
 
-        eventsDate = new String[]{
-          "12/22/22",
-          "01/03/23",
-          "01/31/23",
-          "02/22/23",
-          "03/14/23",
-          "03/23/23",
-          "04/01/23",
-          "05/02/23",
-          "06/03/23"
+        MentorPhone = new String[]{
+          "111-111-1111",
+          "222-222-2222",
+          "333-333-3333",
+          "444-444-4444",
+          "555-555-5555",
+          "666-666-6666",
+          "777-777-7777",
+          "888-888-8888",
+          "999-999-9999"
+        };
+
+        MentorEmail = new String[]{
+                "juliet@avgc.com",
+                "julianm@avgc.com",
+                "markp@avgc.com",
+                "anitaz@avgc.com",
+                "lukav@avgc.com",
+                "marcusw@avgc.com",
+                "lolaz@avgc.com",
+                "marshak@avgc.com",
+                "lucianp@avgc.com"
+
         };
 
 
@@ -92,13 +106,13 @@ public class SearchActivity extends AppCompatActivity {
 
     private void getData() {
 
-        for (int i= 0;i<eventsName.length;i++){
-            EventEntity events = new EventEntity(eventsName[i], eventsDate[i]);
-            eventsArrayList.add(events);
+        for (int i= 0;i<MentorName.length;i++){
+            MentorEntity Mentors = new MentorEntity(MentorName[i], MentorPhone[i], MentorEmail[i]);
+            MentorsArrayList.add(Mentors);
 
         }
 
-        searchAdapter = new SearchAdapter(this, eventsArrayList);
+        searchAdapter = new SearchAdapter(this, MentorsArrayList);
         recyclerView.setAdapter(searchAdapter);
         searchAdapter.notifyDataSetChanged();
     }
@@ -106,10 +120,10 @@ public class SearchActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search_menu, menu);
-        MenuItem menuItem = menu.findItem(R.id.search_events);
+        MenuItem menuItem = menu.findItem(R.id.search_Mentors);
         SearchView searchView = (SearchView) menuItem.getActionView();
         searchView.setMaxWidth(Integer.MAX_VALUE);
-        searchView.setQueryHint("Search for events!");
+        searchView.setQueryHint("Search for Mentors!");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

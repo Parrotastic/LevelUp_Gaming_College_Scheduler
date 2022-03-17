@@ -35,7 +35,7 @@
         <activity android:name=".UI.TrialEdit"
             android:label="Edit Trial"/>
         <activity android:name=".UI.SearchActivity"
-            android:label="Event Search"/>
+            android:label="Mentor Search"/>
 
         <activity
             android:name=".UI.MainActivity"

@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lukavalentine.databaseapp.Entities.EventEntity;
+import com.lukavalentine.databaseapp.Entities.MentorEntity;
 import com.lukavalentine.databaseapp.R;
 
 import java.util.ArrayList;
@@ -21,16 +21,16 @@ import java.util.Locale;
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchViewHolder> implements Filterable {
     private final Context context;
     private final LayoutInflater mInflater;
-    ArrayList<EventEntity> eventsArrayList;
-    ArrayList<EventEntity> eventsArrayListFull;
+    ArrayList<MentorEntity> MentorsArrayList;
+    ArrayList<MentorEntity> MentorsArrayListFull;
 
 
 
-    public SearchAdapter(Context context, ArrayList<EventEntity> eventsArrayList){
+    public SearchAdapter(Context context, ArrayList<MentorEntity> MentorsArrayList){
         mInflater = LayoutInflater.from(context);
         this.context = context;
-        this.eventsArrayListFull = eventsArrayList;
-        this.eventsArrayList = new ArrayList<>(eventsArrayListFull);
+        this.MentorsArrayListFull = MentorsArrayList;
+        this.MentorsArrayList = new ArrayList<>(MentorsArrayListFull);
     }
 
     @NonNull
@@ -42,9 +42,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     @Override
     public void onBindViewHolder(@NonNull SearchViewHolder holder, int position) {
-        EventEntity events = eventsArrayList.get(position);
-        holder.searchListTextView.setText(events.getEventName());
-        holder.searchListTextView2.setText(events.getEventDate());
+        MentorEntity Mentors = MentorsArrayList.get(position);
+        holder.searchListTextView.setText(Mentors.getMentorName());
+        holder.searchListTextView2.setText(Mentors.getMentorPhone());
+        holder.searchListTextView3.setText(Mentors.getMentorEmail());
 
 
 
@@ -52,41 +53,41 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     @Override
     public int getItemCount() {
-        return eventsArrayList.size();
+        return MentorsArrayList.size();
     }
 
     @Override
     public Filter getFilter() {
-        return eventsSearchFilter;
+        return MentorsSearchFilter;
     }
 
-    private final Filter eventsSearchFilter = new Filter() {
+    private final Filter MentorsSearchFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            ArrayList<EventEntity> filteredEventsList = new ArrayList<>();
+            ArrayList<MentorEntity> filteredMentorsList = new ArrayList<>();
 
             if(constraint == null || constraint.length() == 0){
-                filteredEventsList.addAll(eventsArrayListFull);
+                filteredMentorsList.addAll(MentorsArrayListFull);
             } else{
 
                 String filterPattern = constraint.toString().toLowerCase(Locale.ROOT).trim();
-                for (EventEntity events : eventsArrayListFull){
-                    if (events.getEventName().toLowerCase(Locale.ROOT).contains(filterPattern))
-                        filteredEventsList.add(events);
+                for (MentorEntity Mentors : MentorsArrayListFull){
+                    if (Mentors.getMentorName().toLowerCase(Locale.ROOT).contains(filterPattern))
+                        filteredMentorsList.add(Mentors);
                 }
             }
 
             FilterResults results = new FilterResults();
-            results.values = filteredEventsList;
-            results.count = filteredEventsList.size();
+            results.values = filteredMentorsList;
+            results.count = filteredMentorsList.size();
             return results;
 
         }
 
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            eventsArrayList.clear();
-            eventsArrayList.addAll((ArrayList) results.values);
+            MentorsArrayList.clear();
+            MentorsArrayList.addAll((ArrayList) results.values);
             notifyDataSetChanged();
 
         }
