@@ -25,33 +25,15 @@ public class MainActivity extends AppCompatActivity {
     private Repository repository;
     private String userName;
     private String password;
-    private String dbUserName;
     EditText loginUserNameEditText;
     EditText loginPasswordEditText;
+    UserEntity currentUser;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_login_screen);
-
-
-
-
-        userName = getIntent().getStringExtra("userName".toString());
-        password = getIntent().getStringExtra("userPassword".toString());
-//        List<UserEntity> allUsers = repository.getAllUsers();
-        loginUserNameEditText = findViewById(R.id.loginUserNameEditText);
-        loginPasswordEditText = findViewById(R.id.loginPasswordEditText);
-
-        //BELOW LINE @ 48 IS A NULL OBJECT REFERENCE...
-//        Caused b
-//
-//        y: java.lang.NullPointerException: Attempt to invoke virtual method 'android.text.Editable android.widget.EditText.getText()' on a null object reference
-
-        loginUserNameEditText.setText(userName);
-        loginPasswordEditText.setText(password);
-
         Repository repository= new Repository(getApplication());
 
 
@@ -59,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+        //BELOW LINE @ 48 IS A NULL OBJECT REFERENCE...
+//        Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'android.text.Editable android.widget.EditText.getText()' on a null object reference
 
 
 
@@ -78,6 +64,17 @@ public class MainActivity extends AppCompatActivity {
 
         UserEntity user = new UserEntity(1, "admin", "password");
         repository.insert(user);
+
+        List<UserEntity> allUsers = repository.getAllUsers();
+        userName = getIntent().getStringExtra("userName".toString());
+        password = getIntent().getStringExtra("userPassword".toString());
+
+        loginUserNameEditText = findViewById(R.id.loginUserNameEditText);
+        loginPasswordEditText = findViewById(R.id.loginPasswordEditText);
+
+        loginUserNameEditText.setText(userName);
+
+        loginPasswordEditText.setText(password);
 
 
 
@@ -135,37 +132,77 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void verifyLogin(View view) {
-        Repository repository = new Repository(getApplication());
+        //Main Screen button pulls from this method verifyLogin method.
+        //dbUserName and dbPassWord are presenting the proper user data: [1, "admin", "password"].
+        //
+        //
+
+        //Repository repository = new Repository(getApplication());
+
+        repository = new Repository(getApplication());
         userName = loginUserNameEditText.getText().toString();
         password = loginPasswordEditText.getText().toString();
 
 
+        for(UserEntity u : repository.getAllUsers()){
+            String dbUserName = u.getUserName();
 
-
-
-
-
-
-        if (userName == userName && password == password){
-            Toast.makeText(this, "Welcome! Time to gain exp! ☕", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this, LevelActivity.class);
-            startActivity(intent);
-
-        }  else{
+            String dbUserPassword = u.getUserPassword();
+            //dbUserName == userName && dbUserPassword == password
+            if (dbUserName.contentEquals(userName) && dbUserPassword.contentEquals(password)){
+                Toast.makeText(this, "Welcome! Time to gain exp! ☕", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, LevelActivity.class);
+                startActivity(intent);
+            } else{
             Toast.makeText(this, "Invalid username/password", Toast.LENGTH_SHORT).show();
 
         }
+
+
+//        if (userName == userName && password == password){
+//                    Toast.makeText(this, "Welcome! Time to gain exp! ☕", Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(MainActivity.this, LevelActivity.class);
+//                    startActivity(intent);
+//
+//                }  else{
+//                    Toast.makeText(this, "Invalid username/password", Toast.LENGTH_SHORT).show();
+//
+//                }
+
+        //This login method works only on a base level, to get this up to enterprise level for GitHub prospects,
+        //We need to update it for the method to actually pull from the SQLite table "user_table".
+        //Otherwise, this will just look crappy.
+
+
+
+
+
+
+
+
+//        if (userName == userName && password == password){
+//            Toast.makeText(this, "Welcome! Time to gain exp! ☕", Toast.LENGTH_SHORT).show();
+//            Intent intent = new Intent(MainActivity.this, LevelActivity.class);
+//            startActivity(intent);
+//
+//        }  else{
+//            Toast.makeText(this, "Invalid username/password", Toast.LENGTH_SHORT).show();
+//
+//        }
 //        for(UserEntity u : repository.getAllUsers()){
 //            String dbUserName = u.getUserName().toString();
 //            String dbUserPassWord = u.getUserPassword();
 //
-//            if (dbUserName == userName){
+//            if (dbUserName == userName && dbUserPassWord == password){
 //                Toast.makeText(this, "Welcome! Time to gain exp! ☕", Toast.LENGTH_SHORT).show();
 //                Intent intent = new Intent(MainActivity.this, LevelActivity.class);
 //                startActivity(intent);
-//            }
+//            } else{
+//            Toast.makeText(this, "Invalid username/password", Toast.LENGTH_SHORT).show();
+//
+//        }
 
 
 
     }
-}
+}}
