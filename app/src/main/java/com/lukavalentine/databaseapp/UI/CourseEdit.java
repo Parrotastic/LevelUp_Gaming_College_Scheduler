@@ -208,7 +208,7 @@ public class CourseEdit extends AppCompatActivity {
             Long trigger = myDate.getTime();
 
 
-            //date=myCalendar.getTimeInMillis();
+
             alarmManager.set(AlarmManager.RTC_WAKEUP, trigger, sender);
             return true;
 
@@ -237,7 +237,7 @@ public class CourseEdit extends AppCompatActivity {
             Long trigger = myDate.getTime();
 
 
-            //date=myCalendar.getTimeInMillis();
+
             alarmManager.set(AlarmManager.RTC_WAKEUP, trigger, sender);
             return true;
 

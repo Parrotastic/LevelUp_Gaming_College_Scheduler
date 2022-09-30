@@ -34,19 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_login_screen);
-        Repository repository= new Repository(getApplication());
-
-
-
-
-
-
-
-
-        //BELOW LINE @ 48 IS A NULL OBJECT REFERENCE...
-//        Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'android.text.Editable android.widget.EditText.getText()' on a null object reference
-
-
+        Repository repository = new Repository(getApplication());
 
 
         LevelEntity Level = new LevelEntity(1, "Level 1: Tutorial", "04/03/25", "10/30/25");
@@ -56,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
         Level = new LevelEntity(3, "Level 3: Rhombus Road", "06/03/26", "12/30/26");
         repository.insert(Level);
 
-        CourseEntity course = new CourseEntity(1,"UI/UX 101", "001", "....", "04/03/25", "06/03/25", "In Progress",1);
+        CourseEntity course = new CourseEntity(1, "UI/UX 101", "001", "....", "04/03/25", "06/03/25", "In Progress", 1);
         repository.insert(course);
 
-        TrialEntity Trial = new TrialEntity(1,"Trial Boss: Angry Tree", "06/02/25", "06/03/25", "Objective",1);
+        TrialEntity Trial = new TrialEntity(1, "Trial Boss: Angry Tree", "06/02/25", "06/03/25", "Objective", 1);
         repository.insert(Trial);
 
         UserEntity user = new UserEntity(1, "admin", "password");
@@ -76,39 +64,6 @@ public class MainActivity extends AppCompatActivity {
 
         loginPasswordEditText.setText(password);
 
-
-
-
-//        RecyclerView recyclerView = findViewById(R.id.associated_courses);
-//
-//        final CourseAdapter adapter = new CourseAdapter(this);
-//        recyclerView.setAdapter(adapter);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        List<CourseEntity> filteredCourses = new ArrayList<>();
-//        //Use this for the password/username verification
-//        //If(username = userentity.username && password = userentity.password)
-//        //True: intent to next activity
-//        //False: Toast message invalid username/pass
-//        for (CourseEntity c : repository.getAllCourses()) {
-//            if (c.getLevelID() == LevelID) filteredCourses.add(c);
-//        }
-//        numCourses = filteredCourses.size();
-//
-//        adapter.setWords(filteredCourses);
-//
-
-//
-//        if(id == R.id.delete_course){
-//            if(numTrials == 0){
-//                repository.delete(currentCourse);
-//                Intent intent = new Intent(CourseEdit.this, LevelEdit.class);
-//                intent.putExtra("LevelID", currentCourse.getLevelID());
-//                startActivity(intent);
-//            }
-//            else{
-//                Toast.makeText(getApplicationContext(), "Cannot delete course with trial(s) assigned.", Toast.LENGTH_SHORT).show();
-//            }
-//        }
 
 
 
@@ -132,77 +87,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void verifyLogin(View view) {
-        //Main Screen button pulls from this method verifyLogin method.
-        //dbUserName and dbPassWord are presenting the proper user data: [1, "admin", "password"].
-        //
-        //
 
-        //Repository repository = new Repository(getApplication());
 
         repository = new Repository(getApplication());
         userName = loginUserNameEditText.getText().toString();
         password = loginPasswordEditText.getText().toString();
 
 
-        for(UserEntity u : repository.getAllUsers()){
+        for (UserEntity u : repository.getAllUsers()) {
             String dbUserName = u.getUserName();
 
             String dbUserPassword = u.getUserPassword();
-            //dbUserName == userName && dbUserPassword == password
-            if (dbUserName.contentEquals(userName) && dbUserPassword.contentEquals(password)){
+
+            if (dbUserName.contentEquals(userName) && dbUserPassword.contentEquals(password)) {
                 Toast.makeText(this, "Welcome! Time to gain exp! ☕", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, LevelActivity.class);
                 startActivity(intent);
-            } else{
-            Toast.makeText(this, "Invalid username/password", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Invalid username/password", Toast.LENGTH_SHORT).show();
+
+            }
+
 
         }
-
-
-//        if (userName == userName && password == password){
-//                    Toast.makeText(this, "Welcome! Time to gain exp! ☕", Toast.LENGTH_SHORT).show();
-//                    Intent intent = new Intent(MainActivity.this, LevelActivity.class);
-//                    startActivity(intent);
-//
-//                }  else{
-//                    Toast.makeText(this, "Invalid username/password", Toast.LENGTH_SHORT).show();
-//
-//                }
-
-        //This login method works only on a base level, to get this up to enterprise level for GitHub prospects,
-        //We need to update it for the method to actually pull from the SQLite table "user_table".
-        //Otherwise, this will just look crappy.
-
-
-
-
-
-
-
-
-//        if (userName == userName && password == password){
-//            Toast.makeText(this, "Welcome! Time to gain exp! ☕", Toast.LENGTH_SHORT).show();
-//            Intent intent = new Intent(MainActivity.this, LevelActivity.class);
-//            startActivity(intent);
-//
-//        }  else{
-//            Toast.makeText(this, "Invalid username/password", Toast.LENGTH_SHORT).show();
-//
-//        }
-//        for(UserEntity u : repository.getAllUsers()){
-//            String dbUserName = u.getUserName().toString();
-//            String dbUserPassWord = u.getUserPassword();
-//
-//            if (dbUserName == userName && dbUserPassWord == password){
-//                Toast.makeText(this, "Welcome! Time to gain exp! ☕", Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(MainActivity.this, LevelActivity.class);
-//                startActivity(intent);
-//            } else{
-//            Toast.makeText(this, "Invalid username/password", Toast.LENGTH_SHORT).show();
-//
-//        }
-
-
-
     }
-}}
+}

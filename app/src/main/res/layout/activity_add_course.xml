@@ -7,13 +7,7 @@
     android:orientation="vertical"
     tools:context=".UI.CourseAdd">
 
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:onClick="addTrial"-->
-<!--        android:src="@android:drawable/ic_input_add"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintRight_toRightOf="parent"/>-->
+
 
     <ScrollView
         android:id="@+id/scrollViewAddCourse"
@@ -127,21 +121,7 @@
 
             </LinearLayout>
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="horizontal">-->
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="LevelID: "/>-->
-<!--                <EditText-->
-<!--                    android:id="@+id/courseAddLevelID"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:hint="2"/>-->
 
-<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="match_parent"

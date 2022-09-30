@@ -60,7 +60,7 @@ public class CourseAdd extends AppCompatActivity {
         courseAddStart = findViewById(R.id.courseAddStart);
         courseAddEnd = findViewById(R.id.courseAddEnd);
         courseAddStatus = findViewById(R.id.courseAddStatus);
-        //courseAddLevelID = findViewById(R.id.courseAddLevelID);
+
 
         if(currentCourse != null){
          courseName = currentCourse.getCourseName();
@@ -79,7 +79,7 @@ public class CourseAdd extends AppCompatActivity {
             courseAddStart.setText(courseStart);
             courseAddEnd.setText(courseEnd);
             courseAddStatus.setText(courseStatus);
-            //courseAddLevelID.setText(LevelID);
+
         }
 
 

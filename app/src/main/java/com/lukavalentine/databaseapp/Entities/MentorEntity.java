@@ -1,6 +1,8 @@
 package com.lukavalentine.databaseapp.Entities;
 
 public class MentorEntity {
+
+
     private String MentorName;
     private String MentorPhone;
     private String MentorEmail;

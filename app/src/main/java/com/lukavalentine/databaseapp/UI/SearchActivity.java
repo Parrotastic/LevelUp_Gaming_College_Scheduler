@@ -23,7 +23,6 @@ import java.util.List;
 public class SearchActivity extends AppCompatActivity {
 
 
-
     Repository Repository;
     ArrayList<MentorEntity> MentorsArrayList;
     SearchAdapter searchAdapter;
@@ -33,27 +32,21 @@ public class SearchActivity extends AppCompatActivity {
     String[] MentorEmail;
 
 
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        //Thinking about doing something more simplistic like listing Mentors rather
-        //than trying to pull courses...
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
 
-
-        //courseSearch = findViewById(R.id.searchEditText);
         Repository = new Repository(getApplication());
-        //Repository.getAllCourses();
+
         recyclerView = findViewById(R.id.searchRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
-        //searchCourseAdapter.setWords(Repository.getAllCourses());
 
-        //courseArrayList = new ArrayList<CourseEntity>();
+
         MentorsArrayList = new ArrayList<MentorEntity>();
 
 
@@ -70,15 +63,15 @@ public class SearchActivity extends AppCompatActivity {
         };
 
         MentorPhone = new String[]{
-          "111-111-1111",
-          "222-222-2222",
-          "333-333-3333",
-          "444-444-4444",
-          "555-555-5555",
-          "666-666-6666",
-          "777-777-7777",
-          "888-888-8888",
-          "999-999-9999"
+                "111-111-1111",
+                "222-222-2222",
+                "333-333-3333",
+                "444-444-4444",
+                "555-555-5555",
+                "666-666-6666",
+                "777-777-7777",
+                "888-888-8888",
+                "999-999-9999"
         };
 
         MentorEmail = new String[]{
@@ -98,15 +91,11 @@ public class SearchActivity extends AppCompatActivity {
         getData();
 
 
-
-        
-        
-
     }
 
     private void getData() {
 
-        for (int i= 0;i<MentorName.length;i++){
+        for (int i = 0; i < MentorName.length; i++) {
             MentorEntity Mentors = new MentorEntity(MentorName[i], MentorPhone[i], MentorEmail[i]);
             MentorsArrayList.add(Mentors);
 
@@ -141,36 +130,5 @@ public class SearchActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-//    public void searchForCourses(View view) {
-//        repository = new Repository(getApplication());
-//        //Not sure if below is needed
-//        //List<CourseEntity> allCourses = repository.getAllCourses();
-//
-//        RecyclerView recyclerView = findViewById(R.id.searchRecyclerView);
-//        final CourseAdapter adapter = new CourseAdapter(this);
-//        recyclerView.setAdapter(adapter);
-//
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//
-////        String courseSearch1 = courseSearch.getText().toString();
-////        ArrayList<String> filteredCourses = new ArrayList();
-////
-////        ArrayList<String> strings = new ArrayList<String>();
-////        strings.add("String1");
-////        strings.add("String2");
-////        strings.add("String3");
-////        strings.add("String4");
-////        strings.add("String5");
-////
-////
-////
-////        for (int i = 0; i < 5; i++) {
-////            if (strings.get(i) == courseSearch1) filteredCourses.add(strings.get(i));
-////
-////        }
-////        numCourses = filteredCourses.size();
-//
-//        //adapter.setWords(filteredCourses);
-//    }
 
 }

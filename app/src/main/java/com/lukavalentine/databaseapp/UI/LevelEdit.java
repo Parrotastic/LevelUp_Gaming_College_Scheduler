@@ -170,19 +170,7 @@ public class LevelEdit extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Cannot delete level with course(s) assigned.", Toast.LENGTH_SHORT).show();
             }
         }
-//
-//        if(id == R.id.share_Level){
-//            Intent sendIntent = new Intent();
-//            sendIntent.setAction(Intent.ACTION_SEND);
-//            sendIntent.putExtra(Intent.EXTRA_TEXT, "Check out this information!");
-//
-//            sendIntent.putExtra(Intent.EXTRA_TITLE, "Level Info");
-//            sendIntent.setType("text/plain");
-//
-//            Intent shareIntent = Intent.createChooser(sendIntent, null);
-//            startActivity(shareIntent);
-//            return true;
-//        }
+
 
 
 

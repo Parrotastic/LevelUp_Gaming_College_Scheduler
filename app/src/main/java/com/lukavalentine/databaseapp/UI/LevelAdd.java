@@ -68,11 +68,7 @@ public class LevelAdd extends AppCompatActivity {
 
 
 
-    public void addLevel(View view) {
-//        Intent intent = new Intent(LevelAdd.this, LevelActivity.class);
-//        intent.putExtra("LevelID", LevelID);
-//        startActivity(intent);
-    }
+
 
     public void addLevelFromScreen(View view) {
         LevelEntity t;

@@ -36,7 +36,7 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.LevelViewHol
         private LevelViewHolder(View itemView) {
             super(itemView);
             LevelItemView = itemView.findViewById(R.id.LevelTextView);
-            //Added additional LevelItemView2
+
             LevelItemView2 = itemView.findViewById(R.id.LevelTextView2);
             LevelItemView3 = itemView.findViewById(R.id.LevelTextView3);
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -45,7 +45,7 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.LevelViewHol
                 public void onClick(View v) {
                     int position = getAdapterPosition();
                     final LevelEntity current = mLevels.get(position);
-                    //
+
                     Intent intent = new Intent(context, LevelEdit.class);
                     intent.putExtra("LevelID", current.getLevelID());
                     intent.putExtra("LevelName", current.getLevelName());
@@ -75,7 +75,7 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.LevelViewHol
         if (mLevels != null) {
             final LevelEntity current = mLevels.get(position);
             holder.LevelItemView.setText(current.getLevelName());
-            //Added additional LevelItemView2.
+
             holder.LevelItemView2.setText(current.getLevelStart());
             holder.LevelItemView3.setText(current.getLevelEnd());
         } else {

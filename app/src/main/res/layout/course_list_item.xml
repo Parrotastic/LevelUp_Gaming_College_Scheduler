@@ -30,65 +30,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="monospace"/>
 
-<!--    <RelativeLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:padding="8dp">-->
 
-<!--        <TextView-->
-<!--            android:id="@+id/courseName"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Course Name"-->
-<!--            android:layout_alignParentStart="true" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/courseStart"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/courseName"-->
-<!--            android:text="Course Start"-->
-<!--            />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/courseEnd"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/courseName"-->
-<!--            android:layout_toRightOf="@id/courseStart"-->
-<!--            android:text="Course End"-->
-<!--            />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/courseMentor"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_alignParentRight="true"-->
-<!--            android:text="Course Mentor"/>-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/courseNote"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Course Notes"-->
-<!--            android:ellipsize="marquee"-->
-<!--            android:layout_alignParentEnd="true"-->
-<!--            android:layout_below="@id/courseMentor"-->
-<!--            />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/courseLevelID"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="LevelID:"-->
-<!--            android:layout_below="@id/courseStart"/>-->
-
-
-
-
-<!--    </RelativeLayout>-->
-
-<!--    Changing from CardView to GridLayout-->
 
 
 
